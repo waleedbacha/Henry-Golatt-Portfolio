@@ -1,0 +1,113 @@
+/* ============================================================
+   SCROLL TO TOP BUTTON
+   ============================================================ */
+
+.scroll-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #0b1a10;
+  color: #32b554;
+  border: 2px solid #32b554;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 8px 25px rgba(50, 181, 84, 0.35);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.8);
+}
+
+.scroll-to-top-visible {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.scroll-to-top:hover {
+  transform: translateY(-4px) scale(1.08);
+  background: #32b554;
+  color: #0a0a0a;
+  box-shadow: 0 12px 35px rgba(50, 181, 84, 0.6);
+}
+
+.scroll-to-top-icon {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.3s ease;
+}
+
+.scroll-to-top:hover .scroll-to-top-icon {
+  transform: translateY(-3px);
+}
+
+/* Progress ring */
+.scroll-to-top-ring {
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  pointer-events: none;
+  transform: rotate(-90deg);
+}
+
+.scroll-to-top-ring-bg {
+  stroke: rgba(50, 181, 84, 0.15);
+  opacity: 1;
+}
+
+.scroll-to-top-ring-progress {
+  stroke: #32b554;
+  transition: stroke-dashoffset 0.15s ease;
+  filter: drop-shadow(0 0 3px rgba(50, 181, 84, 0.5));
+}
+
+/* Pulse animation */
+.scroll-to-top-visible {
+  animation: scrollFabPulse 2s ease-in-out infinite;
+}
+
+@keyframes scrollFabPulse {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(50, 181, 84, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 8px 25px rgba(50, 181, 84, 0.35),
+      0 0 0 10px rgba(50, 181, 84, 0.08);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .scroll-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 46px;
+    height: 46px;
+  }
+
+  .scroll-to-top-ring {
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+  }
+
+  .scroll-to-top-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .scroll-to-top {
+    animation: none !important;
+  }
+}

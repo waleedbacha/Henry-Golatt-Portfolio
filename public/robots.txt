@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Block sensitive paths (if any)
+Disallow: /api/
+Disallow: /admin/
+
+# Sitemap location
+Sitemap: https://www.hgconsultingservices.com/sitemap.xml

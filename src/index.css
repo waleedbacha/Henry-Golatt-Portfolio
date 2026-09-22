@@ -1,0 +1,816 @@
+@import "tailwindcss";
+
+/* Custom properties */
+@theme {
+  --color-primary: #0a0a0a;
+  --color-secondary: #111111;
+  --color-card: #1a1a1a;
+  --color-accent: #00ff88;
+  --color-accent-dark: #00cc66;
+  --color-text-secondary: #b0b0b0;
+  --color-border: #2a2a2a;
+}
+
+/* Base styles */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--color-primary);
+    color: white;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: var(--color-primary);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--color-accent);
+    border-radius: 9999px;
+    opacity: 0.3;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    opacity: 0.5;
+  }
+}
+
+/* Custom components */
+@layer components {
+  .bg-gradient-accent {
+    background: linear-gradient(135deg, #00ff88, #00cc66);
+  }
+  
+  .border-border {
+    border-color: #2a2a2a;
+  }
+
+  .glass-effect {
+    background-color: rgba(17, 17, 17, 0.8);
+    backdrop-filter: blur(8px);
+    border: 1px solid #2a2a2a;
+  }
+
+  .section-padding {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .container-custom {
+    max-width: 80rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #00ff88, #00cc66);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+}
+/* ============================================================
+   🌗 LIGHT MODE THEME OVERRIDES
+   Applied when <html data-theme="light">
+   ============================================================ */
+
+[data-theme='light'] {
+  color-scheme: light;
+}
+
+/* Base body */
+[data-theme='light'] body {
+  background-color: #f5f7f5;
+  color: #0a0a0a;
+}
+
+/* Navbar */
+[data-theme='light'] .navbar {
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid rgba(50, 181, 84, 0.15);
+}
+
+[data-theme='light'] .navbar-scrolled {
+  background: rgba(255, 255, 255, 0.98);
+  border-bottom-color: rgba(50, 181, 84, 0.2);
+}
+
+[data-theme='light'] .navbar-link {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+[data-theme='light'] .navbar-link:hover {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .navbar-link-active {
+  background: rgba(50, 181, 84, 0.15);
+  color: #32b554;
+}
+
+/* Mega menu */
+[data-theme='light'] .mega-menu-inner {
+  background: #ffffff;
+  border-color: rgba(50, 181, 84, 0.2);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme='light'] .mega-menu-inner::before {
+  background: #ffffff;
+}
+
+[data-theme='light'] .mega-menu-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .mega-menu-item-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .mega-menu-item-desc {
+  color: #555;
+}
+
+[data-theme='light'] .mega-menu-item:hover {
+  background: rgba(50, 181, 84, 0.08);
+}
+
+/* Hero section */
+[data-theme='light'] .hero-section {
+  background-color: #f5f7f5;
+}
+
+[data-theme='light'] .hero-background-shape-1,
+[data-theme='light'] .hero-background-shape-2,
+[data-theme='light'] .hero-background-shape-3 {
+  opacity: 0.3;
+}
+
+[data-theme='light'] .hero-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .hero-description {
+  color: #555;
+}
+
+[data-theme='light'] .hero-trusted-label {
+  color: #666;
+}
+
+[data-theme='light'] .hero-rating-number {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .hero-card-large {
+  background: linear-gradient(to bottom, #e8f4eb, #d4ecdb);
+  border-color: rgba(50, 181, 84, 0.3);
+}
+
+[data-theme='light'] .hero-card-large-value {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .hero-card-large-label {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .hero-card-bottom-left {
+  background: #f0f8f2;
+}
+
+[data-theme='light'] .hero-card-bottom-right {
+  background: linear-gradient(to bottom, #e8f4eb, #d4ecdb);
+}
+
+[data-theme='light'] .hero-card-bottom-right-value,
+[data-theme='light'] .hero-card-bottom-right-label {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .hero-code-quality-label {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .hero-client-name {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .hero-clients {
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Stats section */
+[data-theme='light'] .hero-client-item {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+/* All page wrappers */
+[data-theme='light'] .page-wrapper {
+  background: #f5f7f5;
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .page-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .page-description {
+  color: #555;
+}
+
+/* Cards */
+[data-theme='light'] .page-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='light'] .page-card-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .page-card-description {
+  color: #555;
+}
+
+/* Footer */
+[data-theme='light'] .footer {
+  background: #ffffff;
+  border-top-color: rgba(50, 181, 84, 0.15);
+  color: #555;
+}
+
+[data-theme='light'] footer {
+  background-color: #ffffff !important;
+  color: #0a0a0a;
+}
+
+[data-theme='light'] footer h4 {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] footer p,
+[data-theme='light'] footer li,
+[data-theme='light'] footer span {
+  color: #555;
+}
+
+/* Chat window */
+[data-theme='light'] .chat-window {
+  background: #ffffff;
+  border-color: rgba(50, 181, 84, 0.3);
+}
+
+[data-theme='light'] .chat-header {
+  background: linear-gradient(135deg, #e8f4eb, #d4ecdb);
+}
+
+[data-theme='light'] .chat-header-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .chat-body {
+  background: #f8faf8;
+}
+
+[data-theme='light'] .chat-message-assistant {
+  background: #e8f4eb;
+  color: #0a0a0a;
+  border-color: rgba(50, 181, 84, 0.2);
+}
+
+[data-theme='light'] .chat-input-form {
+  background: linear-gradient(135deg, #e8f4eb, #d4ecdb);
+}
+
+[data-theme='light'] .chat-input {
+  background: rgba(255, 255, 255, 0.8);
+  color: #0a0a0a;
+  border-color: rgba(50, 181, 84, 0.3);
+}
+
+[data-theme='light'] .chat-input::placeholder {
+  color: #888;
+}
+
+/* Smooth transition */
+html {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+/* ============================================================
+   🌗 FEATURES SECTION - LIGHT MODE
+   ============================================================ */
+
+[data-theme='light'] #features {
+  background: #f5f7f5;
+}
+
+/* Section heading "What We Do" */
+[data-theme='light'] #features h2 {
+  color: #0a0a0a;
+}
+
+/* Section description */
+[data-theme='light'] #features > div > div > p,
+[data-theme='light'] #features .container-custom > .text-center > p {
+  color: #555;
+}
+
+/* Feature cards */
+[data-theme='light'] #features .bg-\[\#1a1a1a\] {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Feature card titles */
+[data-theme='light'] #features h3 {
+  color: #0a0a0a !important;
+}
+
+/* Feature card descriptions */
+[data-theme='light'] #features p {
+  color: #555 !important;
+}
+
+/* Icon container - keep green */
+[data-theme='light'] #features .bg-\[\#00ff88\]\/10 {
+  background: rgba(50, 181, 84, 0.12) !important;
+}
+
+/* ============================================================
+   🌗 OTHER SECTIONS - Light Mode Overrides
+   ============================================================ */
+
+/* Services Home Section */
+[data-theme='light'] .services-home-section {
+  background: #f5f7f5;
+}
+
+[data-theme='light'] .services-home-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .services-home-subtitle {
+  color: #555;
+}
+
+[data-theme='light'] .services-home-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .services-home-card-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .services-home-card-desc {
+  color: #555;
+}
+
+/* Stats Section */
+[data-theme='light'] .stats-section,
+[data-theme='light'] section[class*="bg-[#111111]"] {
+  background: #f5f7f5 !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Solutions Section */
+[data-theme='light'] #solutions {
+  background: #f5f7f5;
+}
+
+[data-theme='light'] #solutions h2 {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] #solutions h3 {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] #solutions p {
+  color: #555;
+}
+
+[data-theme='light'] #solutions .bg-\[\#1a1a1a\] {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Timeline Section */
+[data-theme='light'] .timeline-section {
+  background: #f5f7f5;
+}
+
+[data-theme='light'] .timeline-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .timeline-subtitle {
+  color: #555;
+}
+
+[data-theme='light'] .timeline-node-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .timeline-node-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .timeline-node-desc {
+  color: #555;
+}
+
+[data-theme='light'] .timeline-horizontal-line {
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgba(50, 181, 84, 0.3) 5%,
+    rgba(50, 181, 84, 0.6) 50%,
+    rgba(50, 181, 84, 0.3) 95%,
+    transparent 100%
+  );
+}
+
+[data-theme='light'] .timeline-node-badge {
+  background: #ffffff;
+  box-shadow: 0 0 0 5px rgba(50, 181, 84, 0.1);
+}
+
+[data-theme='light'] .timeline-scroll-btn {
+  background: rgba(50, 181, 84, 0.1);
+  border-color: rgba(50, 181, 84, 0.3);
+}
+
+/* ============================================================
+   🌗 SERVICES PAGE - Light Mode
+   ============================================================ */
+
+[data-theme='light'] .services-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .services-card-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .services-card-desc {
+  color: #555;
+}
+
+[data-theme='light'] .services-detail-section {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .services-detail-heading {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .services-detail-card {
+  background: #f8faf8;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .services-detail-card-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .services-detail-card-desc {
+  color: #555;
+}
+
+[data-theme='light'] .services-detail-info-bar {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .services-feature-item {
+  background: rgba(50, 181, 84, 0.06);
+  color: #333;
+}
+
+[data-theme='light'] .services-tech-tag {
+  background: rgba(50, 181, 84, 0.1);
+  color: #1a6b34;
+}
+
+/* ============================================================
+   🌗 GALLERY PAGE - Light Mode
+   ============================================================ */
+
+[data-theme='light'] .gallery-category-card {
+  background: #ffffff;
+}
+
+[data-theme='light'] .gallery-category-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .gallery-category-desc {
+  color: #555;
+}
+
+[data-theme='light'] .gallery-image-card {
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================================
+   🌗 PROJECTS PAGE - Light Mode
+   ============================================================ */
+
+[data-theme='light'] .project-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .project-card-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .project-card-desc {
+  color: #555;
+}
+
+[data-theme='light'] .project-card-review {
+  background: rgba(50, 181, 84, 0.06);
+  border-color: rgba(50, 181, 84, 0.15);
+}
+
+[data-theme='light'] .project-card-review-name {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .project-detail-section {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .project-detail-heading {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .project-detail-text {
+  color: #555;
+}
+
+[data-theme='light'] .project-info-bar {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .project-info-value {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .project-detail-card {
+  background: #f8faf8;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .project-result-item {
+  background: rgba(50, 181, 84, 0.06);
+  color: #0a0a0a;
+}
+
+/* ============================================================
+   🌗 ABOUT PAGE - Light Mode
+   ============================================================ */
+
+[data-theme='light'] .about-founder-name {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .about-founder-bio {
+  color: #555;
+}
+
+[data-theme='light'] .about-section-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .about-section-subtitle {
+  color: #555;
+}
+
+[data-theme='light'] .about-list-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .about-list-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .about-list li {
+  color: #555;
+}
+
+[data-theme='light'] .about-founder-image-wrapper {
+  background: linear-gradient(135deg, #e8f4eb, #d4ecdb);
+  border-color: rgba(50, 181, 84, 0.3);
+}
+
+[data-theme='light'] .about-founder-avatar {
+  color: #1eb74c;
+}
+
+[data-theme='light'] .about-founder-image-caption {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .about-founder-image-caption span {
+  color: #555;
+}
+
+[data-theme='light'] .about-cta {
+  background: linear-gradient(
+    135deg,
+    rgba(50, 181, 84, 0.15),
+    rgba(30, 183, 76, 0.06)
+  );
+  border-color: rgba(50, 181, 84, 0.35);
+}
+
+[data-theme='light'] .about-cta-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .about-cta-text {
+  color: #555;
+}
+
+/* ============================================================
+   🌗 CONTACT PAGE - Light Mode
+   ============================================================ */
+
+[data-theme='light'] .page-contact-info,
+[data-theme='light'] .page-contact-form {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .page-contact-heading,
+[data-theme='light'] .page-form-heading {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .page-contact-label,
+[data-theme='light'] .page-form-label {
+  color: #555;
+}
+
+[data-theme='light'] .page-contact-value {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .page-form-input,
+[data-theme='light'] .page-form-textarea {
+  background: #f8faf8;
+  border-color: rgba(0, 0, 0, 0.1);
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .page-form-input:focus,
+[data-theme='light'] .page-form-textarea:focus {
+  background: #ffffff;
+  border-color: #32b554;
+}
+
+[data-theme='light'] .page-form-input::placeholder,
+[data-theme='light'] .page-form-textarea::placeholder {
+  color: #999;
+}
+
+[data-theme='light'] .page-contact-expect-title {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .page-contact-expect-list li {
+  color: #555;
+}
+
+/* ============================================================
+   🌗 TESTIMONIALS PAGE - Light Mode
+   ============================================================ */
+
+[data-theme='light'] .page-testimonial-card {
+  background: #ffffff;
+  border-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .page-testimonial-text {
+  color: #444;
+}
+
+[data-theme='light'] .page-testimonial-name {
+  color: #0a0a0a;
+}
+
+[data-theme='light'] .page-testimonial-author {
+  border-top-color: rgba(0, 0, 0, 0.08);
+}
+
+[data-theme='light'] .page-testimonial-avatar {
+  background: linear-gradient(135deg, #e8f4eb, #d4ecdb);
+  border-color: rgba(50, 181, 84, 0.3);
+}
+/* ============================================================
+   🌗 STATS SECTION - LIGHT MODE FIX
+   ============================================================ */
+
+/* The stats section container background */
+[data-theme='light'] section[class*="bg-[#111111]"] {
+  background: #f5f7f5 !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Stat number - keep green (already visible) */
+[data-theme='light'] section[class*="bg-[#111111]"] .text-\[\#00ff88\] {
+  color: #32b554 !important;
+}
+
+/* Stat label - "Years of Experience" etc — change from white to dark */
+[data-theme='light'] section[class*="bg-[#111111]"] .text-white {
+  color: #0a0a0a !important;
+}
+
+/* Stat description - "In inclusive economic development" etc */
+[data-theme='light'] section[class*="bg-[#111111]"] .text-\[\#b0b0b0\] {
+  color: #555 !important;
+}
+
+/* Alternative selector in case the above doesn't match */
+[data-theme='light'] .stats-section {
+  background: #f5f7f5 !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+[data-theme='light'] .stats-section .text-white,
+[data-theme='light'] .stats-label {
+  color: #0a0a0a !important;
+}
+
+[data-theme='light'] .stats-section .text-\[\#b0b0b0\],
+[data-theme='light'] .stats-description {
+  color: #555 !important;
+}
+/* ============================================================
+   LENIS SMOOTH SCROLL - Base Styles
+   ============================================================ */
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}

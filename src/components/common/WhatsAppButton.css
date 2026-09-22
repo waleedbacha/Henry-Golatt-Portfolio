@@ -1,0 +1,102 @@
+/* ============================================================
+   WHATSAPP FLOATING BUTTON
+   ============================================================ */
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: #25D366; /* WhatsApp green */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  z-index: 999;
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  transition: all 0.3s ease;
+  animation: whatsappPulse 2s ease-in-out infinite;
+}
+
+.whatsapp-float:hover {
+  background: #20bd5a;
+  transform: scale(1.1);
+  box-shadow: 0 12px 35px rgba(37, 211, 102, 0.6);
+  animation: none;
+}
+
+.whatsapp-float-icon {
+  width: 32px;
+  height: 32px;
+}
+
+/* Tooltip */
+.whatsapp-float-tooltip {
+  position: absolute;
+  right: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(37, 211, 102, 0.3);
+  pointer-events: none;
+}
+
+.whatsapp-float-tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 6px solid transparent;
+  border-left-color: #1a1a1a;
+}
+
+.whatsapp-float:hover .whatsapp-float-tooltip {
+  opacity: 1;
+  visibility: visible;
+  right: 80px;
+}
+
+/* Pulse animation */
+@keyframes whatsappPulse {
+  0%, 100% {
+    box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+  }
+  50% {
+    box-shadow: 
+      0 8px 25px rgba(37, 211, 102, 0.4),
+      0 0 0 15px rgba(37, 211, 102, 0.1);
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .whatsapp-float {
+    bottom: 20px;
+    right: 20px;
+    width: 54px;
+    height: 54px;
+  }
+
+  .whatsapp-float-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* Hide tooltip on mobile (no hover) */
+  .whatsapp-float-tooltip {
+    display: none;
+  }
+}

@@ -1,0 +1,553 @@
+/* ============================================================
+   NAVBAR - Professional with Scroll Effect
+   ============================================================ */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+  background: transparent;
+  padding: 0 24px;
+}
+
+.navbar-scrolled {
+  background: rgba(0, 0, 0, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(50, 181, 84, 0.1);
+}
+
+.navbar-container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.navbar-nav {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+
+/* ============================================================
+   NAVBAR LOGO - Transparent PNG
+   ============================================================ */
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.navbar-logo:hover {
+  transform: scale(1.03);
+  opacity: 0.92;
+}
+
+.navbar-logo-img {
+  height: 46px;
+  width: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .navbar-logo-img {
+    height: 38px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .navbar-logo-img {
+    height: 32px;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .navbar-logo-container {
+    padding: 5px 12px;
+  }
+  
+  .navbar-logo-img {
+    height: 30px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .navbar-logo-container {
+    padding: 4px 10px;
+  }
+  
+  .navbar-logo-img {
+    height: 26px;
+  }
+}
+
+/* Desktop Links */
+.navbar-links {
+  display: none;
+  align-items: center;
+  gap: 30px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .navbar-links {
+    display: flex;
+  }
+}
+
+.navbar-link {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  padding: 10px 14px;
+  border-radius: 5px;
+}
+
+.navbar-link:hover {
+  color: #ffffff;
+}
+
+.navbar-link-active {
+  background: #192619;
+  color: #ffffff;
+}
+
+.navbar-link-active:hover {
+  background: #1f3020;
+}
+
+/* CTA Button */
+.navbar-cta-button {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  height: 37px;
+  padding: 0 19px;
+  border-radius: 6px;
+  background: #32ad50;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 640px) {
+  .navbar-cta-button {
+    display: flex;
+  }
+}
+
+.navbar-cta-button:hover {
+  background: #3ac05e;
+  transform: scale(1.05);
+}
+
+/* ============================================================
+   MOBILE TOGGLE BUTTON (visible only on mobile)
+   ============================================================ */
+
+.navbar-mobile-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.3s ease;
+}
+
+.navbar-mobile-toggle:hover {
+  color: #32b554;
+}
+
+/* Hide toggle on desktop */
+@media (min-width: 768px) {
+  .navbar-mobile-toggle {
+    display: none;
+  }
+}
+
+/* ============================================================
+   MOBILE DRAWER - SLIDES IN FROM RIGHT
+   ============================================================ */
+
+/* Backdrop */
+.mobile-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  backdrop-filter: blur(4px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 998;
+}
+
+.mobile-drawer-backdrop-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Drawer */
+.mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+   width: 60vw;          
+  max-width: 260px;       
+  min-width: 240px;     
+  background: #0a1a0f;
+  border-left: 1px solid rgba(50, 181, 84, 0.25);
+  transform: translateX(100%);
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  box-shadow: -20px 0 60px rgba(0, 0, 0, 0.6);
+  overflow-y: auto;
+}
+
+.mobile-drawer-open {
+  transform: translateX(0);
+}
+
+/* Hide drawer on desktop */
+@media (min-width: 768px) {
+  .mobile-drawer,
+  .mobile-drawer-backdrop {
+    display: none;
+  }
+}
+
+/* Drawer Header */
+.mobile-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid rgba(50, 181, 84, 0.15);
+}
+
+.mobile-drawer-close {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(50, 181, 84, 0.1);
+  border: 1px solid rgba(50, 181, 84, 0.25);
+  color: #32b554;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.mobile-drawer-close:hover {
+  background: rgba(50, 181, 84, 0.2);
+  transform: rotate(90deg);
+}
+
+/* Drawer Nav */
+.mobile-drawer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 24px 16px;
+  flex: 1;
+}
+
+.mobile-drawer-link {
+  display: block;
+  padding: 14px 18px;
+  border-radius: 10px;
+  color: #d4d4d4;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.mobile-drawer-link:hover {
+  background: rgba(50, 181, 84, 0.1);
+  border-color: rgba(50, 181, 84, 0.25);
+  color: #ffffff;
+  transform: translateX(-4px);
+}
+
+.mobile-drawer-link-active {
+  background: rgba(50, 181, 84, 0.15);
+  border-color: rgba(50, 181, 84, 0.35);
+  color: #32b554;
+  position: relative;
+}
+
+.mobile-drawer-link-active::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 3px;
+  height: 20px;
+  background: #32b554;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Drawer Footer */
+.mobile-drawer-footer {
+  padding: 20px 16px;
+  border-top: 1px solid rgba(50, 181, 84, 0.15);
+}
+
+.mobile-drawer-cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 14px 24px;
+  border-radius: 10px;
+  background: #32b554;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.mobile-drawer-cta:hover {
+  background: #3ac05e;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(50, 181, 84, 0.3);
+}
+/* ============================================================
+   NAVBAR LINK WRAPPER
+   ============================================================ */
+
+.navbar-link-wrapper {
+  position: relative;
+}
+
+.navbar-link-arrow {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 8px;
+  opacity: 0.6;
+  transition: transform 0.2s ease;
+}
+
+.navbar-link-wrapper:hover .navbar-link-arrow {
+  transform: rotate(180deg);
+  opacity: 1;
+}
+
+/* ============================================================
+   MEGA MENU
+   ============================================================ */
+
+.mega-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 12px;
+  z-index: 100;
+  animation: megaMenuIn 0.2s ease;
+  pointer-events: auto;
+}
+
+@keyframes megaMenuIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.mega-menu-inner {
+  background: linear-gradient(to bottom, #0b1a10, #050b07);
+  border: 1px solid rgba(50, 181, 84, 0.25);
+  border-radius: 16px;
+  padding: 24px;
+  min-width: 620px;
+  max-width: 720px;
+  box-shadow:
+    0 20px 60px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(50, 181, 84, 0.05);
+  position: relative;
+}
+
+/* Small arrow pointing up */
+.mega-menu-inner::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 14px;
+  height: 14px;
+  background: #0b1a10;
+  border-top: 1px solid rgba(50, 181, 84, 0.25);
+  border-left: 1px solid rgba(50, 181, 84, 0.25);
+}
+
+/* Header */
+.mega-menu-header {
+  padding-bottom: 16px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid rgba(50, 181, 84, 0.12);
+}
+
+.mega-menu-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 4px 0;
+  letter-spacing: -0.3px;
+}
+
+.mega-menu-subtitle {
+  font-size: 12px;
+  color: #a8a8a8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* Grid */
+.mega-menu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+/* Item */
+.mega-menu-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border: 1px solid transparent;
+}
+
+.mega-menu-item:hover {
+  background: rgba(50, 181, 84, 0.08);
+  border-color: rgba(50, 181, 84, 0.2);
+  transform: translateX(4px);
+}
+
+.mega-menu-item-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba(50, 181, 84, 0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #32b554;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.mega-menu-item:hover .mega-menu-item-icon {
+  background: rgba(50, 181, 84, 0.22);
+  transform: scale(1.05);
+}
+
+.mega-menu-item-content {
+  min-width: 0;
+}
+
+.mega-menu-item-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+
+.mega-menu-item-desc {
+  font-size: 11px;
+  color: #888;
+  line-height: 1.4;
+}
+
+/* Footer */
+.mega-menu-footer {
+  padding-top: 16px;
+  border-top: 1px solid rgba(50, 181, 84, 0.12);
+  text-align: right;
+}
+
+.mega-menu-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #32b554;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.mega-menu-cta:hover {
+  background: rgba(50, 181, 84, 0.1);
+  gap: 12px;
+}
+
+/* Responsive - smaller screens */
+@media (max-width: 1023px) {
+  .mega-menu {
+    display: none;
+  }
+}
+/* ============================================================
+   NAVBAR ACTIONS (Theme Toggle + CTA)
+   ============================================================ */
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mobile-drawer-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Make sure theme toggle is hidden on very small mobile */
+@media (max-width: 480px) {
+  .navbar-actions .theme-toggle {
+    display: none;
+  }
+}

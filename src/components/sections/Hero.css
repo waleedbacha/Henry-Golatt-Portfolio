@@ -1,0 +1,917 @@
+/* ============================================================
+   HERO SECTION - Complete Styling
+   ============================================================ */
+
+/* ----- Hero Section ----- */
+.hero-section {
+  position: relative;
+  min-height: auto;
+  overflow: hidden;
+  background-color: #000000;
+  color: #ffffff;
+  padding-top: 72px;
+  padding-bottom: 40px;
+}
+
+/* ----- Background ----- */
+.hero-background {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-background-shape-1 {
+  position: absolute;
+  top: -35%;
+  left: -15%;
+  width: 125%;
+  height: 75%;
+  transform: rotate(30deg);
+  background: linear-gradient(to bottom, rgba(7, 20, 12, 0.95), rgba(6, 17, 9, 0.9));
+}
+
+.hero-background-shape-2 {
+  position: absolute;
+  top: 18%;
+  left: -20%;
+  width: 145%;
+  height: 55%;
+  transform: rotate(30deg);
+  background: linear-gradient(to bottom, rgba(6, 17, 9, 0.9), rgba(8, 21, 13, 0.85));
+}
+
+.hero-background-shape-3 {
+  position: absolute;
+  top: 52%;
+  left: -20%;
+  width: 145%;
+  height: 55%;
+  transform: rotate(30deg);
+  background: linear-gradient(to bottom, rgba(8, 21, 13, 0.85), rgba(10, 10, 10, 0.8));
+}
+
+.hero-glow-1 {
+  position: absolute;
+  top: 5%;
+  right: 15%;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(31, 166, 75, 0.1);
+  filter: blur(150px);
+}
+
+.hero-glow-2 {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: rgba(31, 166, 75, 0.05);
+  filter: blur(120px);
+}
+
+.hero-grid-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.1;
+  background-image: 
+    linear-gradient(
+      30deg,
+      transparent 49.7%,
+      rgba(50, 130, 70, 0.12) 50%,
+      transparent 50.3%
+    );
+  background-size: 600px 400px;
+}
+
+/* ----- Hero Content ----- */
+.hero-content {
+  position: relative;
+  z-index: 20;
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 30px 24px 20px;
+}
+
+@media (min-width: 1024px) {
+  .hero-content {
+    padding: 30px 0 20px;
+  }
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 40px;
+  align-items: start;
+}
+
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1.05fr 0.95fr;
+    align-items: center;
+  }
+}
+
+/* ----- Left Content ----- */
+.hero-left {
+  position: relative;
+  z-index: 20;
+}
+
+.hero-title {
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: -1px;
+  font-size: 32px;         /* ✅ Smaller base size */
+  line-height: 1.25;
+}
+
+@media (min-width: 640px) {
+  .hero-title {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-title {
+    font-size: 48px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-title {
+    font-size: 52px;
+  }
+}
+
+.hero-title-highlight {
+  color: #32b554;
+}
+
+.hero-description {
+  margin-top: 20px;
+  max-width: 520px;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #b7b7b7;
+  font-weight: 400;
+}
+
+
+
+/* ----- Trusted By ----- */
+.hero-trusted {
+  margin-top: 35px;
+  display: flex;
+  align-items: center;
+}
+
+.hero-avatars {
+  display: flex;
+  align-items: center;
+}
+
+.hero-avatar {
+  width: 31px;
+  height: 31px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  transition: all 0.3s ease;
+}
+
+.hero-avatar:hover {
+  transform: scale(1.15);
+  border-color: #32b554;
+  z-index: 10;
+}
+
+.hero-avatar-stacked {
+  margin-left: -7px;
+}
+
+.hero-trusted-info {
+  margin-left: 15px;
+}
+
+.hero-trusted-label {
+  font-size: 11px;
+  color: #a8a8a8;
+}
+
+.hero-trusted-rating {
+  display: flex;
+  align-items: center;
+  margin-top: 3px;
+}
+
+.hero-stars {
+  display: flex;
+  gap: 2px;
+}
+
+.hero-star {
+  color: #35b455;
+  fill: #35b455;
+}
+
+.hero-rating-number {
+  margin-left: 7px;
+  font-size: 11px;
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* ----- Right Side Cards ----- */
+.hero-right {
+  position: relative;
+  min-height: 480px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-card {
+  position: absolute;
+  border-radius: 11px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* ============================================================
+   ANIMATED BORDER
+   ============================================================ */
+
+.hero-card-border-static {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  border: 1px solid rgba(50, 181, 84, 0.25);
+  pointer-events: none;
+  z-index: 5;
+}
+
+.hero-card-border-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  z-index: 6;
+  overflow: hidden;
+}
+
+.hero-card-border-glow::before {
+  content: '';
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  background: #32b554;
+  border-radius: 50%;
+  filter: blur(8px);
+  animation: borderTravel 4s linear infinite;
+}
+
+@keyframes borderTravel {
+  0% { top: -20px; left: -20px; opacity: 0; }
+  5% { opacity: 1; }
+  25% { top: -20px; left: calc(100% - 20px); }
+  50% { top: calc(100% - 20px); left: calc(100% - 20px); }
+  75% { top: calc(100% - 20px); left: -20px; }
+  95% { opacity: 1; }
+  100% { top: -20px; left: -20px; opacity: 0; }
+}
+
+/* ============================================================
+   CARD VARIATIONS
+   ============================================================ */
+
+.hero-card-large {
+  left: 0;
+  top: 0;
+  width: 230px;
+  height: 390px;
+  background: linear-gradient(to bottom, #092014, #06150d, #070b08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.hero-card-large:hover {
+  transform: translateY(-5px) scale(1.02);
+}
+
+.hero-card-large-content {
+  position: relative;
+  z-index: 10;
+  padding-top: 31px;
+  text-align: center;
+}
+
+.hero-card-large-value {
+  font-size: 47px;
+  line-height: 1;
+  font-weight: 600;
+  letter-spacing: -1px;
+  color: #ffffff;
+}
+
+.hero-card-large-label {
+  margin-top: 13px;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #ffffff;
+  padding: 0 32px;
+}
+
+.hero-card-shapes {
+  position: absolute;
+  left: 20px;
+  bottom: -15px;
+  width: 215px;
+  height: 180px;
+}
+
+.hero-card-shape-1 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(24deg);
+  width: 125px;
+  height: 125px;
+  border-radius: 27px;
+  border: 17px solid #1eb74c;
+  box-shadow: 0 0 30px rgba(20, 220, 75, 0.28);
+}
+
+.hero-card-shape-2 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(58deg);
+  width: 110px;
+  height: 110px;
+  border-radius: 25px;
+  border: 13px solid #087d2b;
+}
+
+.hero-card-shape-3 {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(8deg);
+  width: 85px;
+  height: 85px;
+  border-radius: 18px;
+  border: 10px solid #36d45f;
+}
+
+.hero-card-image {
+  right: 0;
+  top: 0;
+  width: 244px;
+  height: 346px;
+  background: #122b1c;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+.hero-card-image:hover {
+  transform: translateY(-5px);
+}
+
+.hero-card-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 12%;
+  z-index: 1;
+}
+
+.hero-card-image-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(7, 17, 11, 0.5), transparent);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-card-bottom-left {
+  left: 0;
+  bottom: 0;
+  width: 244px;
+  height: 62px;
+  background: #090d0a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 15px;
+  font-weight: 500;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-card-bottom-left:hover {
+  transform: translateY(-3px);
+}
+
+.hero-code-quality-number {
+  color: #32b554;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-code-quality-label {
+  margin-left: 10px;
+  color: #ffffff;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-card-bottom-right {
+  right: 0;
+  bottom: 0;
+  width: 244px;
+  height: 130px;
+  background: linear-gradient(to bottom, #0b160e, #080b09);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.hero-card-bottom-right:hover {
+  transform: translateY(-3px);
+}
+
+.hero-card-bottom-right-value {
+  font-size: 46px;
+  line-height: 1;
+  font-weight: 600;
+  color: #ffffff;
+  position: relative;
+  z-index: 10;
+}
+
+.hero-card-bottom-right-label {
+  margin-top: 9px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #ffffff;
+  position: relative;
+  z-index: 10;
+}
+
+/* ============================================================
+   CLIENT LOGOS
+   ============================================================ */
+
+.hero-clients {
+  margin-top: 30px;
+  padding-top: 22px;
+  border-top: 1px solid #1a1a1a;
+}
+
+.hero-clients-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  gap: 28px;
+}
+
+@media (min-width: 640px) {
+  .hero-clients-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-clients-grid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 40px;
+  }
+}
+
+.hero-client-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.45);
+  transition: all 0.3s ease;
+  cursor: default;
+}
+
+.hero-client-item:hover {
+  color: #32b554;
+  transform: scale(1.05);
+}
+
+/* ✅ Add this new class for clickable link items */
+.hero-client-item-link {
+  text-decoration: none;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.hero-client-item-link:hover {
+  color: #32b554;
+  background: rgba(50, 181, 84, 0.08);
+  border-color: rgba(50, 181, 84, 0.2);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.hero-client-item-link:hover .hero-client-icon {
+  transform: scale(1.15);
+}
+
+.hero-client-item-link:hover .hero-client-name {
+  color: #32b554;
+}
+
+.hero-client-item:hover {
+  color: #32b554;
+  transform: scale(1.05);
+}
+
+.hero-client-icon {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.hero-client-name {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.hero-client-sub {
+  font-size: 7px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+/* ============================================================
+   ANIMATIONS
+   ============================================================ */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(25px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.hero-animate-fade-up {
+  animation: fadeInUp 0.7s ease-out forwards;
+}
+
+.hero-animate-fade-right {
+  animation: fadeInRight 0.8s ease-out 0.15s forwards;
+}
+/* ============================================================
+   📱 HERO MOBILE RESPONSIVE - FIX
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .hero-section {
+    padding-top: 90px;
+    padding-bottom: 30px;
+  }
+
+  .hero-content {
+    padding: 20px 16px;
+  }
+
+  .hero-grid {
+    gap: 30px;
+  }
+
+  /* Hero Right - Switch to Grid on mobile */
+  .hero-right {
+    position: relative;
+    min-height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 14px;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  /* Reset absolute positioning */
+  .hero-card {
+    position: relative;
+    left: auto !important;
+    right: auto !important;
+    top: auto !important;
+    bottom: auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* $500K Card - spans full width, becomes top card */
+  .hero-card-large {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    min-height: 220px;
+    height: auto;
+  }
+
+  .hero-card-large-content {
+    padding: 24px 16px 20px;
+  }
+
+  .hero-card-large-value {
+    font-size: 42px;
+  }
+
+  .hero-card-large-label {
+    padding: 0 20px;
+    font-size: 13px;
+  }
+
+  /* Hide decorative shapes on mobile (they overlap) */
+  .hero-card-shapes {
+    display: none;
+  }
+
+  /* Image Card */
+  .hero-card-image {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    min-height: 400px;
+    height: 400px;
+    position: relative;
+  }
+
+  .hero-card-image img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* 100% Code Quality */
+  .hero-card-bottom-left {
+    grid-column: 1;
+    grid-row: 3;
+    min-height: 90px;
+    height: auto;
+    padding: 16px 12px;
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .hero-code-quality-number {
+    font-size: 26px;
+    font-weight: 700;
+  }
+
+  .hero-code-quality-label {
+    margin-left: 0;
+    font-size: 12px;
+    color: #a8a8a8;
+  }
+
+  /* 10+ Years */
+  .hero-card-bottom-right {
+    grid-column: 2;
+    grid-row: 3;
+    min-height: 90px;
+    height: auto;
+    padding: 16px 12px;
+  }
+
+  .hero-card-bottom-right-value {
+    font-size: 32px;
+  }
+
+  .hero-card-bottom-right-label {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+}
+
+/* ============================================================
+   📱 SMALL MOBILE (< 640px)
+   ============================================================ */
+
+@media (max-width: 640px) {
+  .hero-section {
+    padding-top: 80px;
+  }
+
+  .hero-title {
+    font-size: 34px;
+    letter-spacing: -1px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+    margin-top: 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    margin-top: 22px;
+  }
+
+  .hero-btn-primary {
+    width: 100%;
+    justify-content: center;
+    height: 48px;
+  }
+
+  .hero-btn-secondary {
+    justify-content: center;
+    padding: 12px;
+  }
+
+  .hero-trusted {
+    margin-top: 28px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .hero-avatar {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero-trusted-info {
+    margin-left: 10px;
+  }
+
+  .hero-clients {
+    margin-top: 28px;
+    padding-top: 20px;
+  }
+
+  .hero-clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .hero-client-icon {
+    font-size: 18px;
+  }
+
+  .hero-client-name {
+    font-size: 12px;
+  }
+
+  .hero-client-sub {
+    font-size: 6px;
+  }
+
+  /* Cards adjustments */
+  .hero-right {
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .hero-card-large {
+    min-height: 180px;
+  }
+
+  .hero-card-large-value {
+    font-size: 36px;
+  }
+
+  .hero-card-large-label {
+    font-size: 12px;
+    padding: 0 16px;
+  }
+
+  .hero-card-image {
+    min-height: 360px;
+    height: 360px;
+  }
+
+  .hero-card-bottom-left,
+  .hero-card-bottom-right {
+    min-height: 80px;
+  }
+
+  .hero-code-quality-number {
+    font-size: 22px;
+  }
+
+  .hero-card-bottom-right-value {
+    font-size: 28px;
+  }
+
+  .hero-card-bottom-right-label {
+    font-size: 11px;
+  }
+}
+/* ============================================================
+   🔧 FORCE HERO TITLE SIZE - OVERRIDE ALL
+   ============================================================ */
+
+.hero-section .hero-title {
+  font-size: 32px !important;
+  letter-spacing: -1px !important;
+  line-height: 1.25 !important;
+}
+
+@media (min-width: 640px) {
+  .hero-section .hero-title {
+    font-size: 38px !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-section .hero-title {
+    font-size: 42px !important;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-section .hero-title {
+    font-size: 46px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-section .hero-title {
+    font-size: 28px !important;
+    letter-spacing: -0.8px !important;
+    line-height: 1.3 !important;
+  }
+}
+/* ============================================================
+   📱 MOBILE-ONLY LAYOUT REORDER
+   Image on top, then text, then cards
+   ============================================================ */
+
+@media (max-width: 1024px) {
+
+  /* 1️⃣ Switch the hero grid to single column */
+  .hero-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  /* 2️⃣ IMAGE FIRST */
+  .hero-right {
+    order: 1;
+  }
+
+  /* 3️⃣ TEXT SECOND */
+  .hero-left {
+    order: 2;
+  }
+
+  /* 4️⃣ Inside .hero-right, keep the grid layout:
+        $500K → image → 100%/10+ cards
+        But move the actual "image" card up so it's shown first */
+  .hero-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  /* Image card always first in the grid */
+  .hero-card-image {
+    grid-column: 1 / -1;
+    grid-row: 1;
+  }
+
+  /* $500K card second */
+  .hero-card-large {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  /* 100% card third */
+  .hero-card-bottom-left {
+    grid-column: 1;
+    grid-row: 3;
+  }
+
+  /* 10+ card fourth */
+  .hero-card-bottom-right {
+    grid-column: 2;
+    grid-row: 3;
+  }
+}
+
