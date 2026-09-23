@@ -1,6 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { Link, useLocation } from 'react-router-dom';
-import ThemeToggle from '../common/ThemeToggle';
+import React, { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
+// import ThemeToggle from "../common/ThemeToggle";
 import {
   Menu,
   X,
@@ -15,9 +15,9 @@ import {
   BookOpen,
   Trophy,
   Info,
-} from 'lucide-react';
-import logo from '../../assets/logo1.png';
-import './Navbar.css';
+} from "lucide-react";
+import logo from "../../assets/logo1.png";
+import "./Navbar.css";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,8 +28,8 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   useEffect(() => {
@@ -39,139 +39,139 @@ const Navbar = () => {
 
   // Lock body scroll when drawer is open
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : '';
+    document.body.style.overflow = isOpen ? "hidden" : "";
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = "";
     };
   }, [isOpen]);
 
   // ===== MEGA MENU DATA =====
   const megaMenus = {
     services: {
-      title: 'Our Services',
-      subtitle: 'Six ways HG Consulting helps you build inclusive ecosystems',
-      viewAllPath: '/services',
-      viewAllLabel: 'View All Services',
+      title: "Our Services",
+      subtitle: "Six ways HG Consulting helps you build inclusive ecosystems",
+      viewAllPath: "/services",
+      viewAllLabel: "View All Services",
       items: [
         {
           icon: TrendingUp,
-          title: 'Economic Development',
-          description: 'Strategic planning for inclusive local ecosystems',
-          path: '/services',
+          title: "Economic Development",
+          description: "Strategic planning for inclusive local ecosystems",
+          path: "/services",
         },
         {
           icon: GraduationCap,
-          title: 'HBCU Partnerships',
-          description: 'University collaboration & tech transfer',
-          path: '/services',
+          title: "HBCU Partnerships",
+          description: "University collaboration & tech transfer",
+          path: "/services",
         },
         {
           icon: Briefcase,
-          title: 'Small Business',
-          description: 'Building ecosystems for entrepreneurs',
-          path: '/services',
+          title: "Small Business",
+          description: "Building ecosystems for entrepreneurs",
+          path: "/services",
         },
         {
           icon: Scale,
-          title: 'Policy & Advocacy',
-          description: 'Advancing economic inclusion policies',
-          path: '/services',
+          title: "Policy & Advocacy",
+          description: "Advancing economic inclusion policies",
+          path: "/services",
         },
         {
           icon: Target,
-          title: 'Strategic Planning',
-          description: 'Board development & governance',
-          path: '/services',
+          title: "Strategic Planning",
+          description: "Board development & governance",
+          path: "/services",
         },
         {
           icon: Building2,
-          title: 'Urban Development',
-          description: 'Downtown revitalization & preservation',
-          path: '/services',
+          title: "Urban Development",
+          description: "Downtown revitalization & preservation",
+          path: "/services",
         },
       ],
     },
 
     about: {
-      title: 'About HG Consulting',
-      subtitle: 'Learn about our founder, mission, and impact',
-      viewAllPath: '/about',
-      viewAllLabel: 'More About Us',
+      title: "About HG Consulting",
+      subtitle: "Learn about our founder, mission, and impact",
+      viewAllPath: "/about",
+      viewAllLabel: "More About Us",
       items: [
         {
           icon: Info,
-          title: 'Our Mission',
-          description: 'Building inclusive economic ecosystems',
-          path: '/about',
+          title: "Our Mission",
+          description: "Building inclusive economic ecosystems",
+          path: "/about",
         },
         {
           icon: Users,
-          title: 'Henry A. Golatt',
-          description: 'Founder & Principal Consultant',
-          path: '/about',
+          title: "Henry A. Golatt",
+          description: "Founder & Principal Consultant",
+          path: "/about",
         },
         {
           icon: BookOpen,
-          title: 'Publications',
-          description: 'Peer-reviewed research & playbooks',
-          path: '/gallery',
+          title: "Publications",
+          description: "Peer-reviewed research & playbooks",
+          path: "/gallery",
         },
         {
           icon: Trophy,
-          title: 'Awards',
-          description: 'National recognition & honors',
-          path: '/gallery',
+          title: "Awards",
+          description: "National recognition & honors",
+          path: "/gallery",
         },
         {
           icon: Users,
-          title: 'Board Positions',
-          description: '40+ advisory roles',
-          path: '/gallery',
+          title: "Board Positions",
+          description: "40+ advisory roles",
+          path: "/gallery",
         },
         {
           icon: TrendingUp,
-          title: 'Our Journey',
-          description: '15+ years of impact since 2009',
-          path: '/',
+          title: "Our Journey",
+          description: "15+ years of impact since 2009",
+          path: "/",
         },
       ],
     },
 
     gallery: {
-      title: 'Gallery',
-      subtitle: 'Explore our achievements, publications, and partnerships',
-      viewAllPath: '/gallery',
-      viewAllLabel: 'View Full Gallery',
+      title: "Gallery",
+      subtitle: "Explore our achievements, publications, and partnerships",
+      viewAllPath: "/gallery",
+      viewAllLabel: "View Full Gallery",
       items: [
         {
           icon: Users,
-          title: 'Board Leadership',
-          description: 'Advisory & governance positions',
-          path: '/gallery',
+          title: "Board Leadership",
+          description: "Advisory & governance positions",
+          path: "/gallery",
         },
         {
           icon: BookOpen,
-          title: 'Publications',
-          description: 'Research papers & playbooks',
-          path: '/gallery',
+          title: "Publications",
+          description: "Research papers & playbooks",
+          path: "/gallery",
         },
         {
           icon: Trophy,
-          title: 'Awards & Honors',
-          description: 'Recognition & achievements',
-          path: '/gallery',
+          title: "Awards & Honors",
+          description: "Recognition & achievements",
+          path: "/gallery",
         },
       ],
     },
   };
 
   const navItems = [
-    { name: 'HOME', path: '/' },
-    { name: 'SERVICES', path: '/services', mega: 'services' },
-    { name: 'ABOUT', path: '/about', mega: 'about' },
-    { name: 'GALLERY', path: '/gallery', mega: 'gallery' },
-    { name: 'PROJECTS', path: '/testimonials' },
-    { name: 'CONTACT', path: '/contact' },
+    { name: "HOME", path: "/" },
+    { name: "SERVICES", path: "/services", mega: "services" },
+    { name: "ABOUT", path: "/about", mega: "about" },
+    { name: "GALLERY", path: "/gallery", mega: "gallery" },
+    { name: "PROJECTS", path: "/testimonials" },
+    { name: "CONTACT", path: "/contact" },
   ];
 
   // Hover handlers with delay (prevents flickering)
@@ -188,10 +188,9 @@ const Navbar = () => {
 
   return (
     <>
-      <header className={`navbar ${scrolled ? 'navbar-scrolled' : ''}`}>
+      <header className={`navbar ${scrolled ? "navbar-scrolled" : ""}`}>
         <div className="navbar-container">
           <nav className="navbar-nav">
-
             {/* Logo */}
             <Link to="/" className="navbar-logo">
               <img
@@ -207,23 +206,19 @@ const Navbar = () => {
                 <div
                   key={item.name}
                   className="navbar-link-wrapper"
-                  onMouseEnter={() =>
-                    item.mega && handleMouseEnter(item.mega)
-                  }
+                  onMouseEnter={() => item.mega && handleMouseEnter(item.mega)}
                   onMouseLeave={handleMouseLeave}
                 >
                   <Link
                     to={item.path}
                     className={`navbar-link ${
                       location.pathname === item.path
-                        ? 'navbar-link-active'
-                        : ''
+                        ? "navbar-link-active"
+                        : ""
                     }`}
                   >
                     {item.name}
-                    {item.mega && (
-                      <span className="navbar-link-arrow">▾</span>
-                    )}
+                    {item.mega && <span className="navbar-link-arrow">▾</span>}
                   </Link>
 
                   {/* Mega Menu */}
@@ -282,23 +277,20 @@ const Navbar = () => {
               ))}
             </div>
 
-                     {/* Theme Toggle + CTA */}
+            {/* CTA Button + Mobile Menu Toggle */}
             <div className="navbar-actions">
-              <ThemeToggle />
               <Link to="/contact" className="navbar-cta-button">
                 Get in Touch
               </Link>
+
+              <button
+                className="navbar-mobile-toggle"
+                onClick={() => setIsOpen(true)}
+                aria-label="Open menu"
+              >
+                <Menu size={24} />
+              </button>
             </div>
-
-            {/* Mobile Menu Toggle */}
-            <button
-              className="navbar-mobile-toggle"
-              onClick={() => setIsOpen(true)}
-              aria-label="Open menu"
-            >
-              <Menu size={24} />
-            </button>
-
           </nav>
         </div>
       </header>
@@ -306,15 +298,13 @@ const Navbar = () => {
       {/* Mobile Drawer backdrop */}
       <div
         className={`mobile-drawer-backdrop ${
-          isOpen ? 'mobile-drawer-backdrop-open' : ''
+          isOpen ? "mobile-drawer-backdrop-open" : ""
         }`}
         onClick={() => setIsOpen(false)}
       />
 
       {/* Mobile Drawer */}
-      <aside
-        className={`mobile-drawer ${isOpen ? 'mobile-drawer-open' : ''}`}
-      >
+      <aside className={`mobile-drawer ${isOpen ? "mobile-drawer-open" : ""}`}>
         <div className="mobile-drawer-header">
           <Link to="/" className="navbar-logo" onClick={() => setIsOpen(false)}>
             <img
@@ -324,7 +314,6 @@ const Navbar = () => {
             />
           </Link>
           <div className="mobile-drawer-header-actions">
-            <ThemeToggle />
             <button
               className="mobile-drawer-close"
               onClick={() => setIsOpen(false)}
@@ -342,8 +331,8 @@ const Navbar = () => {
               to={item.path}
               className={`mobile-drawer-link ${
                 location.pathname === item.path
-                  ? 'mobile-drawer-link-active'
-                  : ''
+                  ? "mobile-drawer-link-active"
+                  : ""
               }`}
               onClick={() => setIsOpen(false)}
             >

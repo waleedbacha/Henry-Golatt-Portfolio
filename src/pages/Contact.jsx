@@ -257,7 +257,7 @@ const Contact = () => {
       <Footer />
 
       <WhatsAppButton
-        phoneNumber="16145551234"
+        phoneNumber="18705560347"
         message="Hello HG Consulting! I'd like to learn more about your services."
       />
     </div>

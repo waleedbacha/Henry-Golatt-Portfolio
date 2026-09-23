@@ -50,7 +50,7 @@
 }
 
 .navbar-logo-img {
-  height: 46px;
+  height: 58px;
   width: auto;
   object-fit: contain;
   display: block;
@@ -59,14 +59,21 @@
 /* Tablet */
 @media (max-width: 768px) {
   .navbar-logo-img {
-    height: 38px;
+    height: 48px;
   }
 }
 
 /* Small mobile */
 @media (max-width: 480px) {
   .navbar-logo-img {
-    height: 32px;
+    height: 42px;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 360px) {
+  .navbar-logo-img {
+    height: 38px;
   }
 }
 
@@ -75,7 +82,7 @@
   .navbar-logo-container {
     padding: 5px 12px;
   }
-  
+
   .navbar-logo-img {
     height: 30px;
   }
@@ -86,7 +93,7 @@
   .navbar-logo-container {
     padding: 4px 10px;
   }
-  
+
   .navbar-logo-img {
     height: 26px;
   }
@@ -128,9 +135,12 @@
   background: #1f3020;
 }
 
-/* CTA Button */
+/* ============================================================
+   CTA Button — visible on ALL screen sizes
+   ============================================================ */
+
 .navbar-cta-button {
-  display: none;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   height: 37px;
@@ -142,17 +152,42 @@
   font-weight: 500;
   text-decoration: none;
   transition: all 0.3s ease;
-}
-
-@media (min-width: 640px) {
-  .navbar-cta-button {
-    display: flex;
-  }
+  white-space: nowrap;
 }
 
 .navbar-cta-button:hover {
   background: #3ac05e;
   transform: scale(1.05);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .navbar-cta-button {
+    height: 30px;
+    padding: 0 10px;
+    font-size: 10px;
+    border-radius: 5px;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 480px) {
+  .navbar-cta-button {
+    height: 28px;
+    padding: 0 9px;
+    font-size: 9.5px;
+    border-radius: 5px;
+  }
+}
+
+/* Very small devices (iPhone SE, 320px) */
+@media (max-width: 360px) {
+  .navbar-cta-button {
+    height: 26px;
+    padding: 0 8px;
+    font-size: 9px;
+    letter-spacing: 0.1px;
+  }
 }
 
 /* ============================================================
@@ -209,9 +244,9 @@
   top: 0;
   right: 0;
   bottom: 0;
-   width: 60vw;          
-  max-width: 260px;       
-  min-width: 240px;     
+  width: 60vw;
+  max-width: 260px;
+  min-width: 240px;
   background: #0a1a0f;
   border-left: 1px solid rgba(50, 181, 84, 0.25);
   transform: translateX(100%);
@@ -303,7 +338,7 @@
 }
 
 .mobile-drawer-link-active::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   top: 50%;
@@ -340,6 +375,7 @@
   transform: translateY(-2px);
   box-shadow: 0 10px 25px rgba(50, 181, 84, 0.3);
 }
+
 /* ============================================================
    NAVBAR LINK WRAPPER
    ============================================================ */
@@ -402,7 +438,7 @@
 
 /* Small arrow pointing up */
 .mega-menu-inner::before {
-  content: '';
+  content: "";
   position: absolute;
   top: -8px;
   left: 50%;
@@ -529,8 +565,9 @@
     display: none;
   }
 }
+
 /* ============================================================
-   NAVBAR ACTIONS (Theme Toggle + CTA)
+   NAVBAR ACTIONS (CTA + burger on mobile)
    ============================================================ */
 
 .navbar-actions {
@@ -539,15 +576,21 @@
   gap: 12px;
 }
 
+/* Tighten gap on mobile so CTA + burger sit closer */
+@media (max-width: 768px) {
+  .navbar-actions {
+    gap: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar-actions {
+    gap: 6px;
+  }
+}
+
 .mobile-drawer-header-actions {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-/* Make sure theme toggle is hidden on very small mobile */
-@media (max-width: 480px) {
-  .navbar-actions .theme-toggle {
-    display: none;
-  }
 }

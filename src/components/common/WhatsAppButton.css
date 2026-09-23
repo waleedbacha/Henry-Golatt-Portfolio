@@ -1,15 +1,15 @@
 /* ============================================================
-   WHATSAPP FLOATING BUTTON
+   WHATSAPP FLOATING BUTTON — LEFT SIDE
    ============================================================ */
 
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  left: 30px; /* ✅ moved from right → left */
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #25D366; /* WhatsApp green */
+  background: #25d366; /* WhatsApp green */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -33,10 +33,10 @@
   height: 32px;
 }
 
-/* Tooltip */
+/* Tooltip — flipped to appear on the RIGHT of the button */
 .whatsapp-float-tooltip {
   position: absolute;
-  right: 75px;
+  left: 75px; /* ✅ was right: 75px */
   top: 50%;
   transform: translateY(-50%);
   background: #1a1a1a;
@@ -53,29 +53,31 @@
   pointer-events: none;
 }
 
+/* Tooltip arrow — now points LEFT toward the button */
 .whatsapp-float-tooltip::after {
-  content: '';
+  content: "";
   position: absolute;
-  right: -6px;
+  left: -6px; /* ✅ was right: -6px */
   top: 50%;
   transform: translateY(-50%);
   border: 6px solid transparent;
-  border-left-color: #1a1a1a;
+  border-right-color: #1a1a1a; /* ✅ was border-left-color */
 }
 
 .whatsapp-float:hover .whatsapp-float-tooltip {
   opacity: 1;
   visibility: visible;
-  right: 80px;
+  left: 80px; /* ✅ was right: 80px */
 }
 
 /* Pulse animation */
 @keyframes whatsappPulse {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
   }
   50% {
-    box-shadow: 
+    box-shadow:
       0 8px 25px rgba(37, 211, 102, 0.4),
       0 0 0 15px rgba(37, 211, 102, 0.1);
   }
@@ -85,7 +87,7 @@
 @media (max-width: 640px) {
   .whatsapp-float {
     bottom: 20px;
-    right: 20px;
+    left: 20px; /* ✅ was right: 20px */
     width: 54px;
     height: 54px;
   }

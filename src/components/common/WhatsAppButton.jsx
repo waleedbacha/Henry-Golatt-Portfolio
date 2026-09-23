@@ -1,13 +1,13 @@
-import React from 'react';
-import './WhatsAppButton.css';
+import React from "react";
+import "./WhatsAppButton.css";
 
 const WhatsAppButton = ({
-  phoneNumber = '16145551234', // ✅ CHANGE to real number
+  phoneNumber = "18705560347", // ✅ CHANGE to real number
   message = "Hello! I'd like to learn more about HG Consulting's services.",
 }) => {
   // Build the WhatsApp URL
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-    message
+    message,
   )}`;
 
   return (
