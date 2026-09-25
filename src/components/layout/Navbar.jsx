@@ -171,6 +171,8 @@ const Navbar = () => {
     { name: "ABOUT", path: "/about", mega: "about" },
     { name: "GALLERY", path: "/gallery", mega: "gallery" },
     { name: "PROJECTS", path: "/testimonials" },
+    { name: "DISCOVERY", path: "/discover" }, // ✅ NEW
+
     { name: "CONTACT", path: "/contact" },
   ];
 
