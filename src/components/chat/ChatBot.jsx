@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { useSpeechRecognition, useSpeechSynthesis } from "../../hooks/useVoice";
 import { sendChatMessage } from "../../utils/chatApi";
 import {
@@ -11,21 +12,45 @@ import {
   MicOff,
   Volume2,
   VolumeX,
+  Sparkles,
+  ArrowRight,
 } from "lucide-react";
 import "./ChatBot.css";
+
+// ✅ NEW — keywords that trigger the assessment CTA
+const SERVICE_INTENT_KEYWORDS = [
+  "service",
+  "services",
+  "offer",
+  "offers",
+  "help with",
+  "help us",
+  "what do you do",
+  "what can you do",
+  "what can you help",
+  "capabilities",
+  "solutions",
+  "how can you help",
+];
+
+const detectServiceIntent = (text) => {
+  if (!text) return false;
+  const lower = text.toLowerCase();
+  return SERVICE_INTENT_KEYWORDS.some((kw) => lower.includes(kw));
+};
 
 const ChatBot = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
   const [input, setInput] = useState("");
-  const [status, setStatus] = useState("idle"); // idle | ready | loading | error
-  const [loadingMessage, setLoadingMessage] = useState("");
+  const [status, setStatus] = useState("idle");
   const [autoSpeak, setAutoSpeak] = useState(true);
+  const [showAssessmentCta, setShowAssessmentCta] = useState(false); // ✅ NEW
 
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
+  const navigate = useNavigate(); // ✅ NEW
 
-  // ---- Voice: recognition ----
   const {
     transcript,
     interimTranscript,
@@ -36,24 +61,20 @@ const ChatBot = () => {
     resetTranscript,
   } = useSpeechRecognition();
 
-  // ---- Voice: synthesis ----
   const {
     speak,
     stop: stopSpeaking,
     supported: ttsSupported,
   } = useSpeechSynthesis();
 
-  // Auto-scroll
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages]);
+  }, [messages, showAssessmentCta]); // ✅ NEW — scroll on CTA too
 
-  // Focus input when ready
   useEffect(() => {
     if (isOpen && status === "ready") inputRef.current?.focus();
   }, [isOpen, status]);
 
-  // Live transcript → input
   useEffect(() => {
     if (listening) {
       setInput((transcript + " " + interimTranscript).trim());
@@ -62,7 +83,6 @@ const ChatBot = () => {
     }
   }, [listening, transcript, interimTranscript]);
 
-  // Auto-speak latest assistant message
   useEffect(() => {
     if (!autoSpeak || !ttsSupported) return;
     const last = messages[messages.length - 1];
@@ -71,7 +91,6 @@ const ChatBot = () => {
     }
   }, [messages, autoSpeak, ttsSupported, speak]);
 
-  // ---- Open the bot: initialize chat ----
   const handleOpen = () => {
     setIsOpen(true);
     if (status === "idle") {
@@ -86,7 +105,6 @@ const ChatBot = () => {
     }
   };
 
-  // ---- Voice controls ----
   const toggleListening = () => {
     if (listening) stopListening();
     else {
@@ -101,7 +119,6 @@ const ChatBot = () => {
     setAutoSpeak(!autoSpeak);
   };
 
-  // ---- Send message ----
   const handleSend = async (e) => {
     e?.preventDefault();
     if (!input.trim() || status !== "ready") return;
@@ -109,6 +126,9 @@ const ChatBot = () => {
     const userMessage = input.trim();
     setInput("");
     resetTranscript();
+
+    // ✅ NEW — hide CTA on new question
+    setShowAssessmentCta(false);
 
     const newMessages = [...messages, { role: "user", content: userMessage }];
     setMessages(newMessages);
@@ -118,6 +138,11 @@ const ChatBot = () => {
       const reply = await sendChatMessage(userMessage, messages);
       setMessages((prev) => [...prev, { role: "assistant", content: reply }]);
       setStatus("ready");
+
+      // ✅ NEW — detect service intent, show CTA after a short delay
+      if (detectServiceIntent(userMessage)) {
+        setTimeout(() => setShowAssessmentCta(true), 700);
+      }
     } catch (err) {
       console.error("Chat error:", err);
       setMessages((prev) => [
@@ -125,11 +150,18 @@ const ChatBot = () => {
         {
           role: "assistant",
           content:
-            "Sorry, I'm having trouble connecting right now. Please try again or reach Henry directly at golatth1@gmail.com.",
+            "Sorry, I'm having trouble connecting right now. Please try again or reach Henry directly at golattb@outlook.com.",
         },
       ]);
       setStatus("ready");
     }
+  };
+
+  // ✅ NEW — navigate to /discover
+  const handleStartAssessment = () => {
+    stopSpeaking();
+    setIsOpen(false);
+    navigate("/discover");
   };
 
   return (
@@ -192,6 +224,33 @@ const ChatBot = () => {
                 {msg.content}
               </div>
             ))}
+
+            {/* ✅ NEW — Assessment CTA card */}
+            {showAssessmentCta && status === "ready" && (
+              <div className="chat-assessment-cta">
+                <div className="chat-assessment-cta-glow" />
+                <div className="chat-assessment-cta-icon">
+                  <Sparkles size={16} />
+                </div>
+                <div className="chat-assessment-cta-content">
+                  <div className="chat-assessment-cta-title">
+                    Not sure which service fits you?
+                  </div>
+                  <div className="chat-assessment-cta-desc">
+                    Take our 2-minute readiness assessment to find out where
+                    you're strongest and what to do next.
+                  </div>
+                  <button
+                    className="chat-assessment-cta-btn"
+                    onClick={handleStartAssessment}
+                  >
+                    Start Assessment
+                    <ArrowRight size={14} />
+                  </button>
+                </div>
+              </div>
+            )}
+
             {status === "loading" && (
               <div className="chat-message chat-message-assistant">
                 <Loader2

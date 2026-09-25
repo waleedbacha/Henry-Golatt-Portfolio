@@ -30,8 +30,15 @@
 }
 
 @keyframes chatFabPulse {
-  0%, 100% { box-shadow: 0 8px 25px rgba(50, 181, 84, 0.4); }
-  50% { box-shadow: 0 8px 25px rgba(50, 181, 84, 0.4), 0 0 0 15px rgba(50, 181, 84, 0.1); }
+  0%,
+  100% {
+    box-shadow: 0 8px 25px rgba(50, 181, 84, 0.4);
+  }
+  50% {
+    box-shadow:
+      0 8px 25px rgba(50, 181, 84, 0.4),
+      0 0 0 15px rgba(50, 181, 84, 0.1);
+  }
 }
 
 /* Chat Window */
@@ -54,8 +61,14 @@
 }
 
 @keyframes chatWindowIn {
-  from { opacity: 0; transform: translateY(20px) scale(0.95); }
-  to { opacity: 1; transform: translateY(0) scale(1); }
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 /* Header */
@@ -174,8 +187,14 @@
 }
 
 @keyframes chatBlink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+  0%,
+  50% {
+    opacity: 1;
+  }
+  51%,
+  100% {
+    opacity: 0;
+  }
 }
 
 /* Loading */
@@ -211,7 +230,9 @@
 }
 
 @keyframes chatSpin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .chat-error svg {
@@ -326,12 +347,12 @@
 
 .chat-header-btn:hover {
   background: rgba(244, 196, 48, 0.2);
-  color: #F4C430;
+  color: #f4c430;
 }
 
 .chat-header-btn.active {
   background: rgba(244, 196, 48, 0.15);
-  color: #F4C430;
+  color: #f4c430;
 }
 
 /* Microphone button */
@@ -341,7 +362,7 @@
   border-radius: 10px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(244, 196, 48, 0.3);
-  color: #F4C430;
+  color: #f4c430;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -352,7 +373,7 @@
 
 .chat-mic:hover:not(:disabled) {
   background: rgba(244, 196, 48, 0.15);
-  border-color: #F4C430;
+  border-color: #f4c430;
   transform: scale(1.05);
 }
 
@@ -363,21 +384,152 @@
 
 /* Listening state - animated pulse */
 .chat-mic-listening {
-  background: #F4C430;
+  background: #f4c430;
   color: #0a0a0a;
-  border-color: #F4C430;
+  border-color: #f4c430;
   animation: micPulse 1.2s ease-in-out infinite;
 }
 
 .chat-mic-listening:hover {
-  background: #FFD740;
+  background: #ffd740;
 }
 
 @keyframes micPulse {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 0 0 rgba(244, 196, 48, 0.5);
   }
   50% {
     box-shadow: 0 0 0 10px rgba(244, 196, 48, 0);
+  }
+}
+
+/* ============================================================
+   ASSESSMENT CTA — Inside Chatbot
+   ============================================================ */
+
+.chat-assessment-cta {
+  position: relative;
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  margin-top: 4px;
+  border-radius: 14px;
+  background: linear-gradient(
+    135deg,
+    rgba(50, 181, 84, 0.14),
+    rgba(30, 183, 76, 0.04)
+  );
+  border: 1px solid rgba(50, 181, 84, 0.35);
+  overflow: hidden;
+  animation: chatCtaIn 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes chatCtaIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.chat-assessment-cta-glow {
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle, rgba(50, 181, 84, 0.18), transparent 70%);
+  pointer-events: none;
+}
+
+.chat-assessment-cta-icon {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(50, 181, 84, 0.15);
+  border: 1px solid rgba(50, 181, 84, 0.3);
+  color: #32b554;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.chat-assessment-cta-content {
+  flex: 1;
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.chat-assessment-cta-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 4px;
+  letter-spacing: -0.2px;
+}
+
+.chat-assessment-cta-desc {
+  font-size: 12px;
+  line-height: 1.5;
+  color: #b7b7b7;
+  margin-bottom: 10px;
+}
+
+.chat-assessment-cta-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  background: #32b554;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 12px rgba(50, 181, 84, 0.25);
+}
+
+.chat-assessment-cta-btn:hover {
+  background: #3ac05e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(50, 181, 84, 0.4);
+}
+
+.chat-assessment-cta-btn:active {
+  transform: translateY(0);
+}
+
+/* Light mode */
+[data-theme="light"] .chat-assessment-cta {
+  background: linear-gradient(
+    135deg,
+    rgba(50, 181, 84, 0.1),
+    rgba(30, 183, 76, 0.03)
+  );
+}
+
+[data-theme="light"] .chat-assessment-cta-title {
+  color: #0a0a0a;
+}
+
+[data-theme="light"] .chat-assessment-cta-desc {
+  color: #555;
+}
+
+/* Mobile — full-width button */
+@media (max-width: 480px) {
+  .chat-assessment-cta-btn {
+    width: 100%;
+    justify-content: center;
   }
 }
