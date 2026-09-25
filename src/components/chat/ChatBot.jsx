@@ -68,8 +68,14 @@ const ChatBot = () => {
   } = useSpeechSynthesis();
 
   useEffect(() => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, showAssessmentCta]); // ✅ NEW — scroll on CTA too
+    const timer = setTimeout(() => {
+      messagesEndRef.current?.scrollIntoView({
+        behavior: "smooth",
+        block: "end",
+      });
+    }, 100);
+    return () => clearTimeout(timer);
+  }, [messages, showAssessmentCta]);
 
   useEffect(() => {
     if (isOpen && status === "ready") inputRef.current?.focus();
