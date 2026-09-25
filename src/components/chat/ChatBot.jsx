@@ -97,6 +97,13 @@ const ChatBot = () => {
     }
   }, [messages, autoSpeak, ttsSupported, speak]);
 
+  // ✅ Notify the rest of the app when the chat opens/closes
+  useEffect(() => {
+    window.dispatchEvent(
+      new CustomEvent("hg:chatbot-toggle", { detail: { isOpen } }),
+    );
+  }, [isOpen]);
+
   const handleOpen = () => {
     setIsOpen(true);
     if (status === "idle") {

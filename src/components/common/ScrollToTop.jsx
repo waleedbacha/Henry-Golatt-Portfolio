@@ -1,10 +1,20 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowUp } from 'lucide-react';
-import './ScrollToTop.css';
+import React, { useState, useEffect } from "react";
+import { ArrowUp } from "lucide-react";
+import "./ScrollToTop.css";
 
 const ScrollToTop = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [chatOpen, setChatOpen] = useState(false); // ✅ NEW
+
+  // ✅ NEW — Listen for chatbot open/close
+  useEffect(() => {
+    const handler = (e) => {
+      setChatOpen(Boolean(e.detail?.isOpen));
+    };
+    window.addEventListener("hg:chatbot-toggle", handler);
+    return () => window.removeEventListener("hg:chatbot-toggle", handler);
+  }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -20,16 +30,16 @@ const ScrollToTop = () => {
       setScrollProgress(Math.min(progress, 1));
     };
 
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
     handleScroll(); // Check on mount
 
-    return () => window.removeEventListener('scroll', handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
-      behavior: 'smooth',
+      behavior: "smooth",
     });
   };
 
@@ -38,15 +48,25 @@ const ScrollToTop = () => {
   const circumference = 2 * Math.PI * radius;
   const strokeDashoffset = circumference * (1 - scrollProgress);
 
+  // ✅ NEW — Hide when chatbot is open
+  const shouldShow = isVisible && !chatOpen;
+
   return (
     <button
-      className={`scroll-to-top ${isVisible ? 'scroll-to-top-visible' : ''}`}
+      className={`scroll-to-top ${shouldShow ? "scroll-to-top-visible" : ""}`}
       onClick={scrollToTop}
       aria-label="Scroll to top"
       title="Back to top"
+      aria-hidden={!shouldShow}
+      tabIndex={shouldShow ? 0 : -1}
     >
       {/* Progress ring */}
-      <svg className="scroll-to-top-ring" width="52" height="52" viewBox="0 0 52 52">
+      <svg
+        className="scroll-to-top-ring"
+        width="52"
+        height="52"
+        viewBox="0 0 52 52"
+      >
         {/* Background circle */}
         <circle
           className="scroll-to-top-ring-bg"
