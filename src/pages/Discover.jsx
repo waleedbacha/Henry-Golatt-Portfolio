@@ -5,8 +5,8 @@ import AssessmentIntro from "../components/assessment/AssessmentIntro";
 import AssessmentQuestion from "../components/assessment/AssessmentQuestion";
 import AssessmentAnalyzing from "../components/assessment/AssessmentAnalyzing";
 import AssessmentResult from "../components/assessment/AssessmentResult";
+import BookingModal from "../components/booking/BookingModal"; // ✅ NEW
 import useAssessment from "../hooks/useAssessment";
-import ComingSoonModal from "../components/assessment/ComingSoonModal";
 import "../styles/discovery.css";
 
 const Discover = () => {
@@ -26,11 +26,10 @@ const Discover = () => {
     reset,
   } = useAssessment();
 
-  const [modal, setModal] = useState(null);
+  const [bookingOpen, setBookingOpen] = useState(false); // ✅ NEW
 
-  const handleBook = (scoredResult, userInfo) => {
-    // Phase 1: frontend-only. Show coming-soon modal with what will happen.
-    setModal({ scoredResult, userInfo });
+  const handleBook = () => {
+    setBookingOpen(true); // ✅ Open real booking modal
   };
 
   return (
@@ -70,13 +69,13 @@ const Discover = () => {
 
       <Footer />
 
-      {modal && (
-        <ComingSoonModal
-          onClose={() => setModal(null)}
-          user={modal.userInfo}
-          tier={modal.scoredResult?.tier}
-        />
-      )}
+      {/* ✅ Real booking modal */}
+      <BookingModal
+        isOpen={bookingOpen}
+        onClose={() => setBookingOpen(false)}
+        user={user}
+        tier={result?.tier}
+      />
     </div>
   );
 };
