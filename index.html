@@ -5,15 +5,34 @@
     <link rel="icon" type="image/png" href="/favicon.png" />
     <link rel="apple-touch-icon" href="/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
+    <!-- ✅ NEW: Preconnect to critical origins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://app.cal.com" />
+    <link rel="dns-prefetch" href="https://api.groq.com" />
+
+    <!-- ✅ NEW: Preload hero image so LCP is faster -->
+    <link
+      rel="preload"
+      as="image"
+      href="/assets/image-DreicFxN.webp"
+      type="image/webp"
+    />
+
     <!-- 🔍 SEO Meta -->
-    <meta name="description" content="HG Consulting Services helps cities, universities, and organizations build thriving ecosystems for minority and women entrepreneurs." />
-    <meta name="keywords" content="economic development, HBCU partnerships, small business ecosystem, inclusive entrepreneurship, Columbus Ohio consulting" />
-    
-    <!-- 🤖 Google Search Console Verification (add after Step 5) -->
-    <!-- <meta name="google-site-verification" content="YOUR_TOKEN_HERE" /> -->
-    
-    <title>HG Consulting Services | Building Inclusive Economic Ecosystems</title>
+    <meta
+      name="description"
+      content="HG Consulting Services helps cities, universities, and organizations build thriving ecosystems for minority and women entrepreneurs."
+    />
+    <meta
+      name="keywords"
+      content="economic development, HBCU partnerships, small business ecosystem, inclusive entrepreneurship, Columbus Ohio consulting"
+    />
+
+    <title>
+      HG Consulting Services | Building Inclusive Economic Ecosystems
+    </title>
   </head>
   <body>
     <div id="root"></div>

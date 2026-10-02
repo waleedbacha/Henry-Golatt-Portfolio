@@ -1,13 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, Suspense, lazy } from "react";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import AssessmentIntro from "../components/assessment/AssessmentIntro";
 import AssessmentQuestion from "../components/assessment/AssessmentQuestion";
 import AssessmentAnalyzing from "../components/assessment/AssessmentAnalyzing";
 import AssessmentResult from "../components/assessment/AssessmentResult";
-import BookingModal from "../components/booking/BookingModal"; // ✅ NEW
 import useAssessment from "../hooks/useAssessment";
 import "../styles/discovery.css";
+
+// ✅ Lazy-load the booking modal (only loads when opened)
+const BookingModal = lazy(() => import("../components/booking/BookingModal"));
 
 const Discover = () => {
   const {
@@ -26,11 +28,9 @@ const Discover = () => {
     reset,
   } = useAssessment();
 
-  const [bookingOpen, setBookingOpen] = useState(false); // ✅ NEW
+  const [bookingOpen, setBookingOpen] = useState(false);
 
-  const handleBook = () => {
-    setBookingOpen(true); // ✅ Open real booking modal
-  };
+  const handleBook = () => setBookingOpen(true);
 
   return (
     <div className="page-wrapper discovery-page">
@@ -69,13 +69,15 @@ const Discover = () => {
 
       <Footer />
 
-      {/* ✅ Real booking modal */}
-      <BookingModal
-        isOpen={bookingOpen}
-        onClose={() => setBookingOpen(false)}
-        user={user}
-        tier={result?.tier}
-      />
+      {/* ✅ Wrapped in Suspense for lazy loading */}
+      <Suspense fallback={null}>
+        <BookingModal
+          isOpen={bookingOpen}
+          onClose={() => setBookingOpen(false)}
+          user={user}
+          tier={result?.tier}
+        />
+      </Suspense>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Mail, MapPin, Linkedin, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import logo from "../../assets/logo1.png";
+import logo from "../../assets/logo1.webp";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

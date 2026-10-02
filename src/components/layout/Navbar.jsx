@@ -16,7 +16,7 @@ import {
   Trophy,
   Info,
 } from "lucide-react";
-import logo from "../../assets/logo1.png";
+import logo from "../../assets/logo1.webp";
 import "./Navbar.css";
 
 const Navbar = () => {

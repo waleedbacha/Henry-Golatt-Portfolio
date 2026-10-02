@@ -1,6 +1,6 @@
 import React from "react";
 import { Star } from "lucide-react";
-import heroImage from "../../assets/image.png";
+import heroImage from "../../assets/image.webp";
 import "./Hero.css";
 
 const AnimatedBorder = () => {
