@@ -478,6 +478,64 @@ Response time is typically within 1-2 business days.`,
     category: "General",
     content: `Henry Golatt's experience in brief: 25+ years in inclusive economic development, $16M+ in grants secured and managed, $12M deployed for small business support in Year 1 of the Columbus initiative, 40+ board and advisory positions, 6+ publications in peer-reviewed and industry outlets, 10+ national awards, and partnerships with the U.S. Department of Energy, U.S. Economic Development Administration, Amazon, McGraw Hill, and dozens more organizations.`,
   },
+
+  // ============================================================
+  // 12. UAPB INCUBATOR — SIGNATURE PROJECT
+  // ============================================================
+  {
+    id: "project-uapb-incubator",
+    category: "Projects",
+    content: `Project: UAPB Business Support Incubator and Office Complex (Pine Bluff, Arkansas). In 1999, the University of Arkansas at Pine Bluff (an HBCU) began assembling land in the Central Business District of Pine Bluff. In February 2005, groundbreaking began on the UAPB Business Support Incubator, led by Henry A. Golatt as Project Administrator and Chancellor Lawrence A. Davis Jr. The facility opened in August 2006 and became a $5 million investment that catalyzed over $75 million in subsequent downtown development, clustered into a "model block" spanning 6th through 8th Streets. It became a national model for strategic doing and inclusive development.`,
+  },
+  {
+    id: "project-uapb-groundbreaking",
+    category: "Projects",
+    content: `UAPB Business Support Incubator Groundbreaking — February 2005. Campus officials gathered on a cold February morning in 2005 to break ground on the UAPB Business Support Incubator and Office Complex. Those present included Chancellor Lawrence A. Davis Jr., Mr. Henry A. Golatt (Project Administrator), University of Arkansas System President Dr. B. Alan Suggs, Simmons Bank President and CEO Mr. J. Thomas May, Pine Bluff Mayor Carl Redus Jr., and other community leaders.`,
+  },
+  {
+    id: "project-uapb-opening",
+    category: "Projects",
+    content: `UAPB Business Support Incubator Opening — August 29, 2006. The facility opened to the public with a reception. The Pine Bluff Commercial ran the headline "Dedicated to Success: UAPB Business Support Incubator Celebrated with Reception." The Incubator delivered FastTrac Entrepreneurial Training, Management and Technical Assistance (business planning, loan packaging, etc.), and other programs to help new and emerging entrepreneurs.`,
+  },
+  {
+    id: "project-uapb-outcomes",
+    category: "Projects",
+    content: `UAPB Business Support Incubator — Key Outcomes (2006–2025): The project led to $5M initial investment and $75M+ in subsequent downtown development. It catalyzed: the UAPB-BSI 3rd Thursdays Networking Series (2009), Tasteseetter Eatery and Bistro (2010), recruitment of Hope Enterprise Corporation and Hope Credit Union to downtown Pine Bluff (2013), three successful small business loan programs, the ArtSpace on Main, a new public library, and the 601 Main Street Plaza.`,
+  },
+  {
+    id: "project-uapb-impact",
+    category: "Projects",
+    content: `UAPB Incubator — $75M+ Economic Impact. Building on the original approximate $5 million investment in the UAPB Business Support Incubator, the University of Arkansas at Pine Bluff, the City of Pine Bluff, Simmons Bank, and other collaborators helped catalyze over $75 million in subsequent downtown development. This became a national model for strategic doing and inclusive development, serving as a blueprint for other midsized cities seeking to reinvigorate their downtown districts.`,
+  },
+
+  // ============================================================
+  // 13. MEDIA & PUBLICATIONS
+  // ============================================================
+  {
+    id: "media-arkansas-gazette",
+    category: "Publications",
+    content: `Media Feature: "Downtown Pine Bluff Celebrated" — Arkansas Democrat-Gazette, February 5, 2025. Written by Michael McCray (cultural development specialist for the City of Pine Bluff Economic and Community Development Department, and co-author of "Community Capital: Race, Equity and the Credit Union Movement"). The article recognizes Henry A. Golatt's role in Pine Bluff's downtown renaissance, citing his leadership of the UAPB Business Support Incubator on Main Street and his work as Executive Director of UAPB's Economic Research and Development Center.`,
+  },
+  {
+    id: "media-arkansas-gazette-quote",
+    category: "Publications",
+    content: `Quote from Arkansas Democrat-Gazette (Feb 2025): "The partnership between UAPB and downtown Pine Bluff stands as a model for institutional engagement in community development, proving that when universities invest in their communities, transformative change is possible." The article was published on the 20-year anniversary of the UAPB South groundbreaking.`,
+  },
+  {
+    id: "award-diversity-champion-2020",
+    category: "Awards",
+    content: `Award: Outstanding Diversity Champion — 2020 Diversity in Business Award. Presented by Columbus Business First. Henry Golatt was recognized for leadership in promoting equity and inclusiveness in Central Ohio, listed as Program Coordinator, City of Columbus Department of Development at the time of the award.`,
+  },
+  {
+    id: "project-uapb-leadership",
+    category: "Projects",
+    content: `Henry A. Golatt's Role at UAPB: Henry Golatt served as Project Administrator for the UAPB Business Support Incubator and Office Complex (2005–2006), and as Executive Director of the UAPB Economic Research and Development Center (ERDC) from 2001–2015. He was responsible for pioneering multiple initiatives that laid the groundwork for Pine Bluff's downtown renaissance, including the development of the incubator, recruitment of Hope Credit Union, establishment of loan programs, and cultural events like the blues series at the incubator.`,
+  },
+  {
+    id: "project-uapb-hope-credit-union",
+    category: "Projects",
+    content: `Hope Credit Union Partnership — 2013. Under Henry Golatt's leadership at UAPB, the university recruited Hope Enterprise Corporation and Hope Credit Union as strategic partners to support enterprise development and broader community development aspirations of the University. This brought critical access to capital to downtown Pine Bluff and enhanced financial services in the area.`,
+  },
 ];
 
 export default knowledgeBase;
