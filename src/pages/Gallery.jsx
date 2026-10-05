@@ -7,6 +7,13 @@ import "./Pages.css";
 import diversityAward2020 from "../assets/diversity-award-2020.png";
 import arkansasGazette2025 from "../assets/arkansas-gazette-2025.png";
 import ohio_business_award from "../assets/ohio_business_award.png";
+import jcmboaAward2002 from "../assets/jcmboa-award-2002.png";
+import pineBluffCommercial2000 from "../assets/pine-bluff-commercial-2000.png";
+import departmentReport2020 from "../assets/department-report-2020.png";
+import uapbHbcuReport from "../assets/uapb-hbcu-report.png";
+// import celesteLacourEmail from "../assets/celeste-lacour-email.png";
+// import lynneLacourEmail from "../assets/lynne-lacour-email.png";
+
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
@@ -21,7 +28,7 @@ const Gallery = () => {
       subtitle: "Advisory & Governance",
       icon: Users,
       coverImage:
-        "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&q=80",
+        "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791182170/board_lea_csixh2.jpg",
       description:
         "Serving on boards that shape economic development across the country.",
       count: 7,
@@ -76,7 +83,7 @@ const Gallery = () => {
       subtitle: "Research & Thought Leadership",
       icon: BookOpen,
       coverImage:
-        "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=800&q=80",
+        "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791182233/Publications_ooehia.jpg",
       description:
         "Peer-reviewed research and industry playbooks on inclusive economic development.",
       count: 6,
@@ -89,44 +96,67 @@ const Gallery = () => {
           description:
             "Featured in a February 2025 Arkansas Democrat-Gazette article recognizing Henry A. Golatt's role in Pine Bluff's downtown renaissance and the UAPB Business Support Incubator.",
         },
-
         {
           id: 2,
+          src: pineBluffCommercial2000,
+          title:
+            'Pine Bluff Commercial — "City Council approves concept of Business Support Incubator" (2000)',
+          description:
+            "Foundational article showing Henry Golatt and Dean Andrew Honeycutt presenting the original incubator concept to Pine Bluff City Council.",
+        },
+        {
+          id: 3,
+          src: departmentReport2020,
+          title:
+            "City of Columbus Department of Development — 2020 Accomplishments",
+          description:
+            "$8.3M CARES Act grants to 819 small businesses (80% minority/women owned). $269M in capital investment. $311M in P3 projects.",
+        },
+        {
+          id: 4,
+          src: uapbHbcuReport,
+          title: "UAPB HBCU Program Report — Chapter 3",
+          description:
+            "Documenting the $429,609 HBCU grant and UAPB-ERDC's community impact under Henry Golatt's leadership.",
+        },
+
+        {
+          id: 5,
           src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80",
           title: "Inclusive Entrepreneurship Ecosystem Playbook",
           description:
             "Step-by-step guide published with Amazon for advancing equitable inclusion.",
         },
         {
-          id: 3,
+          id: 6,
           src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
           title: "Columbus Small Business Agenda",
           description:
             "Published with Next Street under contract with the City of Columbus, Ohio.",
         },
         {
-          id: 4,
+          id: 7,
           src: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80",
           title: "Economic Impacts on University Drive",
           description:
             "Published in Journal of Business Administration Online (Fall 2010).",
         },
         {
-          id: 5,
+          id: 8,
           src: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80",
           title: "ACSP Conference Paper",
           description:
             "Association of Collegiate Schools of Planning — peer-reviewed research paper.",
         },
         {
-          id: 6,
+          id: 9,
           src: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80",
           title: "UAPB Lower Mississippi Delta",
           description:
             "Featured in Delta Grassroots Caucus publication highlighting economic development work.",
         },
         {
-          id: 7,
+          id: 10,
           src: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&q=80",
           title: "Building an Inclusive Ecosystem — Sage Publication",
           description:
@@ -140,7 +170,7 @@ const Gallery = () => {
       subtitle: "Recognition & Achievements",
       icon: Trophy,
       coverImage:
-        "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=800&q=80",
+        "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791181827/Accelerate_Columbus_weqnwx.jpg",
       description:
         "Recognized nationally for leadership in inclusive economic development.",
       count: 6,
@@ -152,14 +182,13 @@ const Gallery = () => {
           description:
             "Outstanding Diversity Champion Award — Columbus Business First (2020). Recognized for leadership in promoting equity and inclusiveness in Central Ohio.",
         },
-
-        // {
-        //   id: 2,
-        //   src: "https://images.unsplash.com/photo-1591840261243-8b8a2c8c68cc?w=800&q=80",
-        //   title: "Outstanding Diversity Champion Award",
-        //   description:
-        //     "Recognized by Columbus Business First for promoting equity and inclusiveness.",
-        // },
+        {
+          id: 2,
+          src: jcmboaAward2002,
+          title: "Minority Business of the Year — 2002",
+          description:
+            "Presented by the Jefferson County Minority Business Owners Association to UAPB ERDC (accepted by Henry Golatt as Director).",
+        },
         {
           id: 3,
           src: ohio_business_award,
@@ -169,7 +198,7 @@ const Gallery = () => {
         },
         {
           id: 4,
-          src: "https://images.unsplash.com/photo-1607346256330-dee7af15f7c5?w=800&q=80",
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791182591/forbes_vxc3uj.jpg",
           title: "ForbesBLK Member",
           description:
             "Selected as a member of ForbesBLK — global community of Black professionals.",

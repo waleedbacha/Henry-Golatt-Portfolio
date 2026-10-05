@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Quote, Star, ChevronLeft, ChevronRight } from 'lucide-react';
-import './ClientTestimonials.css';
+import React, { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import "./ClientTestimonials.css";
 
 const ClientTestimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -11,47 +11,66 @@ const ClientTestimonials = () => {
   const testimonials = [
     {
       quote:
-        'HG Consulting brought together critical voices to examine how education can be a lever for equity. Their ability to convene diverse stakeholders and drive meaningful conversation is unmatched.',
-      name: 'McGraw Hill Partnership',
-      role: 'Achieving DEI Through Education Series',
-      avatar: '🎓',
-      company: 'McGraw Hill & Achieve 3000',
+        "Congratulations Henry, this award couldn't have been awarded to a better individual. You have brought so much insight to our division, and you have provided our team with the knowledge and growth that was much needed. I'm honored to work under your direction.",
+      name: "C. Celeste LaCour-Belyn",
+      role: "Program Manager, Partnerships Training & Special Projects",
+      avatar: "🏛️",
+      company:
+        "City of Columbus, Office of Small Business & Entrepreneur Development",
+      rating: 5,
+    },
+    {
+      quote:
+        "Your outstanding leadership within The Office of Small Business and Entrepreneur Development resonates throughout the City of Columbus, greatly impacting the Communities I serve. Thank you for bringing your vision to the City of Columbus.",
+      name: "Lynne D. LaCour",
+      role: "Manager, Far East Neighborhood Pride Center",
+      avatar: "🏘️",
+      company: "City of Columbus, Department of Neighborhoods",
       rating: 5,
     },
     {
       quote:
         "Henry's work has fundamentally changed how we approach inclusive economic development. His vision and execution have made Columbus a national leader in equitable entrepreneurship.",
-      name: 'City of Columbus',
-      role: 'Municipal Partnership',
-      avatar: '🏛️',
-      company: 'City of Columbus, Ohio',
+      name: "City of Columbus",
+      role: "Municipal Partnership",
+      avatar: "🏛️",
+      company: "City of Columbus, Ohio",
       rating: 5,
     },
     {
       quote:
-        'The network Henry built gave me access to resources, mentors, and capital I never knew existed. It changed the trajectory of my business.',
-      name: 'Columbus Entrepreneurs',
-      role: 'Program Participants',
-      avatar: '🚀',
-      company: 'Entrepreneur Support Network',
+        "The network Henry built gave me access to resources, mentors, and capital I never knew existed. It changed the trajectory of my business.",
+      name: "Columbus Entrepreneurs",
+      role: "Program Participants",
+      avatar: "🚀",
+      company: "Entrepreneur Support Network",
       rating: 5,
     },
     {
       quote:
-        'HG Consulting understands what it takes to build inclusive ecosystems that actually work. Their strategic insight and community-driven approach set them apart.',
-      name: 'The Columbus Foundation',
-      role: 'Advisory Board Partner',
-      avatar: '🌱',
-      company: 'Inclusive Entrepreneurship PRI',
+        "HG Consulting brought together critical voices to examine how education can be a lever for equity. Their ability to convene diverse stakeholders and drive meaningful conversation is unmatched.",
+      name: "McGraw Hill Partnership",
+      role: "Achieving DEI Through Education Series",
+      avatar: "🎓",
+      company: "McGraw Hill & Achieve 3000",
       rating: 5,
     },
     {
       quote:
-        'Working with HG Consulting on our community development initiatives has been transformative. Their expertise in HBCU partnerships and economic development is invaluable.',
-      name: 'HBCU Coalition.org',
-      role: 'National Partnership',
-      avatar: '🎯',
-      company: 'HBCU Community Development',
+        "HG Consulting understands what it takes to build inclusive ecosystems that actually work. Their strategic insight and community-driven approach set them apart.",
+      name: "The Columbus Foundation",
+      role: "Advisory Board Partner",
+      avatar: "🌱",
+      company: "Inclusive Entrepreneurship PRI",
+      rating: 5,
+    },
+    {
+      quote:
+        "Working with HG Consulting on our community development initiatives has been transformative. Their expertise in HBCU partnerships and economic development is invaluable.",
+      name: "HBCU Coalition.org",
+      role: "National Partnership",
+      avatar: "🎯",
+      company: "HBCU Community Development",
       rating: 5,
     },
   ];
@@ -83,7 +102,7 @@ const ClientTestimonials = () => {
 
   const goPrev = () => {
     setCurrentIndex(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
+      (prev) => (prev - 1 + testimonials.length) % testimonials.length,
     );
     setIsAutoPlaying(false);
     setTimeout(() => setIsAutoPlaying(true), 15000);
@@ -94,7 +113,6 @@ const ClientTestimonials = () => {
   return (
     <section id="testimonials" className="client-testimonials-section">
       <div className="client-testimonials-container">
-
         {/* ================= HEADER ================= */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -108,7 +126,10 @@ const ClientTestimonials = () => {
           </div>
 
           <h2 className="client-testimonials-title">
-            What Our <span className="client-testimonials-title-highlight">Clients Say</span>
+            What Our{" "}
+            <span className="client-testimonials-title-highlight">
+              Clients Say
+            </span>
           </h2>
 
           <p className="client-testimonials-subtitle">
@@ -119,7 +140,6 @@ const ClientTestimonials = () => {
 
         {/* ================= MAIN SLIDER ================= */}
         <div className="client-testimonials-slider">
-
           {/* Quote icon decoration */}
           <div className="client-testimonials-quote-icon">
             <Quote size={80} strokeWidth={1} />
@@ -150,9 +170,7 @@ const ClientTestimonials = () => {
                 </div>
 
                 {/* Quote text */}
-                <p className="client-testimonials-text">
-                  "{current.quote}"
-                </p>
+                <p className="client-testimonials-text">"{current.quote}"</p>
 
                 {/* Author */}
                 <div className="client-testimonials-author">
@@ -199,14 +217,13 @@ const ClientTestimonials = () => {
             <button
               key={index}
               className={`client-testimonials-dot ${
-                index === currentIndex ? 'client-testimonials-dot-active' : ''
+                index === currentIndex ? "client-testimonials-dot-active" : ""
               }`}
               onClick={() => goTo(index)}
               aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}
         </div>
-
       </div>
     </section>
   );

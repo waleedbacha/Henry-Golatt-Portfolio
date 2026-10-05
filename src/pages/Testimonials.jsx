@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState } from "react";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
+import { motion, AnimatePresence } from "framer-motion";
 import {
   Star,
   Quote,
@@ -15,8 +15,8 @@ import {
   GraduationCap,
   Building2,
   Briefcase,
-} from 'lucide-react';
-import './Pages.css';
+} from "lucide-react";
+import "./Pages.css";
 
 const Testimonials = () => {
   const [activeProject, setActiveProject] = useState(null);
@@ -25,135 +25,223 @@ const Testimonials = () => {
   // REAL HG CONSULTING PROJECTS
   // ============================================================
   const projects = [
+    // ============================================================
+    // PROJECT 1 — Accelerate Columbus
+    // ============================================================
     {
-      id: 'mcgraw-hill',
-      title: 'Achieving Diversity, Equity & Inclusion Through Education',
-      client: 'McGraw Hill & Achieve 3000',
-      category: 'Education & Equity',
+      id: "accelerate-columbus",
+      title: "Accelerate Columbus",
+      client: "City of Columbus, Ohio",
+      category: "Small Business Program",
       coverImage:
-        'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80',
+        "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791181827/Accelerate_Columbus_weqnwx.jpg",
       shortDescription:
-        'National panel series examining the role education plays in ensuring equitable outcomes from high school to career.',
-      duration: 'Multi-year',
-      team: 'Panel + Research',
-      industry: 'Education',
+        "The City of Columbus's signature small business development program, launched in 2019 to help local entrepreneurs start, grow, and scale.",
+      duration: "Launched 2019 — Ongoing",
+      team: "City + ESO Network",
+      industry: "Municipal Government",
       results: [
-        'National panel series',
-        'Resource curation framework',
-        'Pipeline from high school to career',
+        "$8.3M in CARES Act grants delivered",
+        "819 small businesses served",
+        "80% minority or women-owned",
       ],
       overview:
-        'HG Consulting partnered with McGraw Hill and Achieve 3000 to engage guest panelists examining the role education plays in ensuring equitable outcomes. The series explored tools, resources, and relationships in curating traditional and non-traditional educational content.',
+        "Accelerate Columbus is the City of Columbus's signature small business development program. Launched by Henry A. Golatt in 2019, it is designed to help Columbus-based entrepreneurs start, grow, and scale their companies. The City implements it through a competitive RFP process, awarding funding to entrepreneur support organizations (ESOs) that include the Columbus Chamber of Commerce and other community partners.",
       challenge:
-        'Understanding how traditional and non-traditional educational content can bridge equity gaps from high school through career entry.',
+        "Columbus entrepreneurs faced a fragmented support landscape with no single, coordinated pathway for starting, growing, and scaling their businesses.",
       solution:
-        'Multi-part panel series bringing together industry leaders, educators, and community stakeholders to examine real solutions for educational equity.',
+        "Henry played a pivotal, leadership-level role in shaping and launching Accelerate Columbus by aligning city resources, building partnerships, and helping design the program as part of the city's broader small-business support strategy. The program awards funding through a competitive RFP process to a network of entrepreneur support organizations (ESOs) across the city.",
       technologies: [
-        'Panel Discussion',
-        'Resource Development',
-        'Industry Collaboration',
-        'Educational Content Curation',
+        "Program Design",
+        "RFP Framework",
+        "ESO Network Coordination",
+        "Small Business Support",
+        "City of Columbus Partnership",
       ],
       outcome:
-        'Established a framework for connecting high school students to careers through curated resources and industry partnerships.',
+        "Accelerate Columbus became the City of Columbus's signature small business development program. During the early days of the COVID-19 pandemic, Henry led the City in delivering $8.3 million in CARES Act funded grants to 819 small businesses — 80% of which were minority or woman-owned.",
       review: {
-        name: 'McGraw Hill Partnership',
-        role: 'Partner Organization',
-        avatar: '🎓',
+        name: "C. Celeste LaCour-Belyn",
+        role: "Program Manager, City of Columbus",
+        avatar: "🏛️",
         rating: 5,
-        text: 'HG Consulting brought together critical voices to examine how education can be a lever for equity. Their ability to convene diverse stakeholders and drive meaningful conversation is unmatched.',
+        text: "Congratulations Henry, this award couldn't have been awarded to a better individual. You have brought so much insight to our division, and you have provided our team with the knowledge and growth that was much needed. I'm honored to work under your direction.",
+      },
+    },
+
+    // ============================================================
+    // PROJECT 2 — UAPB Business Support Incubator
+    // ============================================================
+    {
+      id: "uapb-incubator",
+      title: "UAPB Business Support Incubator",
+      client: "University of Arkansas at Pine Bluff",
+      category: "Economic Development",
+      coverImage:
+        "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791181987/board_led_2_gcbrbn.jpg",
+      shortDescription:
+        "A $5M initial investment that catalyzed $75M+ in downtown Pine Bluff development — and became a national model for HBCU-led revitalization.",
+      duration: "1999 — 2025",
+      team: "UAPB + City + Community Partners",
+      industry: "Higher Education & Economic Development",
+      results: [
+        "$5M initial investment",
+        "$75M+ in subsequent development",
+        "National model for inclusive growth",
+      ],
+      overview:
+        "In 1999, the University of Arkansas at Pine Bluff (an HBCU) began assembling land in the Central Business District of Pine Bluff. In February 2005, groundbreaking began on the UAPB Business Support Incubator, led by Henry A. Golatt as Project Administrator. The facility opened in August 2006 and became the foundation for a 20-year partnership between the University and the community.",
+      challenge:
+        "Pine Bluff's downtown corridor — between 6th and 8th Avenues — had suffered from decades of disinvestment and decline. Traditional economic development approaches were not reaching the community, and entrepreneurs lacked access to capital, mentorship, and workspace.",
+      solution:
+        "Henry led the UAPB Economic Research and Development Center in pioneering multiple initiatives: developing the UAPB Business Support Incubator, recruiting Hope Enterprise Corporation and Hope Credit Union to downtown (2013), establishing three successful loan programs, and launching the UAPB-BSI 3rd Thursdays Networking Series (2009). These efforts built a model block of coordinated development spanning 6th through 8th Streets.",
+      technologies: [
+        "Downtown Revitalization",
+        "HBCU Community Investment",
+        "Business Incubation",
+        "Access to Capital",
+        "Strategic Partnership Design",
+        "Pine Bluff Downtown Development",
+      ],
+      outcome:
+        "From an initial $5 million investment, UAPB, the City of Pine Bluff, Simmons Bank, and other collaborators catalyzed over $75 million in subsequent downtown development. The project became a national model for strategic doing and inclusive development — cited in a 2025 Arkansas Democrat-Gazette article on the 20-year anniversary.",
+      review: {
+        name: "Arkansas Democrat-Gazette",
+        role: "Media Feature, Feb 5, 2025",
+        avatar: "📰",
+        rating: 5,
+        text: "The partnership between UAPB and downtown Pine Bluff stands as a model for institutional engagement in community development, proving that when universities invest in their communities, transformative change is possible.",
       },
     },
     {
-      id: 'columbus-ecosystem',
-      title: 'Columbus Inclusive Ecosystem Building',
-      client: 'City of Columbus, Ohio',
-      category: 'Economic Development',
+      id: "mcgraw-hill",
+      title: "Achieving Diversity, Equity & Inclusion Through Education",
+      client: "McGraw Hill & Achieve 3000",
+      category: "Education & Equity",
       coverImage:
-        'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+        "https://res.cloudinary.com/dcjhzgigb/image/upload/v1789476260/henry_5_bjdagr.jpg",
       shortDescription:
-        'Creating an inclusive small business ecosystem that propels every resident toward prosperity.',
-      duration: 'Ongoing',
-      team: 'Multi-stakeholder',
-      industry: 'Municipal Government',
+        "National panel series examining the role education plays in ensuring equitable outcomes from high school to career.",
+      duration: "Multi-year",
+      team: "Panel + Research",
+      industry: "Education",
       results: [
-        'City-wide inclusive ecosystem',
-        'Multi-stakeholder alignment',
-        'Ongoing strategic implementation',
+        "National panel series",
+        "Resource curation framework",
+        "Pipeline from high school to career",
+      ],
+      overview:
+        "HG Consulting partnered with McGraw Hill and Achieve 3000 to engage guest panelists examining the role education plays in ensuring equitable outcomes. The series explored tools, resources, and relationships in curating traditional and non-traditional educational content.",
+      challenge:
+        "Understanding how traditional and non-traditional educational content can bridge equity gaps from high school through career entry.",
+      solution:
+        "Multi-part panel series bringing together industry leaders, educators, and community stakeholders to examine real solutions for educational equity.",
+      technologies: [
+        "Panel Discussion",
+        "Resource Development",
+        "Industry Collaboration",
+        "Educational Content Curation",
+      ],
+      outcome:
+        "Established a framework for connecting high school students to careers through curated resources and industry partnerships.",
+      review: {
+        name: "McGraw Hill Partnership",
+        role: "Partner Organization",
+        avatar: "🎓",
+        rating: 5,
+        text: "HG Consulting brought together critical voices to examine how education can be a lever for equity. Their ability to convene diverse stakeholders and drive meaningful conversation is unmatched.",
+      },
+    },
+    {
+      id: "columbus-ecosystem",
+      title: "Columbus Inclusive Ecosystem Building",
+      client: "City of Columbus, Ohio",
+      category: "Economic Development",
+      coverImage:
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+      shortDescription:
+        "Creating an inclusive small business ecosystem that propels every resident toward prosperity.",
+      duration: "Ongoing",
+      team: "Multi-stakeholder",
+      industry: "Municipal Government",
+      results: [
+        "City-wide inclusive ecosystem",
+        "Multi-stakeholder alignment",
+        "Ongoing strategic implementation",
       ],
       overview:
         "Led the effort to create an inclusive small business ecosystem that propels every resident toward prosperity. This work builds on the Columbus Small Business Agenda developed in partnership with Next Street under contract with the City of Columbus.",
       challenge:
-        'Historically disinvested communities lacked equitable access to the small business resources, capital, and networks needed to thrive.',
+        "Historically disinvested communities lacked equitable access to the small business resources, capital, and networks needed to thrive.",
       solution:
-        'Developed a comprehensive framework through the Columbus Small Business Agenda, coordinating public and private stakeholders to align on inclusive economic development strategies.',
+        "Developed a comprehensive framework through the Columbus Small Business Agenda, coordinating public and private stakeholders to align on inclusive economic development strategies.",
       technologies: [
-        'Ecosystem Mapping',
-        'Strategic Planning',
-        'Stakeholder Engagement',
-        'Columbus Small Business Agenda',
-        'Next Street Framework',
+        "Ecosystem Mapping",
+        "Strategic Planning",
+        "Stakeholder Engagement",
+        "Columbus Small Business Agenda",
+        "Next Street Framework",
       ],
       outcome:
-        'Established a coordinated support system for entrepreneurs across the City of Columbus that serves as a national model for inclusive economic development.',
+        "Established a coordinated support system for entrepreneurs across the City of Columbus that serves as a national model for inclusive economic development.",
       review: {
-        name: 'City of Columbus',
-        role: 'Municipal Partnership',
-        avatar: '🏛️',
+        name: "City of Columbus",
+        role: "Municipal Partnership",
+        avatar: "🏛️",
         rating: 5,
         text: "Henry's work has fundamentally changed how we approach inclusive economic development. His vision and execution have made Columbus a national leader in equitable entrepreneurship.",
       },
     },
     {
-      id: 'entrepreneur-network',
-      title: 'City of Columbus Entrepreneur Support Network',
-      client: 'City of Columbus',
-      category: 'Entrepreneurship',
+      id: "entrepreneur-network",
+      title: "City of Columbus Entrepreneur Support Network",
+      client: "City of Columbus",
+      category: "Entrepreneurship",
       coverImage:
-        'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80',
+        "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80",
       shortDescription:
-        'Pilot program providing critical services to entrepreneurs across the small business lifecycle.',
-      duration: 'Pilot Program',
-      team: 'City + Partners',
-      industry: 'Entrepreneurship',
+        "Pilot program providing critical services to entrepreneurs across the small business lifecycle.",
+      duration: "Pilot Program",
+      team: "City + Partners",
+      industry: "Entrepreneurship",
       results: [
-        'Pilot program launched',
-        'Lifecycle support model',
-        'Network coordination',
+        "Pilot program launched",
+        "Lifecycle support model",
+        "Network coordination",
       ],
       overview:
-        'Led the effort for the City of Columbus to establish and implement a pilot program aimed at providing critical services to entrepreneurs across the small business lifecycle — from ideation through growth.',
+        "Led the effort for the City of Columbus to establish and implement a pilot program aimed at providing critical services to entrepreneurs across the small business lifecycle — from ideation through growth.",
       challenge:
-        'Entrepreneurs faced fragmented support across the business lifecycle, with no coordinated pathway from concept to scale.',
+        "Entrepreneurs faced fragmented support across the business lifecycle, with no coordinated pathway from concept to scale.",
       solution:
-        'Designed and launched a coordinated network providing services from ideation through growth, connecting entrepreneurs to the right resources at the right stage.',
+        "Designed and launched a coordinated network providing services from ideation through growth, connecting entrepreneurs to the right resources at the right stage.",
       technologies: [
-        'Program Design',
-        'Network Coordination',
-        'Service Delivery Model',
-        'Entrepreneur Support',
-        'City Partnership',
+        "Program Design",
+        "Network Coordination",
+        "Service Delivery Model",
+        "Entrepreneur Support",
+        "City Partnership",
       ],
       outcome:
-        'Established a model for coordinated entrepreneur support that serves as a template for other cities across the nation.',
+        "Established a model for coordinated entrepreneur support that serves as a template for other cities across the nation.",
       review: {
-        name: 'Columbus Entrepreneurs',
-        role: 'Program Participants',
-        avatar: '🚀',
+        name: "Columbus Entrepreneurs",
+        role: "Program Participants",
+        avatar: "🚀",
         rating: 5,
-        text: 'The network Henry built gave me access to resources, mentors, and capital I never knew existed. It changed the trajectory of my business.',
+        text: "The network Henry built gave me access to resources, mentors, and capital I never knew existed. It changed the trajectory of my business.",
       },
     },
   ];
 
   const openProject = (projectId) => {
     setActiveProject(projectId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const closeProject = () => {
     setActiveProject(null);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const activeProjectData = projects.find((p) => p.id === activeProject);
@@ -162,7 +250,6 @@ const Testimonials = () => {
     <div className="page-wrapper">
       <Navbar />
       <main className="page-main">
-
         {/* MAIN VIEW - Projects Grid */}
         {!activeProject && (
           <>
@@ -177,8 +264,9 @@ const Testimonials = () => {
                   Our <span className="page-title-highlight">Projects</span>
                 </h1>
                 <p className="page-description">
-                  Real initiatives that are shaping inclusive economic ecosystems
-                  across America. Click any project to see details and impact.
+                  Real initiatives that are shaping inclusive economic
+                  ecosystems across America. Click any project to see details
+                  and impact.
                 </p>
               </motion.div>
             </section>
@@ -277,10 +365,7 @@ const Testimonials = () => {
                 transition={{ duration: 0.6 }}
                 className="page-hero-content"
               >
-                <button
-                  className="project-back-button"
-                  onClick={closeProject}
-                >
+                <button className="project-back-button" onClick={closeProject}>
                   <ArrowLeft size={18} />
                   Back to Projects
                 </button>
@@ -299,7 +384,6 @@ const Testimonials = () => {
 
             <section className="page-section">
               <div className="project-detail-container">
-
                 {/* Hero Image */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -491,12 +575,10 @@ const Testimonials = () => {
                     Get in Touch →
                   </a>
                 </motion.div>
-
               </div>
             </section>
           </>
         )}
-
       </main>
       <Footer />
     </div>

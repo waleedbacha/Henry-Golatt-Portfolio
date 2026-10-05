@@ -536,6 +536,141 @@ Response time is typically within 1-2 business days.`,
     category: "Projects",
     content: `Hope Credit Union Partnership — 2013. Under Henry Golatt's leadership at UAPB, the university recruited Hope Enterprise Corporation and Hope Credit Union as strategic partners to support enterprise development and broader community development aspirations of the University. This brought critical access to capital to downtown Pine Bluff and enhanced financial services in the area.`,
   },
+
+  // ============================================================
+  // 14. ACCELERATE COLUMBUS
+  // ============================================================
+  {
+    id: "project-accelerate-columbus",
+    category: "Projects",
+    content: `Project: Accelerate Columbus (launched 2019). Accelerate Columbus is the City of Columbus, Ohio's signature small business development program designed to help Columbus-based entrepreneurs start, grow, and scale their companies. Henry A. Golatt launched it in 2019 through the City of Columbus. Each year, the City awards funding through a competitive RFP process to organizations that successfully respond. The City implements it through a network of entrepreneur support organizations (ESOs), including the Columbus Chamber of Commerce. It provides comprehensive small-business support across the business lifecycle.`,
+  },
+  {
+    id: "project-accelerate-columbus-role",
+    category: "Projects",
+    content: `Henry Golatt's Role in Accelerate Columbus: Henry played a pivotal, leadership-level role in shaping and launching Accelerate Columbus by aligning city resources, building partnerships, and helping design the program as part of the city's broader small-business support strategy. It is now the City of Columbus's signature small business development program.`,
+  },
+
+  // ============================================================
+  // 15. COLUMBUS SMALL BUSINESS AGENDA
+  // ============================================================
+  {
+    id: "project-columbus-agenda-architect",
+    category: "Projects",
+    content: `Henry A. Golatt is the Chief Architect of the Columbus Small Business Agenda — a strategic effort of the City of Columbus Office of Small Business and Entrepreneur Development, created with its partners and stakeholders. The Agenda is the framework that drives inclusive entrepreneurship strategy in Columbus, Ohio, and was published in partnership with Next Street under contract with the City of Columbus.`,
+  },
+  {
+    id: "project-ppe-statement",
+    category: "Publications",
+    content: `Statement from Henry Golatt as Chief Architect of the Columbus Small Business Agenda on the Paycheck Protection Program (PPP): "Economic recovery that does not intentionally and strategically target access and participation by black and brown businesses would have had continued adverse generational impacts on these businesses. We applauded and celebrate these changes announced by President Biden and members of his team that make access to the Paycheck Protection Program more equitable."`,
+  },
+
+  // ============================================================
+  // 16. COVID-19 SMALL BUSINESS RELIEF
+  // ============================================================
+  {
+    id: "project-covid-relief",
+    category: "Projects",
+    content: `Project: COVID-19 Small Business Relief — City of Columbus (2020–2021). Henry A. Golatt led the City of Columbus in successfully delivering much-needed capital to small businesses during the early days of the COVID-19 pandemic. Results: The City provided $8.3 million in CARES Act funded grants to 819 small businesses — 80% of which were minority or woman owned businesses. Henry's leadership was critical during a period of acute crisis for Columbus small businesses.`,
+  },
+  {
+    id: "project-2020-accomplishments",
+    category: "Projects",
+    content: `City of Columbus Department of Development — 2020 Accomplishments (under Henry Golatt's Economic Development Division work): Business Expansion Projects: 20. Estimated Capital Investment: $269,826,148. New Job Commitment: 688. New Jobs Payroll: $59,224,726. Retained Jobs Commitment: 694. Retained Jobs Payroll: $50,101,679. Small Business CARES Act Grants: $8.3M in grants to 819 small businesses (80% minority/woman owned). P3 Program: 11 completed projects representing $311 million in new capital investments.`,
+  },
+
+  // ============================================================
+  // 17. UAPB HBCU GRANT & ERDC IMPACT
+  // ============================================================
+  {
+    id: "project-uapb-hbcu-grant",
+    category: "Projects",
+    content: `UAPB-ERDC HBCU Grant (2006): The University of Arkansas at Pine Bluff received a $429,609 HBCU grant to strengthen the Economic Research and Development Center's (UAPB-ERDC) role in the community. The project helped provide long-term revitalization of the University Park neighborhood and strengthened and expanded small businesses within the university's business incubator. Under Henry Golatt's leadership as ERDC Director, UAPB-ERDC assisted Jefferson County CDC with strategic planning, supported $25,000 in Family Community Development Corporation educational and cultural programs, provided $25,000 from State Farm Insurance for a resource library, $15,000 from Wal-Mart Stores, and $4,000 from Simmons First National Bank — all for UAPB-BSI (Business Support Incubator) tenant support.`,
+  },
+  {
+    id: "project-uapb-erdc-partnerships",
+    category: "Projects",
+    content: `UAPB-ERDC Partnerships under Henry Golatt (2006–2015): State Department of Corrections, Game and Fish Commission, Pine Bluff Downtown Development, City of Pine Bluff, AARP Senior Workers, Dollarway School District, State Farm Insurance, Wal-Mart Stores, Simmons First National Bank, UAPB Department of Education, Southeast Arkansas Workforce Center, TOPPS Inc., City of Pine Bluff Office of the Mayor, Jefferson County Judge, Pine Bluff Fire and Police Departments, Pine Bluff Boys and Girls Club, Arkansas Minority Business Development Roundtable, and Pine Bluff Entrepreneurship Collaborative.`,
+  },
+
+  // ============================================================
+  // 18. HISTORICAL MEDIA & PUBLICATIONS
+  // ============================================================
+  {
+    id: "media-pine-bluff-commercial-2000",
+    category: "Publications",
+    content: `Media: "City Council approves concept of Business Support Incubator" — Pine Bluff Commercial, Sunday, July 9, 2000. Written by Jane L. Wilson. The article covered the Pine Bluff City Council's Community Development Committee approving the concept of a Business Support Incubator program, presented by Andrew Honeycutt (Dean of UAPB School of Business) and Henry Golatt (Deputy Director of the Economic Research and Development Center). Henry Golatt was quoted: "We already have $300,000 in grants through the Department of Housing and Urban Development. And we are anticipating another $200,000 through HUD next year." This was the foundational moment for what became the UAPB Business Support Incubator.`,
+  },
+  {
+    id: "media-attribution-summary",
+    category: "Publications",
+    content: `Media Attribution Summary — Henry A. Golatt has been featured in or mentioned in the following types of media: 1) Peer-reviewed academic journals (Local Economy/Sage, Journal of Business Administration Online, ACSP Conference), 2) National business publications (Amazon playbook, McGraw Hill series), 3) Regional newspapers (Arkansas Democrat-Gazette, Pine Bluff Commercial), 4) Government reports (UAPB HBCU Program Chapter 3, City of Columbus 2020 Accomplishments), 5) Industry publications (Delta Grassroots Caucus), 6) Social media recognitions (ForbesBLK, LinkedIn).`,
+  },
+  {
+    id: "media-publications-list",
+    category: "Publications",
+    content: `Complete List of Henry Golatt's Publications & Media Features:
+1. "Building an Inclusive Ecosystem for Minority and Women Entrepreneurs: A Case Study of Columbus, Ohio" — Local Economy (Sage), peer-reviewed
+2. "Inclusive Entrepreneurship Ecosystem Playbook" — Amazon
+3. "Columbus Small Business Agenda" — Next Street / City of Columbus
+4. "Building an Inclusive Ecosystem for Minority and Women Entrepreneurs" — ACSP Conference paper
+5. "Economic Impacts of Small Businesses and Public/Private Projects on University Drive in Pine Bluff, Arkansas" — Journal of Business Administration Online (Fall 2010)
+6. "UAPB's Great Work in the Lower Mississippi Delta" — Delta Grassroots Caucus
+7. "Advancing Equity in Energy Research" — Alfred P. Sloan Foundation (2024)
+8. "Downtown Pine Bluff Celebrated" — Arkansas Democrat-Gazette (Feb 5, 2025)
+9. "City Council approves concept of Business Support Incubator" — Pine Bluff Commercial (July 9, 2000)
+10. City of Columbus Department of Development 2020 Accomplishments Report
+11. UAPB HBCU Program Chapter 3 (Grant Report)`,
+  },
+
+  // ============================================================
+  // 19. AWARDS — EXPANDED
+  // ============================================================
+  {
+    id: "award-jcmboa-2002",
+    category: "Awards",
+    content: `Award: Minority Business of the Year — 2002. Presented by the Jefferson County Minority Business Owners Association (JCMBOA) of Pine Bluff, Arkansas to the University of Arkansas at Pine Bluff Economic Research and Development Center, accepted by Henry A. Golatt as Director. Recognition at the JCMBOA Second Annual Cookout on August 24, 2002. Honored alongside Theodore Trammell of Trammell's Beauty and Barber Supply.`,
+  },
+
+  // ============================================================
+  // 20. TESTIMONIALS & SOCIAL PROOF
+  // ============================================================
+  {
+    id: "testimonial-celeste-lacour",
+    category: "Testimonials",
+    content: `Testimonial from C. Celeste LaCour-Belyn, Program Manager, Partnerships Training and Special Projects, Office of Small Business and Entrepreneur Development, Economic Development Division, City of Columbus: "Congratulations Henry, this award couldn't have been awarded to a better individual. You have brought so much insight to our division, and you have provided our team with the knowledge and growth that was much needed. I'm honored to work under your direction as I continue to learn and achieve great visions for the future of The Office of Small Business and Entrepreneur Development. Kudos!!!!!"`,
+  },
+  {
+    id: "testimonial-lynne-lacour",
+    category: "Testimonials",
+    content: `Testimonial from Lynne D. LaCour, Manager, Far East Neighborhood Pride Center, City of Columbus Department of Neighborhoods: "Henry — Your outstanding leadership within The Office of Small Business and Entrepreneur Development resonates throughout the City of Columbus, greatly impacting the Communities I serve. Thank you for bringing your vision to the City of Columbus."`,
+  },
+  {
+    id: "testimonial-demetrius-johnson",
+    category: "Testimonials",
+    content: `Social recognition from Demetrius Johnson on LinkedIn (Aug 16, 2020): "Congratulations, @Henry_Golatt. You a prime example of what an #UAPB alumni looks like. In the words of AM&N College President, John B. Watson: 'We develop Power, Courage, and Determination and we go out to achieve Truth, Wisdom, and Justice.'"`,
+  },
+
+  // ============================================================
+  // 21. FULL MASTER BIO (for comprehensive answers)
+  // ============================================================
+  {
+    id: "founder-master-bio",
+    category: "About",
+    content: `Henry A. Golatt — Master Bio. Henry A. Golatt is an Inclusive Development Strategist and the founder of HG Consulting Services. Career highlights: Director of the Economic Research and Development Center (ERDC) at the University of Arkansas at Pine Bluff (2001–2015), where he led the UAPB Business Support Incubator and catalyzed $75M+ in downtown Pine Bluff development. Program Development Coordinator at the City of Columbus, Ohio Department of Development (2017–2021), where he was the Chief Architect of the Columbus Small Business Agenda and launched Accelerate Columbus in 2019. Currently Chief of Strategy & Partnerships at the HBCU Community Development Action Coalition (2022–present). B.S. in Accounting from UAPB (1990). 25+ years of experience. 40+ board positions. 10+ national awards.`,
+  },
+  {
+    id: "founder-complete-roles",
+    category: "About",
+    content: `Henry A. Golatt's Complete Professional Roles:
+• Founder & Principal Consultant, HG Consulting Services
+• Chief of Strategy & Partnerships, HBCU Community Development Action Coalition (2022–present)
+• Program Development Coordinator, City of Columbus, Ohio Department of Development (2017–2021)
+• Executive Director, UAPB Economic Research and Development Center (2001–2015)
+• Deputy Director, UAPB Economic Research and Development Center (1999–2001)
+• Economic Development Specialist, UAPB ERDC (1991–1999)
+• Business Research Assistant, UAPB (1990–1991)`,
+  },
 ];
 
 export default knowledgeBase;
