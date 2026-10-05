@@ -35,28 +35,28 @@ const Gallery = () => {
       images: [
         {
           id: 1,
-          src: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&q=80",
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1789476260/henry_4_icuhkw.jpg",
           title: "Ohio Dominican University MBA Advisory Board",
           description:
             "Serving as vital link between graduate business programs and industry leaders for 6+ years.",
         },
         {
           id: 2,
-          src: "https://images.unsplash.com/photo-1591696205602-2f950c417cb9?w=800&q=80",
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1789476260/henry_1_atr3lq.jpg",
           title: "Columbus Urban League Advisory Board",
           description:
             "Supporting the Columbus Minority Business Assistance Center (MBAC) initiatives.",
         },
         {
           id: 3,
-          src: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80",
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1789476259/henry_6_ibvv2p.jpg",
           title: "HBCU Coalition.org — Vice Chairman",
           description:
             "Providing fiduciary oversight to executive leadership and chairing the research committee.",
         },
         {
           id: 4,
-          src: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800&q=80",
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791182233/Publications_ooehia.jpg",
           title: "HBCU Community Development Action Coalition",
           description:
             "Board Member for 8+ years advancing community economic development across the nation.",
@@ -90,7 +90,7 @@ const Gallery = () => {
       images: [
         {
           id: 1,
-          src: arkansasGazette2025,
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791187235/artifacts_2_dtfna7.jpg",
           title:
             "Downtown Pine Bluff Celebrated — Arkansas Democrat-Gazette (2025)",
           description:
@@ -191,11 +191,12 @@ const Gallery = () => {
         },
         {
           id: 3,
-          src: ohio_business_award,
-          title: "Ohio Black Expo Business Excellence Award",
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1789476260/henry_2_nztqtp.jpg",
+          title: "Who's Who in Black Columbus (2025)",
           description:
-            "Awarded in 2020 for commitment to business excellence in the State of Ohio.",
+            "Honorable Mention in the November 2025 edition for inclusive economic development work.",
         },
+
         {
           id: 4,
           src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791182591/forbes_vxc3uj.jpg",
@@ -205,24 +206,24 @@ const Gallery = () => {
         },
         {
           id: 5,
-          src: "https://images.unsplash.com/photo-1533227938327-74f332729668?w=800&q=80",
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791186509/Chairman_s_Medallion_Award_Banner_1_hwzrtd.png",
           title: "Delta Regional Authority Chairman's Medallion",
           description:
             "Awarded to exemplary regional community economic development leaders.",
         },
         {
           id: 6,
-          src: "https://images.unsplash.com/photo-1569098644584-210bcd375b59?w=800&q=80",
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791186628/Gemini_Generated_Image_9y47u39y47u39y47_1_npoypi.jpg",
           title: "Tuskegee University Community Award",
           description:
             "Booker T. Washington Community Economic Development Award for rural impact.",
         },
         {
           id: 7,
-          src: "https://images.unsplash.com/photo-1579952363873-27f3bade9f55?w=800&q=80",
-          title: "Who's Who in Black Columbus (2025)",
+          src: ohio_business_award,
+          title: "Ohio Black Expo Business Excellence Award",
           description:
-            "Honorable Mention in the November 2025 edition for inclusive economic development work.",
+            "Awarded in 2020 for commitment to business excellence in the State of Ohio.",
         },
       ],
     },
