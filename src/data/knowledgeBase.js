@@ -671,6 +671,67 @@ Response time is typically within 1-2 business days.`,
 • Economic Development Specialist, UAPB ERDC (1991–1999)
 • Business Research Assistant, UAPB (1990–1991)`,
   },
+  // ============================================================
+  // OHIOMBE BUSINESS ADVOCATE FEATURE (2018)
+  // ============================================================
+  {
+    id: "media-ohiombe-2018",
+    category: "Publications",
+    content: `Media: "Business Advocate: Henry Golatt" — OhioMBE, February 19, 2018. A published profile highlighting Henry's career as a veteran economic and community development practitioner. The article notes that Henry has dedicated a large part of his life and career to assisting individuals and groups — representing small businesses and communities alike — to realize and maximize their entrepreneurial dreams. It describes his body of work as having earned him regional and national accolades for implementing programs that empower existing and aspiring entrepreneurs by building physical, human, and social infrastructures, networks, and ecosystems.`,
+  },
+  {
+    id: "media-ohiombe-2018-awards",
+    category: "Publications",
+    content: `From OhioMBE Business Advocate profile (2018): The article specifically cites Henry's career awards including the District Director's Partnership Award from the U.S. Small Business Administration (Arkansas) and the Minority Business Development Agency Regional Director's Award (Region VI). It also mentions the Tuskegee University 16th Annual Booker T. Washington Economic Development Award (2011) and his selection as an inaugural Entrepreneurial Fellow in the Delta Entrepreneurs Network (2015).`,
+  },
+  {
+    id: "media-ohiombe-2018-role",
+    category: "Publications",
+    content: `OhioMBE (2018) describes Henry's role at the time: "Henry joins the City of Columbus as the new Small Business Coordinator/Concierge within the Economic Development Division of the Department of Development. In this role, he manages an internal team which collaborates with external partners and stakeholders to deliver specialized technical assistance and financial services to constituency groups including aspiring entrepreneurs, small businesses, and neighborhood and business associations."`,
+  },
+  {
+    id: "media-ohiombe-2018-education",
+    category: "Publications",
+    content: `From the OhioMBE profile: "Henry holds a Bachelor's of Science Degree in Accounting from the University of Arkansas and is a certified small business facilitator and instructor."`,
+  },
+
+  // ============================================================
+  // SMARTVILLE / DOE HBCU ENERGY PROJECT (2023)
+  // ============================================================
+  {
+    id: "project-smartville-doe-2023",
+    category: "Projects",
+    content: `Project: Smartville Inc. — DOE Long Duration Energy Storage Award (September 27, 2023). The U.S. Department of Energy Office of Clean Energy Demonstrations awarded Smartville Inc. $10 million as part of a $325 million investment to develop long-duration energy storage (LDES) technologies. Smartville's Smartville 360™ systems will use repurposed EV battery packs to provide grid resiliency and backup power to senior centers, low-income multi-family affordable housing complexes, and EV charging facilities in San Diego, Atlanta, New Orleans, Orangeburg, and Denmark, S.C. Total battery capacity installed: more than 7 MWh.`,
+  },
+  {
+    id: "project-smartville-hbcu-partners",
+    category: "Projects",
+    content: `Smartville DOE project partners (2023): The HBCU Community Development Action Coalition (CDAC) provided key support, along with four HBCUs — Denmark Technical College, Claflin University, South Carolina State University, and Dillard University in New Orleans. Additional collaborators: George McKinney Retirement Center, JBM Energy Solutions, Luna Development, Southern Company, Georgia Power, and Cox Automotive.`,
+  },
+  {
+    id: "project-smartville-henry-quote",
+    category: "Projects",
+    content: `Henry Golatt's Quote on the Smartville DOE Award (Sept 2023): As Chief of Strategy and Partnerships for the HBCU Community Development Action Coalition (CDAC), Henry said: "This LDES project builds on previous outcomes from CDAC's work in successfully aggregating and partnering with HBCUs, including those presented in Smartville's application. This project advances the work CDAC is doing alongside private developer Luna Development Services and Renaissance Equity Partners in Orangeburg. The project also expands CDAC's efforts to other HBCUs, including Denmark Technical College and Dillard University."`,
+  },
+  {
+    id: "project-smartville-impact",
+    category: "Projects",
+    content: `Smartville DOE project impact: This project is part of CDAC's broader effort to advance HBCU-led clean energy infrastructure. It exemplifies CDAC's HBCU GreenTown Model — positioning HBCUs as backup power resources for their communities and creating workforce pipelines in STEM and clean energy for HBCU students.`,
+  },
+
+  // ============================================================
+  // NEW AWARDS / RECOGNITIONS FROM OHIOMBE
+  // ============================================================
+  {
+    id: "award-sba-arkansas-2002",
+    category: "Awards",
+    content: `Award: U.S. Small Business Administration (Arkansas) District Director's Partnership Award. Presented to Henry A. Golatt in recognition of outstanding services that foster minority business development. Mentioned in the OhioMBE "Business Advocate" profile (2018).`,
+  },
+  {
+    id: "award-delta-entrepreneur-fellow-2015",
+    category: "Awards",
+    content: `Recognition: Delta Entrepreneurs Network — Inaugural Fellow (2015). A program of the Delta Regional Authority. Henry A. Golatt was named in the inaugural class of Entrepreneurial Fellows in 2015, recognizing his work in inclusive entrepreneurship across the Mississippi River Delta region.`,
+  },
 ];
 
 export default knowledgeBase;

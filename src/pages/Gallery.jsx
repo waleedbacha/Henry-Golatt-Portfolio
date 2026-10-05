@@ -122,13 +122,28 @@ const Gallery = () => {
 
         {
           id: 5,
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791204391/iohmbimg_sa1cx3.webp",
+          title: 'OhioMBE — "Business Advocate: Henry Golatt" (Feb 2018)',
+          description:
+            "Published profile of Henry Golatt by OhioMBE (Minority Business Enterprise publication), February 2018. Highlights his career, awards, and role as Program Development Coordinator for the City of Columbus.",
+        },
+        {
+          id: 6,
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791204391/oe_jrnd4o.png",
+          title:
+            "DOE Awards Smartville $10M for HBCU Energy Storage (Sept 2023)",
+          description:
+            "PR Newswire release covering the U.S. Department of Energy's $10 million award to Smartville Inc. for long-duration energy storage benefiting HBCUs. Includes a quote from Henry Golatt, Chief of Strategy and Partnerships for the HBCU Community Development Action Coalition.",
+        },
+        {
+          id: 12,
           src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80",
           title: "Inclusive Entrepreneurship Ecosystem Playbook",
           description:
             "Step-by-step guide published with Amazon for advancing equitable inclusion.",
         },
         {
-          id: 6,
+          id: 13,
           src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
           title: "Columbus Small Business Agenda",
           description:
