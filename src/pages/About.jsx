@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import { motion } from "framer-motion";
@@ -21,6 +22,48 @@ import uapbIncubator from "../assets/hero.png";
 import "./Pages.css";
 
 const About = () => {
+  const location = useLocation();
+
+  // ============================================================
+  // ✅ Deep-link support — auto-scroll to section from URL hash
+  // ============================================================
+  useEffect(() => {
+    if (!location.hash) return;
+
+    const id = location.hash.replace("#", "");
+
+    const scrollToSection = () => {
+      const element = document.getElementById(id);
+      if (!element) {
+        // Retry once more if element hasn't rendered yet
+        setTimeout(() => {
+          const retry = document.getElementById(id);
+          if (retry) scrollTo(retry);
+        }, 400);
+        return;
+      }
+      scrollTo(element);
+    };
+
+    const scrollTo = (el) => {
+      const offset = 90; // navbar height + breathing room
+      const top = el.getBoundingClientRect().top + window.scrollY - offset;
+
+      // ✅ Highlight flash
+      el.classList.add("hash-highlight");
+      setTimeout(() => el.classList.remove("hash-highlight"), 2000);
+
+      if (window.lenis) {
+        window.lenis.scrollTo(top, { duration: 1.2 });
+      } else {
+        window.scrollTo({ top, behavior: "smooth" });
+      }
+    };
+
+    const timer = setTimeout(scrollToSection, 400);
+    return () => clearTimeout(timer);
+  }, [location.hash, location.pathname]);
+
   const values = [
     {
       icon: Target,
@@ -38,7 +81,7 @@ const About = () => {
       icon: Award,
       title: "Evidence-Based",
       description:
-        "Peer-reviewed research and over 15 years of hands-on experience inform every engagement.",
+        "Peer-reviewed research and over 25 years of hands-on experience inform every engagement.",
     },
     {
       icon: Heart,
@@ -65,7 +108,7 @@ const About = () => {
       icon: TrendingUp,
       title: "Inclusive Economic Development",
       description:
-        "Over 15 years designing and implementing programs that advance equitable opportunity.",
+        "Over 25 years designing and implementing programs that advance equitable opportunity.",
     },
     {
       icon: GraduationCap,
@@ -143,7 +186,7 @@ const About = () => {
         {/* ============================================================
             FOUNDER SECTION
             ============================================================ */}
-        <section className="page-section">
+        <section id="founder" className="page-section">
           <div className="about-founder">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -159,7 +202,7 @@ const About = () => {
 
               <p className="about-founder-bio">
                 Henry A. Golatt is an economic development strategist with over
-                15 years of experience building inclusive ecosystems for
+                25 years of experience building inclusive ecosystems for
                 entrepreneurs, universities, and communities. He founded HG
                 Consulting Services to help organizations design and implement
                 programs that advance equitable economic opportunity for
@@ -224,7 +267,7 @@ const About = () => {
         {/* ============================================================
             MISSION & VALUES
             ============================================================ */}
-        <section className="page-section">
+        <section id="mission" className="page-section">
           <div className="about-section-header">
             <div className="about-section-badge">
               <Target size={14} />
@@ -258,9 +301,9 @@ const About = () => {
         </section>
 
         {/* ============================================================
-    SIGNATURE PROJECT — UAPB Business Support Incubator
-    ============================================================ */}
-        <section className="page-section">
+            SIGNATURE PROJECT — UAPB Business Support Incubator
+            ============================================================ */}
+        <section id="uapb-incubator" className="page-section">
           <div className="about-section-header">
             <div className="about-section-badge">
               <Building2 size={14} />
@@ -388,7 +431,7 @@ const About = () => {
         {/* ============================================================
             AREAS OF EXPERTISE
             ============================================================ */}
-        <section className="page-section">
+        <section id="expertise" className="page-section">
           <div className="about-section-header">
             <div className="about-section-badge">
               <Briefcase size={14} />
@@ -421,7 +464,7 @@ const About = () => {
         {/* ============================================================
             CREDENTIALS + PUBLICATIONS
             ============================================================ */}
-        <section className="page-section">
+        <section id="credentials" className="page-section">
           <div className="about-two-col">
             {/* Credentials */}
             <motion.div

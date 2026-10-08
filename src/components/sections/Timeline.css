@@ -1,5 +1,5 @@
 /* ============================================================
-   TIMELINE SECTION - Horizontal Design (Mobile Friendly)
+   TIMELINE SECTION - Horizontal Design (Fully Responsive)
    ============================================================ */
 
 .timeline-section {
@@ -10,14 +10,18 @@
 }
 
 .timeline-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 1000px;
   height: 500px;
-  background: radial-gradient(ellipse, rgba(50, 181, 84, 0.06), transparent 70%);
+  background: radial-gradient(
+    ellipse,
+    rgba(50, 181, 84, 0.06),
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -35,6 +39,7 @@
 .timeline-header {
   text-align: center;
   margin-bottom: 50px;
+  padding: 0 16px;
 }
 
 .timeline-badge {
@@ -86,7 +91,7 @@
 
 .timeline-horizontal-wrapper {
   position: relative;
-  padding: 0 40px;
+  padding: 0 56px;
 }
 
 .timeline-scroll-btn {
@@ -125,7 +130,9 @@
   overflow-y: hidden;
   scrollbar-width: none;
   -ms-overflow-style: none;
-  padding: 10px 0;
+  scroll-snap-type: x proximity;
+  -webkit-overflow-scrolling: touch;
+  padding: 8px 0;
 }
 
 .timeline-horizontal-scroll::-webkit-scrollbar {
@@ -136,8 +143,9 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: 140px 30px;
+  padding: 180px 60px;
   min-width: max-content;
+  gap: 0;
 }
 
 /* Horizontal Line */
@@ -171,9 +179,9 @@
   width: 200px;
   flex-shrink: 0;
   cursor: pointer;
+  scroll-snap-align: center;
 }
 
-/* Card */
 .timeline-node-card {
   position: absolute;
   width: 180px;
@@ -183,16 +191,25 @@
   border: 1px solid #1a2a1f;
   transition: all 0.3s ease;
   z-index: 5;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  box-sizing: border-box;
 }
 
 .timeline-node-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -1px;
   border-radius: 12px;
   padding: 1px;
-  background: linear-gradient(135deg, var(--node-color, #32b554), transparent 60%);
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  background: linear-gradient(
+    135deg,
+    var(--node-color, #32b554),
+    transparent 60%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
   mask-composite: exclude;
   opacity: 0.4;
@@ -200,7 +217,6 @@
 }
 
 .timeline-node:hover .timeline-node-card {
-  transform: scale(1.05);
   border-color: var(--node-color);
   box-shadow: 0 15px 35px rgba(50, 181, 84, 0.15);
 }
@@ -210,11 +226,23 @@
 }
 
 .timeline-node-top .timeline-node-card {
-  bottom: calc(50% + 35px);
+  bottom: calc(50% + 38px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-node-top:hover .timeline-node-card {
+  transform: translateX(-50%) scale(1.03);
 }
 
 .timeline-node-bottom .timeline-node-card {
-  top: calc(50% + 35px);
+  top: calc(50% + 38px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.timeline-node-bottom:hover .timeline-node-card {
+  transform: translateX(-50%) scale(1.03);
 }
 
 .timeline-node-category {
@@ -241,7 +269,6 @@
   margin: 0;
 }
 
-/* Connector */
 .timeline-node-connector {
   position: absolute;
   width: 2px;
@@ -253,14 +280,13 @@
 }
 
 .timeline-node-top .timeline-node-connector {
-  bottom: calc(50% + 14px);
+  bottom: calc(50% + 16px);
 }
 
 .timeline-node-bottom .timeline-node-connector {
-  top: calc(50% + 14px);
+  top: calc(50% + 16px);
 }
 
-/* Badge */
 .timeline-node-badge {
   position: relative;
   width: 44px;
@@ -283,7 +309,6 @@
     0 0 25px var(--node-color, #32b554);
 }
 
-/* Year label */
 .timeline-node-year {
   position: absolute;
   top: calc(50% + 28px);
@@ -326,8 +351,13 @@
 }
 
 @keyframes hintSlide {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(4px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(4px);
+  }
 }
 
 /* ============================================================
@@ -439,7 +469,7 @@
 }
 
 /* ============================================================
-   📱 MOBILE VIEW - KEY FIX
+   📱 TABLET — 768px and below
    ============================================================ */
 
 @media (max-width: 768px) {
@@ -448,12 +478,12 @@
   }
 
   .timeline-container {
-    padding: 0 12px;
+    padding: 0 16px;
   }
 
   .timeline-header {
-    margin-bottom: 30px;
-    padding: 0 12px;
+    margin-bottom: 32px;
+    padding: 0 8px;
   }
 
   .timeline-title {
@@ -466,60 +496,73 @@
   }
 
   .timeline-horizontal-wrapper {
-    padding: 0 8px;
+    padding: 0 16px;
   }
 
   .timeline-scroll-btn {
-    display: none; /* Hide arrow buttons on mobile — use swipe */
+    display: none;
   }
 
-  /* Reduce vertical padding of track */
+  /* ✅ Bigger track padding to guarantee no clip */
   .timeline-horizontal-track {
-    padding: 100px 16px;
+    padding: 190px 24px;
+    gap: 0;
   }
 
-  /* Smaller cards on mobile */
+  /* Slightly wider cards — text wraps into fewer lines */
   .timeline-node {
-    width: 160px;
+    width: 180px;
   }
 
   .timeline-node-card {
-    width: 145px;
-    padding: 12px;
+    width: 172px;
+    padding: 14px;
   }
 
   .timeline-node-top .timeline-node-card {
-    bottom: calc(50% + 28px);
+    bottom: calc(50% + 32px);
   }
 
   .timeline-node-bottom .timeline-node-card {
-    top: calc(50% + 28px);
+    top: calc(50% + 32px);
+  }
+
+  .timeline-node-top .timeline-node-connector {
+    bottom: calc(50% + 16px);
+  }
+
+  .timeline-node-bottom .timeline-node-connector {
+    top: calc(50% + 16px);
   }
 
   .timeline-node-title {
-    font-size: 13px;
+    font-size: 13.5px;
   }
 
   .timeline-node-desc {
-    font-size: 10px;
-    line-height: 1.4;
+    font-size: 11px;
+    line-height: 1.5;
   }
 
   .timeline-node-category {
-    font-size: 8px;
+    font-size: 8.5px;
   }
 
-  /* Smaller badge */
   .timeline-node-badge {
-    width: 38px;
-    height: 38px;
+    width: 40px;
+    height: 40px;
   }
 
   .timeline-node-year {
-    font-size: 11px;
+    font-size: 11.5px;
+    top: calc(50% + 28px);
   }
 
-  /* Modal adjustment */
+  .timeline-node-bottom .timeline-node-year {
+    bottom: calc(50% + 28px);
+  }
+
+  /* Modal */
   .timeline-modal {
     padding: 32px 24px;
   }
@@ -538,37 +581,210 @@
 }
 
 /* ============================================================
-   📱 EXTRA SMALL SCREENS
+   📱 SMALL MOBILE — 480px and below
    ============================================================ */
 
 @media (max-width: 480px) {
-  .timeline-title {
-    font-size: 24px;
+  .timeline-section {
+    padding: 50px 0;
   }
 
+  .timeline-header {
+    margin-bottom: 24px;
+  }
+
+  .timeline-title {
+    font-size: 24px;
+    letter-spacing: -0.6px;
+  }
+
+  .timeline-subtitle {
+    font-size: 12px;
+    line-height: 1.5;
+  }
+
+  .timeline-horizontal-wrapper {
+    padding: 0 12px;
+  }
+
+  /* ✅ Bigger track padding for smaller cards */
   .timeline-horizontal-track {
-    padding: 90px 12px;
+    padding: 180px 20px;
   }
 
   .timeline-node {
-    width: 150px;
+    width: 165px;
+  }
+
+  .timeline-node-card {
+    width: 155px;
+    padding: 13px;
+  }
+
+  .timeline-node-top .timeline-node-card {
+    bottom: calc(50% + 30px);
+  }
+
+  .timeline-node-bottom .timeline-node-card {
+    top: calc(50% + 30px);
+  }
+
+  .timeline-node-top .timeline-node-connector {
+    bottom: calc(50% + 14px);
+    height: 18px;
+  }
+
+  .timeline-node-bottom .timeline-node-connector {
+    top: calc(50% + 14px);
+    height: 18px;
+  }
+
+  .timeline-node-title {
+    font-size: 13px;
+    line-height: 1.3;
+  }
+
+  .timeline-node-desc {
+    font-size: 10.5px;
+    line-height: 1.45;
+  }
+
+  .timeline-node-category {
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+
+  .timeline-node-badge {
+    width: 38px;
+    height: 38px;
+  }
+
+  .timeline-node-badge svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .timeline-node-year {
+    font-size: 11px;
+    top: calc(50% + 26px);
+  }
+
+  .timeline-node-bottom .timeline-node-year {
+    bottom: calc(50% + 26px);
+  }
+
+  .timeline-progress-hint {
+    font-size: 11px;
+  }
+}
+
+/* ============================================================
+   📱 EXTRA SMALL — 375px and below (iPhone SE, iPhone Mini)
+   ============================================================ */
+
+@media (max-width: 375px) {
+  .timeline-title {
+    font-size: 22px;
+  }
+
+  .timeline-horizontal-track {
+    padding: 170px 16px;
+  }
+
+  .timeline-node {
+    width: 155px;
+  }
+
+  .timeline-node-card {
+    width: 145px;
+    padding: 12px;
+  }
+
+  .timeline-node-title {
+    font-size: 12.5px;
+  }
+
+  .timeline-node-desc {
+    font-size: 10px;
+    line-height: 1.4;
+  }
+
+  .timeline-node-badge {
+    width: 36px;
+    height: 36px;
+  }
+
+  .timeline-node-badge svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .timeline-node-year {
+    font-size: 10.5px;
+  }
+}
+
+/* ============================================================
+   📱 TINY — 340px and below (Galaxy Fold outer, older Androids)
+   ============================================================ */
+
+@media (max-width: 340px) {
+  .timeline-title {
+    font-size: 20px;
+  }
+
+  .timeline-horizontal-track {
+    padding: 160px 12px;
+  }
+
+  .timeline-node {
+    width: 145px;
   }
 
   .timeline-node-card {
     width: 135px;
-    padding: 10px;
+    padding: 11px;
   }
 
   .timeline-node-title {
     font-size: 12px;
+    line-height: 1.25;
   }
 
   .timeline-node-desc {
-    font-size: 9px;
+    font-size: 9.5px;
+    line-height: 1.35;
   }
 
   .timeline-node-badge {
     width: 34px;
     height: 34px;
+  }
+
+  .timeline-node-badge svg {
+    width: 12px;
+    height: 12px;
+  }
+
+  .timeline-node-year {
+    font-size: 10px;
+  }
+}
+
+/* ============================================================
+   🖥️ LANDSCAPE MOBILE — short viewports
+   ============================================================ */
+
+@media (max-width: 768px) and (orientation: landscape) and (max-height: 500px) {
+  .timeline-section {
+    padding: 40px 0;
+  }
+
+  .timeline-header {
+    margin-bottom: 20px;
+  }
+
+  .timeline-horizontal-track {
+    padding: 150px 24px;
   }
 }

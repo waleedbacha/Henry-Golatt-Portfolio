@@ -1,9 +1,20 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
+import { useSearchParams } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import { motion, AnimatePresence } from "framer-motion";
-import { Users, BookOpen, Trophy, X, ArrowLeft } from "lucide-react";
+import {
+  Users,
+  BookOpen,
+  Trophy,
+  X,
+  ArrowLeft,
+  FileText,
+  Newspaper,
+} from "lucide-react";
 import "./Pages.css";
+
+// Real image imports
 import diversityAward2020 from "../assets/diversity-award-2020.png";
 import arkansasGazette2025 from "../assets/arkansas-gazette-2025.png";
 import ohio_business_award from "../assets/ohio_business_award.png";
@@ -11,16 +22,25 @@ import jcmboaAward2002 from "../assets/jcmboa-award-2002.png";
 import pineBluffCommercial2000 from "../assets/pine-bluff-commercial-2000.png";
 import departmentReport2020 from "../assets/department-report-2020.png";
 import uapbHbcuReport from "../assets/uapb-hbcu-report.png";
-// import celesteLacourEmail from "../assets/celeste-lacour-email.png";
-// import lynneLacourEmail from "../assets/lynne-lacour-email.png";
+import awardMbda2009 from "../assets/uapb-hbcu-report.png";
 
 const Gallery = () => {
   const [activeCategory, setActiveCategory] = useState(null);
   const [selectedImage, setSelectedImage] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [publicationFilter, setPublicationFilter] = useState("all"); // ✅ NEW
 
-  // ============================================================
-  // REAL HG CONSULTING GALLERY DATA
-  // ============================================================
+  useEffect(() => {
+    const categoryFromUrl = searchParams.get("category");
+    if (categoryFromUrl) {
+      const validCategories = ["boards", "publications", "awards"];
+      if (validCategories.includes(categoryFromUrl)) {
+        setActiveCategory(categoryFromUrl);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+  }, [searchParams]);
+
   const categories = [
     {
       id: "boards",
@@ -31,8 +51,9 @@ const Gallery = () => {
         "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791182170/board_lea_csixh2.jpg",
       description:
         "Serving on boards that shape economic development across the country.",
-      count: 7,
+      count: 6,
       images: [
+        // ... existing boards entries (unchanged)
         {
           id: 1,
           src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1789476260/henry_4_icuhkw.jpg",
@@ -79,14 +100,14 @@ const Gallery = () => {
     },
     {
       id: "publications",
-      title: "Publications",
+      title: "Publications & News Articles",
       subtitle: "Research & Thought Leadership",
       icon: BookOpen,
       coverImage:
         "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791182233/Publications_ooehia.jpg",
       description:
-        "Peer-reviewed research and industry playbooks on inclusive economic development.",
-      count: 6,
+        "Peer-reviewed research, news features, and strategic plans on inclusive economic development.",
+      count: 13,
       images: [
         {
           id: 1,
@@ -95,6 +116,7 @@ const Gallery = () => {
             "Downtown Pine Bluff Celebrated — Arkansas Democrat-Gazette (2025)",
           description:
             "Featured in a February 2025 Arkansas Democrat-Gazette article recognizing Henry A. Golatt's role in Pine Bluff's downtown renaissance and the UAPB Business Support Incubator.",
+          subcategory: "news", // ✅ NEW
         },
         {
           id: 2,
@@ -103,6 +125,7 @@ const Gallery = () => {
             'Pine Bluff Commercial — "City Council approves concept of Business Support Incubator" (2000)',
           description:
             "Foundational article showing Henry Golatt and Dean Andrew Honeycutt presenting the original incubator concept to Pine Bluff City Council.",
+          subcategory: "news", // ✅ NEW
         },
         {
           id: 3,
@@ -111,6 +134,7 @@ const Gallery = () => {
             "City of Columbus Department of Development — 2020 Accomplishments",
           description:
             "$8.3M CARES Act grants to 819 small businesses (80% minority/women owned). $269M in capital investment. $311M in P3 projects.",
+          subcategory: "publications", // ✅ NEW
         },
         {
           id: 4,
@@ -118,14 +142,15 @@ const Gallery = () => {
           title: "UAPB HBCU Program Report — Chapter 3",
           description:
             "Documenting the $429,609 HBCU grant and UAPB-ERDC's community impact under Henry Golatt's leadership.",
+          subcategory: "publications", // ✅ NEW
         },
-
         {
           id: 5,
           src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791204391/iohmbimg_sa1cx3.webp",
           title: 'OhioMBE — "Business Advocate: Henry Golatt" (Feb 2018)',
           description:
             "Published profile of Henry Golatt by OhioMBE (Minority Business Enterprise publication), February 2018. Highlights his career, awards, and role as Program Development Coordinator for the City of Columbus.",
+          subcategory: "news", // ✅ NEW
         },
         {
           id: 6,
@@ -134,48 +159,73 @@ const Gallery = () => {
             "DOE Awards Smartville $10M for HBCU Energy Storage (Sept 2023)",
           description:
             "PR Newswire release covering the U.S. Department of Energy's $10 million award to Smartville Inc. for long-duration energy storage benefiting HBCUs. Includes a quote from Henry Golatt, Chief of Strategy and Partnerships for the HBCU Community Development Action Coalition.",
+          subcategory: "news", // ✅ NEW
         },
         {
-          id: 12,
+          id: 7,
           src: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=800&q=80",
           title: "Inclusive Entrepreneurship Ecosystem Playbook",
           description:
             "Step-by-step guide published with Amazon for advancing equitable inclusion.",
+          subcategory: "publications", // ✅ NEW
         },
         {
-          id: 13,
+          id: 8,
           src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
           title: "Columbus Small Business Agenda",
           description:
             "Published with Next Street under contract with the City of Columbus, Ohio.",
+          subcategory: "publications", // ✅ NEW
         },
         {
-          id: 7,
+          id: 9,
           src: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&q=80",
           title: "Economic Impacts on University Drive",
           description:
             "Published in Journal of Business Administration Online (Fall 2010).",
+          subcategory: "publications", // ✅ NEW
         },
         {
-          id: 8,
+          id: 10,
           src: "https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=800&q=80",
           title: "ACSP Conference Paper",
           description:
             "Association of Collegiate Schools of Planning — peer-reviewed research paper.",
+          subcategory: "publications", // ✅ NEW
         },
         {
-          id: 9,
+          id: 11,
           src: "https://images.unsplash.com/photo-1519681393784-d120267933ba?w=800&q=80",
           title: "UAPB Lower Mississippi Delta",
           description:
             "Featured in Delta Grassroots Caucus publication highlighting economic development work.",
+          subcategory: "publications", // ✅ NEW
         },
         {
-          id: 10,
-          src: "https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?w=800&q=80",
-          title: "Building an Inclusive Ecosystem — Sage Publication",
+          id: 12,
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791442887/CDAC_2023_Strategic_Plan_WF_Version_2-3-23_sinshj.jpg",
+          pdfUrl:
+            "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791442887/CDAC_2023_Strategic_Plan_WF_Version_2-3-23_sinshj.pdf",
+          downloadUrl:
+            "https://res.cloudinary.com/dcjhzgigb/image/upload/fl_attachment/v1791442887/CDAC_2023_Strategic_Plan_WF_Version_2-3-23_sinshj.pdf",
+          title: "CDAC 2023 Strategic Plan",
           description:
-            "Peer-reviewed case study in Local Economy journal exploring minority business development investments.",
+            "The HBCU Community Development Action Coalition's 2023 Strategic Plan, outlining priorities for advancing HBCU-led community and economic development across the country.",
+          fileType: "pdf",
+          subcategory: "pdfs", // ✅ NEW
+        },
+        {
+          id: 13,
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791442887/Advancing_Equity_in_Energy_Research_Final_05-12_e7wych.jpg",
+          pdfUrl:
+            "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791442887/Advancing_Equity_in_Energy_Research_Final_05-12_e7wych.pdf",
+          downloadUrl:
+            "https://res.cloudinary.com/dcjhzgigb/image/upload/fl_attachment/v1791442887/Advancing_Equity_in_Energy_Research_Final_05-12_e7wych.pdf",
+          title: "Advancing Equity in Energy Research",
+          description:
+            "Overcoming Barriers and Building Pathways — a research study led by Johnson C. Smith University, FIU, Ohio State, and HBCU-CDAC, funded by the Alfred P. Sloan Foundation. Henry A. Golatt is a co-author.",
+          fileType: "pdf",
+          subcategory: "pdfs", // ✅ NEW
         },
       ],
     },
@@ -188,8 +238,9 @@ const Gallery = () => {
         "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791181827/Accelerate_Columbus_weqnwx.jpg",
       description:
         "Recognized nationally for leadership in inclusive economic development.",
-      count: 6,
+      count: 8,
       images: [
+        // ... existing awards entries (unchanged)
         {
           id: 1,
           src: diversityAward2020,
@@ -211,7 +262,6 @@ const Gallery = () => {
           description:
             "Honorable Mention in the November 2025 edition for inclusive economic development work.",
         },
-
         {
           id: 4,
           src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791182591/forbes_vxc3uj.jpg",
@@ -240,18 +290,50 @@ const Gallery = () => {
           description:
             "Awarded in 2020 for commitment to business excellence in the State of Ohio.",
         },
+        {
+          id: 8,
+          src: awardMbda2009,
+          title: "MBDA Regional Director's Award (2009)",
+          description:
+            "U.S. Department of Commerce Minority Business Development Agency — Regional Director's Award, Minority Enterprise Development Week 2009.",
+        },
       ],
     },
   ];
 
+  // ============================================================
+  // ✅ Filter publications by subcategory
+  // ============================================================
+  const filteredPublications = useMemo(() => {
+    if (activeCategory !== "publications") return [];
+    const all = categories.find((c) => c.id === "publications")?.images || [];
+    if (publicationFilter === "all") return all;
+    return all.filter((item) => item.subcategory === publicationFilter);
+  }, [activeCategory, publicationFilter, categories]);
+
+  // ✅ Counts for each filter
+  const filterCounts = useMemo(() => {
+    const all = categories.find((c) => c.id === "publications")?.images || [];
+    return {
+      all: all.length,
+      pdfs: all.filter((i) => i.subcategory === "pdfs").length,
+      news: all.filter((i) => i.subcategory === "news").length,
+      publications: all.filter((i) => i.subcategory === "publications").length,
+    };
+  }, [categories]);
+
   const openCategory = (categoryId) => {
     setActiveCategory(categoryId);
+    setPublicationFilter("all"); // Reset filter when opening
+    setSearchParams({ category: categoryId });
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const closeCategory = () => {
     setActiveCategory(null);
     setSelectedImage(null);
+    setPublicationFilter("all");
+    setSearchParams({});
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
@@ -294,12 +376,10 @@ const Gallery = () => {
                     onClick={() => openCategory(category.id)}
                   >
                     <div className="gallery-category-border" />
-
                     <div className="gallery-category-image">
                       <img src={category.coverImage} alt={category.title} />
                       <div className="gallery-category-overlay" />
                     </div>
-
                     <div className="gallery-category-content">
                       <div className="gallery-category-icon">
                         <category.icon size={24} />
@@ -313,7 +393,6 @@ const Gallery = () => {
                       <p className="gallery-category-desc">
                         {category.description}
                       </p>
-
                       <div className="gallery-category-footer">
                         <span className="gallery-category-count">
                           {category.count} Items
@@ -356,8 +435,72 @@ const Gallery = () => {
             </section>
 
             <section className="page-section">
+              {/* ✅ Filter Tabs (only for publications) */}
+              {activeCategory === "publications" && (
+                <div className="gallery-filters">
+                  <button
+                    className={`gallery-filter-btn ${
+                      publicationFilter === "all"
+                        ? "gallery-filter-btn-active"
+                        : ""
+                    }`}
+                    onClick={() => setPublicationFilter("all")}
+                  >
+                    All{" "}
+                    <span className="gallery-filter-count">
+                      {filterCounts.all}
+                    </span>
+                  </button>
+                  <button
+                    className={`gallery-filter-btn ${
+                      publicationFilter === "pdfs"
+                        ? "gallery-filter-btn-active"
+                        : ""
+                    }`}
+                    onClick={() => setPublicationFilter("pdfs")}
+                  >
+                    <FileText size={14} />
+                    PDFs{" "}
+                    <span className="gallery-filter-count">
+                      {filterCounts.pdfs}
+                    </span>
+                  </button>
+                  <button
+                    className={`gallery-filter-btn ${
+                      publicationFilter === "news"
+                        ? "gallery-filter-btn-active"
+                        : ""
+                    }`}
+                    onClick={() => setPublicationFilter("news")}
+                  >
+                    <Newspaper size={14} />
+                    News Articles{" "}
+                    <span className="gallery-filter-count">
+                      {filterCounts.news}
+                    </span>
+                  </button>
+                  <button
+                    className={`gallery-filter-btn ${
+                      publicationFilter === "publications"
+                        ? "gallery-filter-btn-active"
+                        : ""
+                    }`}
+                    onClick={() => setPublicationFilter("publications")}
+                  >
+                    <BookOpen size={14} />
+                    Publications{" "}
+                    <span className="gallery-filter-count">
+                      {filterCounts.publications}
+                    </span>
+                  </button>
+                </div>
+              )}
+
               <div className="gallery-images-grid">
-                {activeCategoryData.images.map((image, index) => (
+                {(activeCategory === "publications"
+                  ? filteredPublications
+                  : activeCategoryData.images
+                ).map((image, index) => (
                   <motion.div
                     key={image.id}
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -368,6 +511,23 @@ const Gallery = () => {
                   >
                     <div className="gallery-image-wrapper">
                       <img src={image.src} alt={image.title} loading="lazy" />
+
+                      {/* ✅ PDF badge */}
+                      {image.fileType === "pdf" && (
+                        <div className="gallery-badge gallery-badge-pdf">
+                          <FileText size={11} />
+                          PDF
+                        </div>
+                      )}
+
+                      {/* ✅ News badge */}
+                      {image.subcategory === "news" && (
+                        <div className="gallery-badge gallery-badge-news">
+                          <Newspaper size={11} />
+                          News
+                        </div>
+                      )}
+
                       <div className="gallery-image-overlay">
                         <h4 className="gallery-image-title">{image.title}</h4>
                         <p className="gallery-image-desc">
@@ -405,10 +565,48 @@ const Gallery = () => {
                 >
                   <X size={24} />
                 </button>
-                <img src={selectedImage.src} alt={selectedImage.title} />
+
+                {selectedImage.fileType === "pdf" && selectedImage.pdfUrl ? (
+                  <div className="gallery-lightbox-pdf">
+                    <iframe
+                      src={`${selectedImage.pdfUrl}#toolbar=1&navpanes=0`}
+                      title={selectedImage.title}
+                      className="gallery-lightbox-pdf-frame"
+                    />
+                  </div>
+                ) : (
+                  <img src={selectedImage.src} alt={selectedImage.title} />
+                )}
+
                 <div className="gallery-lightbox-info">
                   <h3>{selectedImage.title}</h3>
                   <p>{selectedImage.description}</p>
+
+                  {selectedImage.fileType === "pdf" && selectedImage.pdfUrl && (
+                    <div className="gallery-lightbox-actions">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          window.open(
+                            selectedImage.pdfUrl,
+                            "_blank",
+                            "noopener,noreferrer",
+                          );
+                        }}
+                        className="gallery-lightbox-btn gallery-lightbox-btn-primary"
+                      >
+                        Open in New Tab
+                      </button>
+                      <a
+                        href={selectedImage.downloadUrl || selectedImage.pdfUrl}
+                        download
+                        rel="noopener noreferrer"
+                        className="gallery-lightbox-btn gallery-lightbox-btn-secondary"
+                      >
+                        Download PDF
+                      </a>
+                    </div>
+                  )}
                 </div>
               </motion.div>
             </motion.div>

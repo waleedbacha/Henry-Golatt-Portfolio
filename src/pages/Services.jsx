@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import Navbar from '../components/layout/Navbar';
-import Footer from '../components/layout/Footer';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
+import Navbar from "../components/layout/Navbar";
+import Footer from "../components/layout/Footer";
+import { motion } from "framer-motion";
 import {
   TrendingUp,
   GraduationCap,
@@ -19,326 +20,344 @@ import {
   LineChart,
   FileText,
   Landmark,
-} from 'lucide-react';
-import './Pages.css';
+} from "lucide-react";
+import "./Pages.css";
 
 const Services = () => {
   const [activeService, setActiveService] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
 
   // ============================================================
   // REAL HG CONSULTING SERVICES
   // ============================================================
   const services = [
     {
-      id: 'economic-development',
-      title: 'Economic Development Strategy',
-      subtitle: 'Strategic Planning',
+      id: "economic-development",
+      title: "Economic Development Strategy",
+      subtitle: "Strategic Planning",
       icon: TrendingUp,
       coverImage:
-        'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80',
+        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
       shortDescription:
-        'Comprehensive strategies to build inclusive, dynamic, and continuously improving local economic ecosystems.',
-      price: 'Custom Engagement',
-      duration: '6-18 months',
+        "Comprehensive strategies to build inclusive, dynamic, and continuously improving local economic ecosystems.",
+      price: "Custom Engagement",
+      duration: "6-18 months",
       features: [
-        'Ecosystem analysis & mapping',
-        'Strategic plan development',
-        'Stakeholder engagement',
-        'Implementation roadmaps',
-        'Impact measurement frameworks',
+        "Ecosystem analysis & mapping",
+        "Strategic plan development",
+        "Stakeholder engagement",
+        "Implementation roadmaps",
+        "Impact measurement frameworks",
       ],
       details: [
         {
           icon: Users,
-          title: 'Stakeholder Engagement',
+          title: "Stakeholder Engagement",
           description:
-            'Bringing together public, private, and nonprofit leaders to align on shared economic goals.',
+            "Bringing together public, private, and nonprofit leaders to align on shared economic goals.",
         },
         {
           icon: LineChart,
-          title: 'Ecosystem Analysis',
+          title: "Ecosystem Analysis",
           description:
-            'Data-driven assessment of local economic strengths, gaps, and opportunities.',
+            "Data-driven assessment of local economic strengths, gaps, and opportunities.",
         },
         {
           icon: FileText,
-          title: 'Strategic Plan Development',
+          title: "Strategic Plan Development",
           description:
-            'Evidence-based plans modeled on our published Inclusive Entrepreneurship Playbook.',
+            "Evidence-based plans modeled on our published Inclusive Entrepreneurship Playbook.",
         },
         {
           icon: Target,
-          title: 'Impact Measurement',
+          title: "Impact Measurement",
           description:
-            'Frameworks to track economic outcomes and ensure long-term sustainability.',
+            "Frameworks to track economic outcomes and ensure long-term sustainability.",
         },
       ],
       technologies: [
-        'Columbus Small Business Agenda',
-        'Inclusive Entrepreneurship Playbook',
-        'Next Street Framework',
+        "Columbus Small Business Agenda",
+        "Inclusive Entrepreneurship Playbook",
+        "Next Street Framework",
       ],
     },
     {
-      id: 'hbcu-partnerships',
-      title: 'HBCU & University Partnerships',
-      subtitle: 'Education & Research',
+      id: "hbcu-partnerships",
+      title: "HBCU & University Partnerships",
+      subtitle: "Education & Research",
       icon: GraduationCap,
       coverImage:
-        'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80',
+        "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=800&q=80",
       shortDescription:
-        'Connecting historically black colleges and universities to economic development and commercialization opportunities.',
-      price: 'Custom Engagement',
-      duration: '3-12 months',
+        "Connecting historically black colleges and universities to economic development and commercialization opportunities.",
+      price: "Custom Engagement",
+      duration: "3-12 months",
       features: [
-        'University-industry collaboration',
-        'Technology transfer & commercialization',
-        'Curriculum & program development',
-        'Research funding strategies',
-        'Minority business development',
+        "University-industry collaboration",
+        "Technology transfer & commercialization",
+        "Curriculum & program development",
+        "Research funding strategies",
+        "Minority business development",
       ],
       details: [
         {
           icon: Lightbulb,
-          title: 'Technology Commercialization',
+          title: "Technology Commercialization",
           description:
-            'Bridging university research to market through strategic commercialization pathways.',
+            "Bridging university research to market through strategic commercialization pathways.",
         },
         {
           icon: BookOpen,
-          title: 'Research & Curriculum',
+          title: "Research & Curriculum",
           description:
-            'Developing programs that align academic research with real-world economic impact.',
+            "Developing programs that align academic research with real-world economic impact.",
         },
         {
           icon: Users,
-          title: 'Industry Partnerships',
+          title: "Industry Partnerships",
           description:
-            'Linking universities with industry leaders for internships, research, and job placement.',
+            "Linking universities with industry leaders for internships, research, and job placement.",
         },
         {
           icon: Users,
-          title: 'Minority Business Development',
+          title: "Minority Business Development",
           description:
-            'Creating pathways for underrepresented entrepreneurs through university partnerships.',
+            "Creating pathways for underrepresented entrepreneurs through university partnerships.",
         },
       ],
       technologies: [
-        'HBCU CDAC',
-        'Arkansas Technology Transfer Society',
-        'HBCU Coalition.org',
+        "HBCU CDAC",
+        "Arkansas Technology Transfer Society",
+        "HBCU Coalition.org",
       ],
     },
     {
-      id: 'small-business',
-      title: 'Small Business Ecosystem Building',
-      subtitle: 'Entrepreneurship',
+      id: "small-business",
+      title: "Small Business Ecosystem Building",
+      subtitle: "Entrepreneurship",
       icon: Briefcase,
       coverImage:
-        'https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80',
+        "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80",
       shortDescription:
-        'Designing and implementing programs that support entrepreneurs through every stage of the business lifecycle.',
-      price: 'Custom Engagement',
-      duration: '6-24 months',
+        "Designing and implementing programs that support entrepreneurs through every stage of the business lifecycle.",
+      price: "Custom Engagement",
+      duration: "6-24 months",
       features: [
-        'Entrepreneur support network design',
-        'Access to capital strategies',
-        'Business accelerator programs',
-        'Mentorship & training',
-        'Minority business assistance',
+        "Entrepreneur support network design",
+        "Access to capital strategies",
+        "Business accelerator programs",
+        "Mentorship & training",
+        "Minority business assistance",
       ],
       details: [
         {
           icon: Users,
-          title: 'Entrepreneur Networks',
+          title: "Entrepreneur Networks",
           description:
-            'Building coordinated support systems for entrepreneurs across the business lifecycle.',
+            "Building coordinated support systems for entrepreneurs across the business lifecycle.",
         },
         {
           icon: LineChart,
-          title: 'Access to Capital',
+          title: "Access to Capital",
           description:
-            'Strategies to connect entrepreneurs with funding, grants, and investment opportunities.',
+            "Strategies to connect entrepreneurs with funding, grants, and investment opportunities.",
         },
         {
           icon: Target,
-          title: 'Accelerator Programs',
+          title: "Accelerator Programs",
           description:
-            'Designing and launching programs that accelerate business growth.',
+            "Designing and launching programs that accelerate business growth.",
         },
         {
           icon: Award,
-          title: 'Minority Business Assistance',
+          title: "Minority Business Assistance",
           description:
-            'Specialized support for minority, women, and underserved entrepreneurs.',
+            "Specialized support for minority, women, and underserved entrepreneurs.",
         },
       ],
       technologies: [
-        'Columbus Minority Business Assistance Center',
-        'AEO Network',
-        'Forward Cities',
+        "Columbus Minority Business Assistance Center",
+        "AEO Network",
+        "Forward Cities",
       ],
     },
     {
-      id: 'policy-advocacy',
-      title: 'Policy & Advocacy',
-      subtitle: 'Public-Private Partnerships',
+      id: "policy-advocacy",
+      title: "Policy & Advocacy",
+      subtitle: "Public-Private Partnerships",
       icon: Scale,
       coverImage:
-        'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80',
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
       shortDescription:
-        'Advising on policies that advance economic inclusion at federal, state, and local levels.',
-      price: 'Custom Engagement',
-      duration: 'Ongoing',
+        "Advising on policies that advance economic inclusion at federal, state, and local levels.",
+      price: "Custom Engagement",
+      duration: "Ongoing",
       features: [
-        'Policy briefings',
-        'Legislative advocacy',
-        'Public-private partnership design',
-        'Community development strategies',
-        'Economic impact analysis',
+        "Policy briefings",
+        "Legislative advocacy",
+        "Public-private partnership design",
+        "Community development strategies",
+        "Economic impact analysis",
       ],
       details: [
         {
           icon: FileText,
-          title: 'Policy Briefings',
+          title: "Policy Briefings",
           description:
-            'Preparing evidence-based briefings for federal, state, and local policymakers.',
+            "Preparing evidence-based briefings for federal, state, and local policymakers.",
         },
         {
           icon: Landmark,
-          title: 'Legislative Advocacy',
+          title: "Legislative Advocacy",
           description:
-            'Advocating for policies that support inclusive economic development.',
+            "Advocating for policies that support inclusive economic development.",
         },
         {
           icon: Building2,
-          title: 'Public-Private Partnerships',
+          title: "Public-Private Partnerships",
           description:
-            'Designing collaborations between government, business, and community organizations.',
+            "Designing collaborations between government, business, and community organizations.",
         },
         {
           icon: LineChart,
-          title: 'Economic Impact Analysis',
+          title: "Economic Impact Analysis",
           description:
-            'Quantifying the economic impact of proposed policies and programs.',
+            "Quantifying the economic impact of proposed policies and programs.",
         },
       ],
       technologies: [
-        'Ohio Economic Development Association',
-        'AEO Network',
-        'Delta Regional Authority',
+        "Ohio Economic Development Association",
+        "AEO Network",
+        "Delta Regional Authority",
       ],
     },
     {
-      id: 'strategic-planning',
-      title: 'Strategic Planning & Governance',
-      subtitle: 'Board Development',
+      id: "strategic-planning",
+      title: "Strategic Planning & Governance",
+      subtitle: "Board Development",
       icon: Target,
       coverImage:
-        'https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80',
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&q=80",
       shortDescription:
-        'Providing fiduciary oversight, strategic guidance, and governance expertise to boards and organizations.',
-      price: 'Custom Engagement',
-      duration: '12+ months',
+        "Providing fiduciary oversight, strategic guidance, and governance expertise to boards and organizations.",
+      price: "Custom Engagement",
+      duration: "12+ months",
       features: [
-        'Board development & training',
-        'Executive search & evaluation',
-        'Strategic partnership identification',
-        'Funding strategy development',
-        'Organizational growth planning',
+        "Board development & training",
+        "Executive search & evaluation",
+        "Strategic partnership identification",
+        "Funding strategy development",
+        "Organizational growth planning",
       ],
       details: [
         {
           icon: Users,
-          title: 'Board Development',
+          title: "Board Development",
           description:
-            'Building effective boards with the right governance structures and talent.',
+            "Building effective boards with the right governance structures and talent.",
         },
         {
           icon: Target,
-          title: 'Strategic Partnerships',
+          title: "Strategic Partnerships",
           description:
-            'Identifying and recommending new regional and national strategic partnerships.',
+            "Identifying and recommending new regional and national strategic partnerships.",
         },
         {
           icon: LineChart,
-          title: 'Funding Strategies',
+          title: "Funding Strategies",
           description:
-            'Developing funding and advocacy strategies to ensure organizational growth.',
+            "Developing funding and advocacy strategies to ensure organizational growth.",
         },
         {
           icon: FileText,
-          title: 'Policy & Governance',
+          title: "Policy & Governance",
           description:
-            'Developing policies that govern executive pay, conflict of interest, and program budgets.',
+            "Developing policies that govern executive pay, conflict of interest, and program budgets.",
         },
       ],
       technologies: [
-        'HBCU Coalition.org',
-        'Ohio Dominican University MBA Program',
-        'Columbus Foundation',
+        "HBCU Coalition.org",
+        "Ohio Dominican University MBA Program",
+        "Columbus Foundation",
       ],
     },
     {
-      id: 'urban-development',
-      title: 'Urban & Downtown Development',
-      subtitle: 'Community Revitalization',
+      id: "urban-development",
+      title: "Urban & Downtown Development",
+      subtitle: "Community Revitalization",
       icon: Building2,
       coverImage:
-        'https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80',
+        "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=800&q=80",
       shortDescription:
-        'Revitalizing urban cores through historic preservation, strategic planning, and economic development.',
-      price: 'Custom Engagement',
-      duration: '1-5 years',
+        "Revitalizing urban cores through historic preservation, strategic planning, and economic development.",
+      price: "Custom Engagement",
+      duration: "1-5 years",
       features: [
-        'Downtown revitalization plans',
-        'Historic preservation strategies',
-        'Property valuation appeals',
-        'Public-private financing',
-        'Community engagement',
+        "Downtown revitalization plans",
+        "Historic preservation strategies",
+        "Property valuation appeals",
+        "Public-private financing",
+        "Community engagement",
       ],
       details: [
         {
           icon: Building2,
-          title: 'Downtown Revitalization',
+          title: "Downtown Revitalization",
           description:
-            'Strategic plans for economic revitalization of downtown districts and major entrances.',
+            "Strategic plans for economic revitalization of downtown districts and major entrances.",
         },
         {
           icon: Landmark,
-          title: 'Historic Preservation',
+          title: "Historic Preservation",
           description:
-            'Preserving historic buildings while driving economic development.',
+            "Preserving historic buildings while driving economic development.",
         },
         {
           icon: FileText,
-          title: 'Property Valuation',
+          title: "Property Valuation",
           description:
-            'Hearing appeals of property valuation and classification on equalization boards.',
+            "Hearing appeals of property valuation and classification on equalization boards.",
         },
         {
           icon: Building2,
-          title: 'Community Engagement',
+          title: "Community Engagement",
           description:
-            'Facilitating and championing local inclusive entrepreneurship initiatives.',
+            "Facilitating and championing local inclusive entrepreneurship initiatives.",
         },
       ],
       technologies: [
-        'Pine Bluff Downtown Development',
-        'East Main Street SID',
-        'Arkansas Downtown Network',
+        "Pine Bluff Downtown Development",
+        "East Main Street SID",
+        "Arkansas Downtown Network",
       ],
     },
   ];
 
+  // ============================================================
+  // ✅ NEW — Read ?service= from URL on mount and auto-open
+  // ============================================================
+  useEffect(() => {
+    const serviceFromUrl = searchParams.get("service");
+    if (serviceFromUrl) {
+      const validServices = services.map((s) => s.id);
+      if (validServices.includes(serviceFromUrl)) {
+        setActiveService(serviceFromUrl);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [searchParams]);
+
   const openService = (serviceId) => {
     setActiveService(serviceId);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setSearchParams({ service: serviceId });
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const closeService = () => {
     setActiveService(null);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setSearchParams({});
+    window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const activeServiceData = services.find((s) => s.id === activeService);
@@ -347,7 +366,6 @@ const Services = () => {
     <div className="page-wrapper">
       <Navbar />
       <main className="page-main">
-
         {/* MAIN SERVICES VIEW */}
         {!activeService && (
           <>
@@ -362,9 +380,9 @@ const Services = () => {
                   Our <span className="page-title-highlight">Services</span>
                 </h1>
                 <p className="page-description">
-                  HG Consulting helps cities, universities, and organizations build
-                  thriving ecosystems for minority and women entrepreneurs.
-                  Click any service to see detailed information.
+                  HG Consulting helps cities, universities, and organizations
+                  build thriving ecosystems for minority and women
+                  entrepreneurs. Click any service to see detailed information.
                 </p>
               </motion.div>
             </section>
@@ -383,7 +401,11 @@ const Services = () => {
                     <div className="services-card-border" />
 
                     <div className="services-card-image">
-                      <img src={service.coverImage} alt={service.title} loading="lazy" />
+                      <img
+                        src={service.coverImage}
+                        alt={service.title}
+                        loading="lazy"
+                      />
                       <div className="services-card-image-overlay" />
                       <div className="services-card-icon">
                         <service.icon size={24} />
@@ -391,13 +413,21 @@ const Services = () => {
                     </div>
 
                     <div className="services-card-content">
-                      <p className="services-card-subtitle">{service.subtitle}</p>
+                      <p className="services-card-subtitle">
+                        {service.subtitle}
+                      </p>
                       <h3 className="services-card-title">{service.title}</h3>
-                      <p className="services-card-desc">{service.shortDescription}</p>
+                      <p className="services-card-desc">
+                        {service.shortDescription}
+                      </p>
 
                       <div className="services-card-footer">
-                        <div className="services-card-price">{service.price}</div>
-                        <span className="services-card-view">View Details →</span>
+                        <div className="services-card-price">
+                          {service.price}
+                        </div>
+                        <span className="services-card-view">
+                          View Details →
+                        </span>
                       </div>
                     </div>
                   </motion.div>
@@ -444,7 +474,6 @@ const Services = () => {
 
             <section className="page-section">
               <div className="services-detail-container">
-
                 {/* Hero Image */}
                 <motion.div
                   initial={{ opacity: 0, y: 30 }}
@@ -579,12 +608,10 @@ const Services = () => {
                     Get in Touch →
                   </a>
                 </motion.div>
-
               </div>
             </section>
           </>
         )}
-
       </main>
       <Footer />
     </div>

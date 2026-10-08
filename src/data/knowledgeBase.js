@@ -732,6 +732,190 @@ Response time is typically within 1-2 business days.`,
     category: "Awards",
     content: `Recognition: Delta Entrepreneurs Network — Inaugural Fellow (2015). A program of the Delta Regional Authority. Henry A. Golatt was named in the inaugural class of Entrepreneurial Fellows in 2015, recognizing his work in inclusive entrepreneurship across the Mississippi River Delta region.`,
   },
+  // ============================================================
+  // 22. CDAC STRATEGIC PLAN (2023-2027)
+  // ============================================================
+  {
+    id: "cdac-mission",
+    category: "Projects",
+    content: `CDAC Mission: The mission of the HBCU Community Development Action Coalition (CDAC) is to serve as a catalyst for greater academic, community, and economic inclusion, innovation, and investments on behalf of HBCUs, other Minority-Serving Institutions (MSIs), and their constituencies.`,
+  },
+  {
+    id: "cdac-vision",
+    category: "Projects",
+    content: `CDAC Vision: By advancing its mission, CDAC envisions its work as helping to transform campuses and communities of HBCUs and other minority-serving institutions into thriving places to live, work and invest. CDAC operationalizes this mission and vision by promoting and leveraging the assets and outcomes of these anchor institutions before regional and national audiences in collaboration with strategic government and industry partners.`,
+  },
+  {
+    id: "cdac-history",
+    category: "Projects",
+    content: `CDAC was founded in 2010 as a voice and vehicle for HBCU-focused community economic development. The Historically Black Colleges and Universities (HBCU) Community Development Action Coalition remains wholly committed to empowering HBCUs and other Minority-Serving Institutions (MSIs) as well as the communities they serve.`,
+  },
+  {
+    id: "cdac-core-values",
+    category: "Projects",
+    content: `CDAC Core Values: CDAC seeks to operate with integrity, justice, equity, diversity, inclusion, fairness, and accountability as guiding principles and core values.`,
+  },
+  {
+    id: "cdac-core-competencies",
+    category: "Projects",
+    content: `CDAC Core Competencies include: Coalition Building, Partnership Development, Community Relations, Constituency Convening, Fiscal Agency, Project Scoping, Project Management, Strategic Planning, and other Community Economic Development Services.`,
+  },
+  {
+    id: "cdac-strategic-objective",
+    category: "Projects",
+    content: `CDAC Strategic Objective (2023-2027): The objective of the 2023 Strategic Plan is to lay out internal and external infrastructure, frameworks, partnerships, and funding streams that collectively position and equip CDAC to function as a top-tier nationally recognized community economic development organization and leader in the deployment of place-based research, strategies, and initiatives. CDAC is committed to realizing this objective by the end of 2027.`,
+  },
+  {
+    id: "cdac-strategic-perspectives",
+    category: "Projects",
+    content: `CDAC Strategic Perspectives: CDAC seeks out and engages in synergetic relationships to advance two key strategic perspectives: 1) Quality of Place Through Strategic Community Revitalization, and 2) Inclusive and Equitable Economic Opportunity.`,
+  },
+  {
+    id: "cdac-strategic-themes",
+    category: "Projects",
+    content: `CDAC Strategic Themes (from its 2023-2027 plan): 1) The Creation and Support for Sustainable Communities with HBCUs and MSIs as Strategic Partners. 2) The Development and Promotion of Programs That Generate and Foster Economic Opportunities for HBCU and MSI Campuses & Communities. 3) The Facilitation of greater HBCU participation in Scholarly and Applied Research and Learning.`,
+  },
+
+  // ============================================================
+  // 23. CDAC PROGRAMS
+  // ============================================================
+  {
+    id: "cdac-program-clean-energy",
+    category: "Projects",
+    content: `CDAC Program — HBCU Clean Energy Initiative (CEI): The CEI mission is to increase awareness and equitable access to clean energy solutions for HBCUs and other MSIs. The CEI was conceptualized by senior administrators within the United States Department of Energy in strategic collaboration with CDAC and memorialized in an unprecedented Memorandum of Understanding with the U.S. Department of Energy. Over the past five years, CDAC has worked to develop a comprehensive clean energy strategy starting with solar energy. CDAC plans to expand to environmental justice via brownfield assessments, remediation, and sustainable development.`,
+  },
+  {
+    id: "cdac-program-our-money-matters",
+    category: "Projects",
+    content: `CDAC Program — Our Money Matters (OMM): A financial education and wealth creation program designed to address key financial literacy challenges that continue to be pervasive and debilitating to financial growth and wealth creation in underserved communities. OMM provides opportunities for scholarships, career exploration, and sector-based jobs, plus pathways to entrepreneurship through online tools and services.`,
+  },
+  {
+    id: "cdac-program-ceid",
+    category: "Projects",
+    content: `CDAC Program — Community Enterprise and Innovative Design (CEID): CEID leverages existing networks and resources such as women's business centers, incubators, and accelerators to provide ecosystem-wide support to existing and aspiring entrepreneurs of color. It is the centerpiece of CDAC's economic development agenda and a vital component of CDAC's college town transformation efforts. CEID provides ongoing support to under-resourced small minority-owned businesses located within existing commercial corridors near HBCU and MSI campuses.`,
+  },
+  {
+    id: "cdac-program-reip",
+    category: "Projects",
+    content: `CDAC Program — Real Estate Investment Program (REIP): REIP uses a "college town" development approach to improve and revitalize HBCU/MSI campuses and communities. This includes revitalizing commercial corridors, developing resident/student/faculty/workforce housing, and supporting small/minority businesses. Notable projects under REIP include the Jubilee Singers Memorial Bridge project (partnering with Fisk, Meharry, and American Baptist College) and the Railroad Corner Redevelopment Project in Orangeburg, South Carolina — a project with capital investments north of $30 million.`,
+  },
+  {
+    id: "cdac-community-investment-fund",
+    category: "Projects",
+    content: `CDAC Program — Community Investment Fund (CIF): A HBCU/MSI focused Community Investment Fund that provides access to mission-critical funding for community development outcomes across all CDAC programs. With CIF, CDAC seeks to bridge place-based opportunities at HBCUs and other MSIs with relationship and financial capital to meet historical deficiencies. CDAC aims to aggregate $30 million in funding over the strategic plan implementation timeframe.`,
+  },
+
+  // ============================================================
+  // 24. CDAC OPERATIONAL DETAILS
+  // ============================================================
+  {
+    id: "cdac-office-move",
+    category: "Projects",
+    content: `CDAC Office Relocation: CDAC plans to relocate its corporate offices from Miami, Florida to Charlotte, North Carolina, and expand its physical reach by opening a satellite hub in Atlanta, Georgia. These moves place CDAC closer to the dominant share of HBCUs, located throughout the South.`,
+  },
+  {
+    id: "cdac-funding-goal",
+    category: "Projects",
+    content: `CDAC 5-Year Funding Goal: CDAC aims to attract approximately $20 million in operational capital and program-delivery funding over the five-year term of the strategic plan implementation cycle (2023-2027). The CEI program specifically anticipates conducting at least 20 solar demonstrations in partnership with HBCUs, MSIs, and clean energy industry partners.`,
+  },
+  {
+    id: "cdac-partnerships",
+    category: "Projects",
+    content: `CDAC Key Partnerships: CDAC partners with the U.S. Department of Energy (DOE), the National Association of State Energy Officials (NASEO), the JPB Foundation, Southface Institute, the National Renewable Energy Laboratory (NREL), the Department of Labor Wheelhouse Group, Wells Fargo Foundation, UNC Chapel Hill Development Finance Initiative (DFI), Stantec, Woodforest National Bank, BCT Partners, and the Alfred P. Sloan Foundation.`,
+  },
+  {
+    id: "cdac-board-leadership",
+    category: "Projects",
+    content: `CDAC Leadership: Larry Salley is the CDAC Board Chair. Ron Butler is the CEO of CDAC. Henry Golatt serves as Chief Strategist / Chief of Strategy and Partnerships. Karen Soares is the CEI Program Director. Sharon Kent is the OMM Program Director. Temple Jackson is the Director of External Communications.`,
+  },
+
+  // ============================================================
+  // 25. ADVANCING EQUITY IN ENERGY RESEARCH REPORT
+  // ============================================================
+  {
+    id: "research-energy-overview",
+    category: "Publications",
+    content: `Report: "Advancing Equity in Energy Research: Overcoming Barriers and Building Pathways." An innovative study exploring equity and inclusion challenges faced by marginalized racial and ethnic researchers in clean energy and innovation systems. Identifies and addresses systemic barriers and implicit biases that affect access to federal and state funding, incentives, and policy programs. The report was funded by the Alfred P. Sloan Foundation and led by Johnson C. Smith University in collaboration with Florida International University, The Ohio State University, and the HBCU Community Development Action Coalition (CDAC).`,
+  },
+  {
+    id: "research-energy-researchers",
+    category: "Publications",
+    content: `Researchers on "Advancing Equity in Energy Research": Dira Melissa Delpech (Ohio State University), J. Chris Ford (Florida International University), Henry A. Golatt (HBCU Community Development Action Coalition / CDAC), Yasuyuki (Yas) Motoyama (Ohio State University), Bryan Patterson (Johnson C. Smith University), and Karen Soares (HBCU Community Development Action Coalition / CDAC). Henry A. Golatt's role was Co-Principal Investigator, Policy Analysis and Energy Equity, Data Analysis.`,
+  },
+  {
+    id: "research-energy-findings",
+    category: "Publications",
+    content: `Key findings from "Advancing Equity in Energy Research" report: The study identified 8 major patterns of systemic barriers for Black researchers in clean energy — including well-established research infrastructure at PWIs vs. major structural constraints at HBCUs, barriers at federal labs, subtle forms of discrimination, double minority barriers faced by Black female researchers, DEI initiatives that burden Black researchers, hidden rules for post-doctoral career development, and Black researchers cultivating networks outside their departments.`,
+  },
+  {
+    id: "research-energy-actions",
+    category: "Publications",
+    content: `Recommendations from "Advancing Equity in Energy Research": The study outlines 10 actions: (1) Focus on long-term development of the pipeline of researchers. (2) Provide more than research grants to strengthen organizational capacity of HBCUs. (3) Encourage collaboration between PWIs and HBCUs, but plan carefully. (4) Establish networks and mentoring programs for Black researchers. (5) Reviewers need to be re-trained, or need different criteria to evaluate institutional capacity. (6) Balance service duties of Black researchers with their DEI initiatives. (7) Leverage best practices for engagement in Professional Societies. (8) Provide tailored measures and training on research outcomes to involved stakeholders. (9) Customize federal mentor programs with HBCUs/MSIs and Black PIs. (10) Expand connections between federal labs and HBCUs.`,
+  },
+  {
+    id: "research-energy-funding-disparities",
+    category: "Publications",
+    content: `Funding disparity data from "Advancing Equity in Energy Research": Between 2000 and 2020, HBCUs received only 1.1% of DOE grants, 10.0% of DOD grants, 0.9% of NSF grants, and 1.4% of EPA grants — compared to all universities which received billions to half a trillion in the same period. Over 2020-2022, HBCUs and HSIs received a disproportionately low ratio of DOE grants: 4.2% in North Carolina, 1.4% in Georgia, and 11.7% in Florida.`,
+  },
+  {
+    id: "research-energy-regions",
+    category: "Publications",
+    content: `Case regions for "Advancing Equity in Energy Research": The study focused on three regions — Atlanta, GA; Miami, FL; and Charlotte-Raleigh-Durham, NC. These regions have a mix of HBCUs/MSIs and PWIs. Notable HBCUs studied include Johnson C. Smith University, Florida Memorial University, Clark Atlanta University, Morehouse College, and Spelman College.`,
+  },
+  {
+    id: "research-energy-interviews",
+    category: "Publications",
+    content: `Interview data from "Advancing Equity in Energy Research": Researchers conducted 28 interviews — 19 with Black researchers and 9 with non-Black researchers. 15 were at PWIs, 14 at HBCUs/HSIs, and 6 at Federal Labs. 21 were male and 7 were female. Interviews focused on background, organizational environment, collaboration, and experience with barriers.`,
+  },
+  {
+    id: "research-energy-hbcu-constraints",
+    category: "Publications",
+    content: `HBCU structural constraints (from "Advancing Equity in Energy Research"): HBCUs face a lack of research funds, basic equipment or labs, no staff to support research or grant management, small startup funds for new faculty (less than a quarter of what PWIs offer), and difficulty hiring graduate students (must rely on undergraduates). Some HBCU faculty have 2-4 courses per semester vs. 0-1 at PWIs. In some cases, reviewers explicitly rejected HBCU faculty grant applications saying their institution "would not have the capacity" — even though the applicants had successful track records of million-dollar grants.`,
+  },
+  {
+    id: "research-energy-black-female",
+    category: "Publications",
+    content: `Black female researchers face double minority barriers (from "Advancing Equity in Energy Research" report): Among doctoral degree holders, women are only 26% in engineering and 34% in physical science. Black individuals are only 9.2% of doctoral degree holders. Black female researchers report being the "only Black woman" in their department, facing "old boys club" environments, difficulty finding mentors with similar backgrounds, and glass ceilings that stall their advancement to full professor.`,
+  },
+  {
+    id: "research-energy-doe-involvement",
+    category: "Publications",
+    content: `DOE/clean energy research funding history (from "Advancing Equity in Energy Research"): The modern energy research system traces its origins to the Manhattan Project during WWII. The Higher Education Act of 1965 recognized and bolstered HBCUs, HSIs, and MSIs as important federal education partners. The Agricultural College Act of 1890 (Second Morrill Act) was the first federal policy authorizing funding to HBCUs, but required a one-to-one match by states — 17 of 19 match-required HBCUs were in Southern states with segregation policies, so many could not fully participate.`,
+  },
+  {
+    id: "research-energy-program-solutions",
+    category: "Publications",
+    content: `Federal STEM programs at HBCUs (from "Advancing Equity in Energy Research"): Notable programs include ASPIRE (National Alliance for Inclusive & Diverse STEM Faculty), DOE STEM Rising, DOE/NNSA Workforce Program, and NSF's HBCU-UP (Undergraduate Program), HBCU-RISE (Research Infrastructure for Science and Engineering), and HBCU-EiR (Excellence in Research).`,
+  },
+  {
+    id: "research-energy-hbcu-roles",
+    category: "Publications",
+    content: `CDAC's role in "Advancing Equity in Energy Research": The HBCU Clean Energy Capacity-Building (CDAC) played a critical role in advancing this research project, serving as both a thought partner and mobilizer of key stakeholders within the HBCU ecosystem. CDAC members conducted and curated interviews, recommended key contributors, shaped findings and implications, and convened diverse audiences — including gatherings in Washington, D.C. during National HBCU Week and stakeholder meetings at Johnson C. Smith University in Charlotte, NC. CDAC also led programming such as the Clean Energy Intensive with Brookhaven National Laboratory.`,
+  },
+  {
+    id: "research-energy-participants",
+    category: "Publications",
+    content: `Participants and advisors for "Advancing Equity in Energy Research" study: The research team includes professors from HBCUs, Hispanic-Serving Institutions, and mainstream institutions, plus economic development practitioners and clean energy professionals. The advisory committee includes Dr. Sumesh Arora (Entergy), Sandy Fazeil (National Association of State Energy Officials), Jackie Toth (Good Energy Collective), Dr. Karen Whelan-Berry (UMass Amherst), and Dr. Laura Wolf-Powers (Hunter, CUNY).`,
+  },
+  {
+    id: "research-energy-publication-info",
+    category: "Publications",
+    content: `Publication info for "Advancing Equity in Energy Research: Overcoming Barriers and Building Pathways": Funded by the Alfred P. Sloan Foundation. Published as a research report (approximately 30+ pages). Full citation: Johnson C. Smith University, Florida International University, Ohio State University, and HBCU-CDAC. Both PDFs — the CDAC 2023 Strategic Plan and the Advancing Equity report — are available in the HG Consulting gallery for viewing and download.`,
+  },
+
+  // ============================================================
+  // 26. MEDIA ATTRIBUTION UPDATES
+  // ============================================================
+  {
+    id: "media-cdac-strategic-plan",
+    category: "Publications",
+    content: `Publication: CDAC 2023 Strategic Plan (Workforce Version 2-3-23). The strategic plan for the HBCU Community Development Action Coalition covering 2023-2027. Henry Golatt is listed on the CDAC Strategic Planning Committee as Chief Strategist.`,
+  },
+  {
+    id: "media-energy-research-publication",
+    category: "Publications",
+    content: `Publication: Advancing Equity in Energy Research — Overcoming Barriers and Building Pathways. Funded by the Alfred P. Sloan Foundation. Henry A. Golatt is listed as Co-Principal Investigator (Policy Analysis and Energy Equity, Data Analysis). This is a major peer-reviewed research study co-led by Johnson C. Smith University, Florida International University, Ohio State University, and HBCU-CDAC.`,
+  },
 ];
 
 export default knowledgeBase;
