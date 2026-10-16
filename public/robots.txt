@@ -1,9 +1,18 @@
+# robots.txt for https://www.henrygolatt.com
+
 User-agent: *
 Allow: /
 
-# Block sensitive paths (if any)
+# Block admin/internal areas
 Disallow: /api/
-Disallow: /admin/
+Disallow: /node_modules/
 
-# Sitemap location
-Sitemap: https://hgconsultingservices.vercel.app/sitemap.xml
+# Block build artifacts
+Disallow: /*.json$
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+
+# Sitemap
+Sitemap: https://www.henrygolatt.com/sitemap.xml
