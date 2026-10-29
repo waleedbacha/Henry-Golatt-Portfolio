@@ -916,6 +916,63 @@ Response time is typically within 1-2 business days.`,
     category: "Publications",
     content: `Publication: Advancing Equity in Energy Research — Overcoming Barriers and Building Pathways. Funded by the Alfred P. Sloan Foundation. Henry A. Golatt is listed as Co-Principal Investigator (Policy Analysis and Energy Equity, Data Analysis). This is a major peer-reviewed research study co-led by Johnson C. Smith University, Florida International University, Ohio State University, and HBCU-CDAC.`,
   },
+  // ============================================================
+  // APPALACHIAN COMMUNITY CAPITAL
+  // ============================================================
+  {
+    id: "acc-board-appointment",
+    category: "Boards",
+    content: `Board Position: Incoming Loan Committee Chair, Appalachian Community Capital (ACC). Henry A. Golatt joined ACC in 2026 as incoming Loan Committee Chair and member of the Board of Directors. ACC is a regional Community Development Financial Institution (CDFI). Henry brings extensive experience in community development finance, entrepreneurship, strategic partnerships, and expanding access to capital. As incoming Loan Committee Chair, he brings lending expertise, cross-sector collaboration, and strategic leadership to strengthen community development finance across Appalachia.`,
+  },
+  {
+    id: "acc-henry-quote",
+    category: "About",
+    content: `Henry A. Golatt's professional philosophy: "Always Seek to Empower by Adding Value." He brings a collaborative, solutions-oriented approach to his work with institutions and communities.`,
+  },
+
+  // ============================================================
+  // NEW MODEL / ARCHITECT-BUILDER LANGUAGE
+  // ============================================================
+  {
+    id: "platform-what-problem",
+    category: "About",
+    content: `What problem is HG Consulting designed to solve? HG Consulting is designed to solve the gap between the assets institutions possess and the economic opportunities their communities can actually access. Institutions may have land, talent, research, purchasing power, capital, relationships, and good intentions, but these resources often operate in isolation. As a result, entrepreneurs encounter disconnected services and markets; workforce or clean-energy initiatives fail to produce local ownership and jobs; and coalitions lack clear roles, governance, accountability, or an implementation path. HG Consulting addresses this fragmentation by identifying where the system breaks, aligning the necessary partners and authority, and designing practical pathways to opportunity. Its aim is to convert underused institutional assets into investment-ready initiatives that increase economic agency, create durable assets, and retain wealth in the community.`,
+  },
+  {
+    id: "platform-architect-builder",
+    category: "About",
+    content: `The Architect/Builder Model: HG Consulting serves as the Architect. We diagnose conditions, identify underused assets, design the ecosystem architecture, align partners, define pathways and responsibilities, establish readiness and measurement standards, and support recalibration. Builders execute defined components of the architecture — they implement, build, deliver, operate, finance, administer, or otherwise carry out defined workstreams. An Implementation Partner is the specific entity selected to serve as a Builder for a particular project or workstream. Architect and Builder are functions, not fixed organization types.`,
+  },
+  {
+    id: "platform-framework",
+    category: "About",
+    content: `The Economic Empowerment Framework: HG Consulting's framework links Institutional Capacity → Ecosystem Architecture → Economic Agency → Asset Conversion → Community Wealth. Institutions build capacity, connect the system, expand people's ability to act, create durable assets, and build community wealth.`,
+  },
+  {
+    id: "platform-capital-discipline",
+    category: "About",
+    content: `Capital Discipline: HG Consulting does not chase money and then invent a use for it. We build a credible economic-empowerment architecture first, then match the right kind of capital to the right institution, asset, and outcome. Capital follows a readiness gate and a defined asset-conversion logic.`,
+  },
+  {
+    id: "platform-differentiators",
+    category: "About",
+    content: `What makes HG Consulting different from ordinary consulting? Traditional consulting: a report is delivered and implementation belongs to someone else; each project starts from scratch; success is measured by activities or deliverables; the founder's experience stays tacit; fundraising becomes the strategy. HG Consulting: the method explicitly tests readiness, ownership, activation, measurement, and recalibration; a proprietary operating system provides repeatable tools, gates, evidence standards, and learning loops; the framework asks whether economic agency increased and whether durable assets and community wealth resulted; the method is codified so qualified team members and partners can eventually perform defined portions consistently; capital follows a readiness gate and a defined asset-conversion logic.`,
+  },
+  {
+    id: "platform-engagement-flow",
+    category: "About",
+    content: `HG Consulting's engagement flow: Frame → Assess → Map → Diagnose → Align → Architect → Capital Readiness → Activate → Measure → Recalibrate. We begin with the economic outcome that is not occurring and determine why existing assets are not producing it.`,
+  },
+  {
+    id: "platform-application-areas",
+    category: "About",
+    content: `HG Consulting's 8 Application Areas: 1) HBCU & University Economic Development, 2) Inclusive Entrepreneurship & Small Business Ecosystems, 3) Urban & Downtown Development, 4) Workforce & Economic Mobility, 5) Research, Innovation & Commercialization, 6) Public-Private & Cross-Sector Partnerships, 7) Institutional & Partnership Strategy, and 8) Economic Empowerment & Ecosystem Architecture.`,
+  },
+  {
+    id: "platform-engagement-tiers",
+    category: "About",
+    content: `HG Consulting's engagement tiers: 1) Executive Economic Empowerment Briefing (frame the strategic opportunity with senior leadership), 2) Economic Empowerment Diagnostic (establish maturity, gaps, assets, and priorities), 3) HBCU Economic Engine Assessment (institution-wide anchor asset and conversion assessment), 4) Ecosystem Architecture Blueprint (design governance and pathways around priority outcomes), 5) Implementation Advisory (support activation, partnerships, recalibration, and measurement).`,
+  },
 ];
 
 export default knowledgeBase;

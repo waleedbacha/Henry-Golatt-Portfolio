@@ -107,7 +107,7 @@ const Gallery = () => {
         "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791182233/Publications_ooehia.jpg",
       description:
         "Peer-reviewed research, news features, and strategic plans on inclusive economic development.",
-      count: 13,
+      count: 14,
       images: [
         {
           id: 1,
@@ -227,6 +227,17 @@ const Gallery = () => {
           fileType: "pdf",
           subcategory: "pdfs", // ✅ NEW
         },
+        {
+          id: 14,
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791442887/Advancing_Equity_in_Energy_Research_Final_05-12_e7wych.jpg",
+          pdfUrl: null,
+          title:
+            "Appalachian Community Capital Welcomes Henry A. Golatt to Board",
+          description:
+            "Announcement of Henry A. Golatt joining Appalachian Community Capital as incoming Loan Committee Chair and newest member of the Board of Directors.",
+          fileType: "image",
+          subcategory: "news",
+        },
       ],
     },
     {
@@ -238,7 +249,7 @@ const Gallery = () => {
         "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791181827/Accelerate_Columbus_weqnwx.jpg",
       description:
         "Recognized nationally for leadership in inclusive economic development.",
-      count: 8,
+      count: 9,
       images: [
         // ... existing awards entries (unchanged)
         {
@@ -296,6 +307,13 @@ const Gallery = () => {
           title: "MBDA Regional Director's Award (2009)",
           description:
             "U.S. Department of Commerce Minority Business Development Agency — Regional Director's Award, Minority Enterprise Development Week 2009.",
+        },
+        {
+          id: 9,
+          src: "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791442887/Advancing_Equity_in_Energy_Research_Final_05-12_e7wych.jpg",
+          title: "Appalachian Community Capital — Board of Directors",
+          description:
+            "Incoming Loan Committee Chair. Bringing lending expertise, cross-sector collaboration, and strategic leadership to strengthen community development finance across Appalachia.",
         },
       ],
     },

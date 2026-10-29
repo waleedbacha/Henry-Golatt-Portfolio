@@ -1,0 +1,157 @@
+/* ============================================================
+   SERVICES — 8 Application Areas
+   ============================================================ */
+
+.services-home-section {
+  padding: 100px 24px;
+  background: #000000;
+}
+
+.services-home-container {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.services-home-header {
+  text-align: center;
+  margin-bottom: 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.services-home-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  border-radius: 20px;
+  background: rgba(50, 181, 84, 0.1);
+  border: 1px solid rgba(50, 181, 84, 0.2);
+  color: #32b554;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+}
+
+.services-home-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -1px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .services-home-title {
+    font-size: 44px;
+  }
+}
+
+.services-home-title-highlight {
+  color: #32b554;
+}
+
+.services-home-subtitle {
+  color: #a8a8a8;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.services-home-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+@media (min-width: 640px) {
+  .services-home-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-home-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.services-home-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #0b160e;
+  border: 1px solid #1a2a1f;
+  border-radius: 14px;
+  padding: 28px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.services-home-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(50, 181, 84, 0.3);
+  box-shadow: 0 20px 40px rgba(50, 181, 84, 0.1);
+}
+
+.services-home-card-border {
+  position: absolute;
+  inset: 0;
+  border-radius: 14px;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.services-home-card:hover .services-home-card-border {
+  opacity: 1;
+  box-shadow: inset 0 0 0 1px rgba(50, 181, 84, 0.4);
+}
+
+.services-home-card-icon-only {
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
+  background: rgba(50, 181, 84, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #32b554;
+  margin-bottom: 20px;
+  transition: all 0.3s ease;
+}
+
+.services-home-card:hover .services-home-card-icon-only {
+  background: rgba(50, 181, 84, 0.2);
+  transform: scale(1.05);
+}
+
+.services-home-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #ffffff;
+  margin-bottom: 12px;
+  line-height: 1.3;
+}
+
+.services-home-card-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: #a8a8a8;
+  flex: 1;
+  margin-bottom: 20px;
+}
+
+.services-home-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #32b554;
+  font-size: 12px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.services-home-card:hover .services-home-card-link {
+  gap: 10px;
+}

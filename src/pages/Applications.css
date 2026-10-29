@@ -1,0 +1,249 @@
+/* ============================================================
+   APPLICATIONS PAGE
+   ============================================================ */
+
+.applications-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 48px;
+}
+
+@media (min-width: 1024px) {
+  .applications-layout {
+    grid-template-columns: 280px 1fr;
+    gap: 64px;
+    align-items: start;
+  }
+}
+
+/* Sticky Sidebar */
+.applications-sidebar {
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .applications-sidebar {
+    position: sticky;
+    top: 100px;
+  }
+}
+
+.applications-sidebar-title {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #32b554;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #1a2a1f;
+}
+
+.applications-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.applications-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #a8a8a8;
+  font-size: 13px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  line-height: 1.4;
+}
+
+.applications-sidebar-link:hover {
+  background: rgba(50, 181, 84, 0.08);
+  color: #32b554;
+}
+
+.applications-sidebar-link svg {
+  flex-shrink: 0;
+  color: #32b554;
+  opacity: 0.7;
+}
+
+.applications-sidebar-link:hover svg {
+  opacity: 1;
+}
+
+/* Application Cards */
+.applications-main {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.application-card {
+  padding: 40px;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #0b160e, #080b09);
+  border: 1px solid #1a2a1f;
+  transition: all 0.3s ease;
+  scroll-margin-top: 100px;
+}
+
+@media (max-width: 640px) {
+  .application-card {
+    padding: 28px 20px;
+  }
+}
+
+.application-card:hover {
+  border-color: rgba(50, 181, 84, 0.3);
+  box-shadow: 0 20px 40px rgba(50, 181, 84, 0.05);
+}
+
+.application-card-header {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.application-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: rgba(50, 181, 84, 0.1);
+  border: 1px solid rgba(50, 181, 84, 0.25);
+  color: #32b554;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.application-card-num {
+  font-size: 11px;
+  font-weight: 700;
+  color: #32b554;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+}
+
+.application-card-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.4px;
+  line-height: 1.25;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .application-card-title {
+    font-size: 26px;
+  }
+}
+
+.application-card-desc {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #b7b7b7;
+  margin-bottom: 28px;
+}
+
+.application-card-deliverables {
+  padding: 20px 24px;
+  border-radius: 12px;
+  background: rgba(50, 181, 84, 0.04);
+  border: 1px solid rgba(50, 181, 84, 0.12);
+  margin-bottom: 24px;
+}
+
+.application-card-deliverables-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #32b554;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 14px;
+}
+
+.application-card-deliverables ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+@media (min-width: 640px) {
+  .application-card-deliverables ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.application-card-deliverables li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 13.5px;
+  color: #d4d4d4;
+  line-height: 1.5;
+}
+
+.application-card-deliverables li svg {
+  color: #32b554;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.application-card-footer {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+  border-top: 1px solid #1a2a1f;
+}
+
+.application-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #32b554;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.application-card-cta:hover {
+  gap: 12px;
+}
+
+/* Mobile Sidebar */
+@media (max-width: 1023px) {
+  .applications-sidebar {
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .applications-sidebar-title {
+    display: none;
+  }
+
+  .applications-sidebar-nav {
+    flex-direction: row;
+    gap: 8px;
+    min-width: max-content;
+  }
+
+  .applications-sidebar-link {
+    white-space: nowrap;
+    padding: 8px 14px;
+    border-radius: 20px;
+    background: rgba(50, 181, 84, 0.05);
+    border: 1px solid rgba(50, 181, 84, 0.15);
+    font-size: 12px;
+  }
+}

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Navbar from "../components/layout/Navbar";
 import Footer from "../components/layout/Footer";
 import { motion } from "framer-motion";
@@ -17,52 +17,29 @@ import {
   Check,
   Linkedin,
   MapPin,
+  ShieldCheck,
+  ArrowRight,
 } from "lucide-react";
-import uapbIncubator from "../assets/hero.png";
+import uapbIncubator from "../assets/hero.png"; // Using existing asset
 import "./Pages.css";
+// import "./About.css";
 
 const About = () => {
   const location = useLocation();
 
-  // ============================================================
-  // ✅ Deep-link support — auto-scroll to section from URL hash
-  // ============================================================
+  // Scroll to hash section on load
   useEffect(() => {
     if (!location.hash) return;
-
     const id = location.hash.replace("#", "");
-
-    const scrollToSection = () => {
-      const element = document.getElementById(id);
-      if (!element) {
-        // Retry once more if element hasn't rendered yet
-        setTimeout(() => {
-          const retry = document.getElementById(id);
-          if (retry) scrollTo(retry);
-        }, 400);
-        return;
-      }
-      scrollTo(element);
-    };
-
-    const scrollTo = (el) => {
-      const offset = 90; // navbar height + breathing room
-      const top = el.getBoundingClientRect().top + window.scrollY - offset;
-
-      // ✅ Highlight flash
-      el.classList.add("hash-highlight");
-      setTimeout(() => el.classList.remove("hash-highlight"), 2000);
-
-      if (window.lenis) {
-        window.lenis.scrollTo(top, { duration: 1.2 });
-      } else {
+    const timer = setTimeout(() => {
+      const el = document.getElementById(id);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY - 90;
         window.scrollTo({ top, behavior: "smooth" });
       }
-    };
-
-    const timer = setTimeout(scrollToSection, 400);
+    }, 400);
     return () => clearTimeout(timer);
-  }, [location.hash, location.pathname]);
+  }, [location.hash]);
 
   const values = [
     {
@@ -91,6 +68,7 @@ const About = () => {
   ];
 
   const credentials = [
+    "Incoming Loan Committee Chair — Appalachian Community Capital (2026)",
     "MBA Program Advisory Board — Ohio Dominican University (6+ years)",
     "ForbesBLK Member",
     "Vice Chairman — HBCU Coalition.org",
@@ -142,21 +120,11 @@ const About = () => {
     },
   ];
 
-  const publications = [
-    "Building an Inclusive Ecosystem for Minority and Women Entrepreneurs — Local Economy (Sage)",
-    "Inclusive Entrepreneurship Ecosystem Playbook — Amazon",
-    "Columbus Small Business Agenda — Next Street & City of Columbus",
-    "Economic Impacts on University Drive — Journal of Business Administration Online",
-  ];
-
   return (
     <div className="page-wrapper">
       <Navbar />
-
       <main className="page-main">
-        {/* ============================================================
-            PAGE HERO
-            ============================================================ */}
+        {/* HERO */}
         <section className="page-hero">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -168,12 +136,10 @@ const About = () => {
               <Users size={14} />
               <span>About HG Consulting</span>
             </div>
-
             <h1 className="page-title">
               Building a More{" "}
               <span className="page-title-highlight">Inclusive Economy</span>
             </h1>
-
             <p className="page-description">
               HG Consulting Services was founded by Henry A. Golatt to help
               cities, universities, and organizations design and implement
@@ -183,39 +149,36 @@ const About = () => {
           </motion.div>
         </section>
 
-        {/* ============================================================
-            FOUNDER SECTION
-            ============================================================ */}
+        {/* FOUNDER */}
         <section id="founder" className="page-section">
           <div className="about-founder">
             <motion.div
               initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.7 }}
               className="about-founder-content"
             >
               <div className="about-founder-label">FOUNDER & PRINCIPAL</div>
-
               <h2 className="about-founder-name">
                 Henry A. <span className="page-title-highlight">Golatt</span>
               </h2>
-
               <p className="about-founder-bio">
-                Henry A. Golatt is an economic development strategist with over
-                25 years of experience building inclusive ecosystems for
-                entrepreneurs, universities, and communities. He founded HG
-                Consulting Services to help organizations design and implement
-                programs that advance equitable economic opportunity for
-                minority and women entrepreneurs.
+                Henry A. Golatt is an economic development strategist and
+                Architect/Builder of inclusive ecosystems with over 25 years of
+                experience building pathways for entrepreneurs, universities,
+                and communities. He founded HG Consulting Services to help
+                organizations design and implement systems that advance
+                equitable economic opportunity for minority and women
+                entrepreneurs.
               </p>
-
               <p className="about-founder-bio">
                 His career spans federal, state, and local levels — from the
                 U.S. Department of Commerce to the City of Columbus — with
                 leadership roles at HBCU Coalition.org, the Columbus Foundation,
-                and multiple university advisory boards. He is a published
-                researcher, a ForbesBLK member, and a national advocate for
-                inclusive economic development.
+                Appalachian Community Capital, and multiple university advisory
+                boards. He is a published researcher, a ForbesBLK member, and a
+                national advocate for inclusive economic development.
               </p>
 
               <div className="about-founder-meta">
@@ -223,12 +186,10 @@ const About = () => {
                   <MapPin size={16} />
                   <span>Columbus, Ohio, USA</span>
                 </div>
-
                 <div className="about-meta-item">
                   <BookOpen size={16} />
                   <span>Published Author & Researcher</span>
                 </div>
-
                 <div className="about-meta-item">
                   <Award size={16} />
                   <span>Multiple National Awards</span>
@@ -248,7 +209,8 @@ const About = () => {
 
             <motion.div
               initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.7 }}
               className="about-founder-image"
             >
@@ -264,9 +226,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* ============================================================
-            MISSION & VALUES
-            ============================================================ */}
+        {/* VALUES */}
         <section id="mission" className="page-section">
           <div className="about-section-header">
             <div className="about-section-badge">
@@ -280,13 +240,13 @@ const About = () => {
               Every engagement is guided by four core principles.
             </p>
           </div>
-
           <div className="page-grid">
             {values.map((value, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 className="page-card"
               >
@@ -300,9 +260,7 @@ const About = () => {
           </div>
         </section>
 
-        {/* ============================================================
-            SIGNATURE PROJECT — UAPB Business Support Incubator
-            ============================================================ */}
+        {/* SIGNATURE PROJECT — UAPB */}
         <section id="uapb-incubator" className="page-section">
           <div className="about-section-header">
             <div className="about-section-badge">
@@ -319,24 +277,21 @@ const About = () => {
               HBCU-led community revitalization.
             </p>
           </div>
-
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.7 }}
             className="about-project-card"
           >
             <div className="about-project-image">
               <img src={uapbIncubator} alt="UAPB Business Support Incubator" />
             </div>
-
             <div className="about-project-content">
               <div className="about-project-label">1999 — 2025</div>
-
               <h3 className="about-project-title">
                 How a University Transformed a Downtown
               </h3>
-
               <p className="about-project-text">
                 In 1999, the University of Arkansas at Pine Bluff began
                 assembling land in the Central Business District of Pine Bluff,
@@ -345,7 +300,6 @@ const About = () => {
                 in 2006 to provide entrepreneurs with the resources, mentorship,
                 and space they needed to grow.
               </p>
-
               <p className="about-project-text">
                 Led by Henry A. Golatt as Project Administrator and later
                 Executive Director of UAPB's Economic Research and Development
@@ -355,7 +309,6 @@ const About = () => {
                 It became a national model for strategic doing and inclusive
                 development.
               </p>
-
               <div className="about-project-stats">
                 <div className="about-project-stat">
                   <div className="about-project-stat-value">$5M</div>
@@ -374,7 +327,6 @@ const About = () => {
                   </div>
                 </div>
               </div>
-
               <div className="about-project-outcomes">
                 <h4 className="about-project-outcomes-title">
                   What the Project Delivered
@@ -414,7 +366,6 @@ const About = () => {
                   </li>
                 </ul>
               </div>
-
               <p className="about-project-quote">
                 "The partnership between UAPB and downtown Pine Bluff stands as
                 a model for institutional engagement in community development,
@@ -428,9 +379,59 @@ const About = () => {
           </motion.div>
         </section>
 
-        {/* ============================================================
-            AREAS OF EXPERTISE
-            ============================================================ */}
+        {/* ACC BOARD APPOINTMENT */}
+        <section id="acc" className="page-section">
+          <div className="about-section-header">
+            <div className="about-section-badge">
+              <ShieldCheck size={14} />
+              <span>Latest Recognition</span>
+            </div>
+            <h2 className="about-section-title">
+              Appalachian Community Capital{" "}
+              <span className="page-title-highlight">Board Appointment</span>
+            </h2>
+          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="about-project-card"
+          >
+            <div
+              className="about-project-content"
+              style={{ gridColumn: "1 / -1" }}
+            >
+              <div className="about-project-label">2026</div>
+              <h3 className="about-project-title">
+                Incoming Loan Committee Chair
+              </h3>
+              <p className="about-project-text">
+                Henry A. Golatt joined Appalachian Community Capital (ACC) as
+                its incoming Loan Committee Chair and newest member of the Board
+                of Directors. A seasoned economic development strategist, Henry
+                brings extensive experience in community development finance,
+                entrepreneurship, strategic partnerships, and expanding access
+                to capital.
+              </p>
+              <p className="about-project-text">
+                As incoming Loan Committee Chair, Henry brings a valuable
+                combination of lending expertise, cross-sector collaboration,
+                and strategic leadership to ACC's work to strengthen community
+                development finance and expand access to capital throughout
+                Appalachia.
+              </p>
+              <div className="about-project-quote">
+                "Always Seek to Empower by Adding Value."
+                <span className="about-project-quote-source">
+                  — Henry A. Golatt, Professional Philosophy
+                </span>
+              </div>
+            </div>
+          </motion.div>
+        </section>
+
+        {/* EXPERTISE */}
         <section id="expertise" className="page-section">
           <div className="about-section-header">
             <div className="about-section-badge">
@@ -441,13 +442,13 @@ const About = () => {
               Areas of <span className="page-title-highlight">Expertise</span>
             </h2>
           </div>
-
           <div className="page-grid">
             {expertise.map((item, index) => (
               <motion.div
                 key={index}
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
                 transition={{ duration: 0.6, delay: index * 0.08 }}
                 className="page-card"
               >
@@ -461,15 +462,22 @@ const About = () => {
           </div>
         </section>
 
-        {/* ============================================================
-            CREDENTIALS + PUBLICATIONS
-            ============================================================ */}
+        {/* CREDENTIALS */}
         <section id="credentials" className="page-section">
+          <div className="about-section-header">
+            <div className="about-section-badge">
+              <Award size={14} />
+              <span>Board & Advisory Roles</span>
+            </div>
+            <h2 className="about-section-title">
+              Where Henry <span className="page-title-highlight">Serves</span>
+            </h2>
+          </div>
           <div className="about-two-col">
-            {/* Credentials */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="about-list-card"
             >
@@ -486,11 +494,10 @@ const About = () => {
                 ))}
               </ul>
             </motion.div>
-
-            {/* Publications */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.15 }}
               className="about-list-card"
             >
@@ -499,27 +506,44 @@ const About = () => {
               </div>
               <h3 className="about-list-title">Selected Publications</h3>
               <ul className="about-list">
-                {publications.map((item, i) => (
-                  <li key={i}>
-                    <Check size={14} />
-                    <span>{item}</span>
-                  </li>
-                ))}
+                <li>
+                  <Check size={14} />
+                  <span>
+                    Advancing Equity in Energy Research — Sloan Foundation
+                    (2023)
+                  </span>
+                </li>
+                <li>
+                  <Check size={14} />
+                  <span>
+                    Building an Inclusive Ecosystem — Local Economy (Sage)
+                  </span>
+                </li>
+                <li>
+                  <Check size={14} />
+                  <span>
+                    Inclusive Entrepreneurship Ecosystem Playbook — Amazon
+                  </span>
+                </li>
+                <li>
+                  <Check size={14} />
+                  <span>
+                    Columbus Small Business Agenda — Next Street & City of
+                    Columbus
+                  </span>
+                </li>
+                <li>
+                  <Check size={14} />
+                  <span>Economic Impacts on University Drive — JBAO</span>
+                </li>
               </ul>
             </motion.div>
           </div>
         </section>
 
-        {/* ============================================================
-            CTA
-            ============================================================ */}
+        {/* CTA */}
         <section className="page-section">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="about-cta"
-          >
+          <div className="about-cta">
             <h3 className="about-cta-title">
               Let's Build a More Inclusive Economy Together
             </h3>
@@ -528,13 +552,12 @@ const About = () => {
               support organization — HG Consulting can help you design and
               implement programs that create lasting impact.
             </p>
-            <a href="/contact" className="about-cta-button">
-              Get in Touch →
-            </a>
-          </motion.div>
+            <Link to="/contact" className="about-cta-button">
+              Discuss an Opportunity <ArrowRight size={16} />
+            </Link>
+          </div>
         </section>
       </main>
-
       <Footer />
     </div>
   );

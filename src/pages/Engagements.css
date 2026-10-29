@@ -1,0 +1,200 @@
+/* ============================================================
+   ENGAGEMENTS PAGE
+   ============================================================ */
+
+.engagements-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+@media (min-width: 768px) {
+  .engagements-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .engagements-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.engagement-card {
+  padding: 32px;
+  border-radius: 20px;
+  background: linear-gradient(to bottom, #0b160e, #080b09);
+  border: 1px solid #1a2a1f;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  scroll-margin-top: 100px;
+}
+
+.engagement-card:hover {
+  border-color: rgba(50, 181, 84, 0.35);
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.engagement-card-tier {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  color: #32b554;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 20px;
+  padding: 4px 10px;
+  background: rgba(50, 181, 84, 0.08);
+  border: 1px solid rgba(50, 181, 84, 0.2);
+  border-radius: 12px;
+  align-self: flex-start;
+}
+
+.engagement-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  border: 1px solid;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.engagement-card-title {
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  margin-bottom: 10px;
+}
+
+.engagement-card-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #a8a8a8;
+  margin-bottom: 20px;
+  flex: 1;
+}
+
+.engagement-card-details {
+  padding-top: 16px;
+  border-top: 1px solid #1a2a1f;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.engagement-detail-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.engagement-detail-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #666;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.engagement-detail-value {
+  font-size: 13px;
+  color: #d4d4d4;
+  line-height: 1.5;
+}
+
+.engagement-card-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #32b554;
+  font-size: 13px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  align-self: flex-start;
+}
+
+.engagement-card:hover .engagement-card-cta {
+  gap: 10px;
+}
+
+/* Philosophy Section */
+.engagement-philosophy {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px 32px;
+  border-radius: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(50, 181, 84, 0.08),
+    rgba(0, 0, 0, 0.5)
+  );
+  border: 1px solid rgba(50, 181, 84, 0.25);
+  text-align: center;
+}
+
+.engagement-philosophy-badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  color: #32b554;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.engagement-philosophy-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+@media (min-width: 768px) {
+  .engagement-philosophy-title {
+    font-size: 36px;
+  }
+}
+
+.engagement-philosophy-text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: #b7b7b7;
+  margin-bottom: 32px;
+  max-width: 640px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.engagement-philosophy-points {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: flex-start;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.engagement-philosophy-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 14px;
+  color: #d4d4d4;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.engagement-philosophy-point svg {
+  color: #32b554;
+  flex-shrink: 0;
+  margin-top: 2px;
+}

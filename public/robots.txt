@@ -16,3 +16,6 @@ Allow: /
 
 # Sitemap
 Sitemap: https://www.henrygolatt.com/sitemap.xml
+
+
+

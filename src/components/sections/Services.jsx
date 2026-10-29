@@ -2,75 +2,75 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {
   ArrowRight,
-  TrendingUp,
+  Building2,
   GraduationCap,
   Briefcase,
-  Scale,
-  Target,
-  Building2,
+  Users,
+  TrendingUp,
+  Globe,
+  Landmark,
+  LineChart,
 } from "lucide-react";
+import "./Services.css";
 
 const Services = () => {
+  // Henry's 8 Application Areas
   const services = [
     {
-      id: "economic-development",
-      icon: TrendingUp,
-      title: "Economic Development",
-      subtitle: "Strategic Planning",
-      description:
-        "Comprehensive strategies to build inclusive, dynamic, and continuously improving local economic ecosystems.",
-      image:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&q=80",
-    },
-    {
-      id: "hbcu-partnerships",
+      id: "hbcu-economic-development",
       icon: GraduationCap,
-      title: "HBCU & University Partnerships",
-      subtitle: "Education & Research",
+      title: "HBCU & University Economic Development",
       description:
-        "Connecting historically black colleges and universities to economic development and commercialization opportunities.",
-      image:
-        "https://images.unsplash.com/photo-1562774053-701939374585?w=600&q=80",
+        "Connect institutional assets, talent, research, procurement, and place to broader economic opportunity.",
     },
     {
-      id: "small-business",
+      id: "inclusive-entrepreneurship",
       icon: Briefcase,
-      title: "Small Business Ecosystem",
-      subtitle: "Entrepreneurship",
+      title: "Inclusive Entrepreneurship & Small Business",
       description:
-        "Designing programs that support entrepreneurs through every stage of the business lifecycle.",
-      image:
-        "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=600&q=80",
+        "Design coordinated pathways connecting entrepreneurs to knowledge, capital, markets, and support.",
     },
     {
-      id: "policy-advocacy",
-      icon: Scale,
-      title: "Policy & Advocacy",
-      subtitle: "Public-Private Partnerships",
-      description:
-        "Advising on policies that advance economic inclusion at federal, state, and local levels.",
-      image:
-        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=80",
-    },
-    {
-      id: "strategic-planning",
-      icon: Target,
-      title: "Strategic Planning",
-      subtitle: "Board Development",
-      description:
-        "Providing fiduciary oversight, strategic guidance, and governance expertise to boards and organizations.",
-      image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&q=80",
-    },
-    {
-      id: "urban-development",
+      id: "urban-downtown",
       icon: Building2,
       title: "Urban & Downtown Development",
-      subtitle: "Community Revitalization",
       description:
-        "Revitalizing urban cores through historic preservation, strategic planning, and economic development.",
-      image:
-        "https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=600&q=80",
+        "Connect place, institutional assets, community priorities, and investment into revitalization strategies.",
+    },
+    {
+      id: "workforce-mobility",
+      icon: Users,
+      title: "Workforce & Economic Mobility",
+      description:
+        "Align education, employers, infrastructure, credentials, and opportunity around durable career pathways.",
+    },
+    {
+      id: "research-innovation",
+      icon: LineChart,
+      title: "Research, Innovation & Commercialization",
+      description:
+        "Connect research talent, institutions, industry, capital, and markets to increase commercialization.",
+    },
+    {
+      id: "public-private",
+      icon: Landmark,
+      title: "Public-Private & Cross-Sector Partnerships",
+      description:
+        "Build partnership capacity, clarify roles, align resources, and convert collaboration into implementation.",
+    },
+    {
+      id: "institutional-strategy",
+      icon: TrendingUp,
+      title: "Institutional & Partnership Strategy",
+      description:
+        "Strengthen leadership, governance, systems, partner alignment, and implementation capacity.",
+    },
+    {
+      id: "ecosystem-architecture",
+      icon: Globe,
+      title: "Economic Empowerment & Ecosystem Architecture",
+      description:
+        "Diagnose complex systems and architect pathways from institutional capacity to community wealth.",
     },
   ];
 
@@ -78,35 +78,34 @@ const Services = () => {
     <section id="services" className="services-home-section">
       <div className="services-home-container">
         <div className="services-home-header">
+          <div className="services-home-badge">
+            WHERE WE APPLY THE ARCHITECTURE
+          </div>
           <h2 className="services-home-title">
-            What{" "}
-            <span className="services-home-title-highlight">We Provide</span>
+            Complex Challenges.{" "}
+            <span className="services-home-title-highlight">
+              Connected Solutions.
+            </span>
           </h2>
           <p className="services-home-subtitle">
-            HG Consulting helps cities, universities, and organizations build
-            thriving ecosystems for minority and women entrepreneurs.
+            Clients may enter through a specific need. We connect that need to
+            the larger institutional and economic system required to produce
+            durable results.
           </p>
         </div>
 
         <div className="services-home-grid">
           {services.map((service, index) => (
             <Link
-              to={`/services?service=${service.id}`}
+              to={`/applications#${service.id}`}
               key={index}
               className="services-home-card"
             >
               <div className="services-home-card-border" />
-              <div className="services-home-card-image">
-                <img src={service.image} alt={service.title} loading="lazy" />
-                <div className="services-home-card-overlay" />
-                <div className="services-home-card-icon">
-                  <service.icon size={22} />
-                </div>
+              <div className="services-home-card-icon-only">
+                <service.icon size={28} />
               </div>
               <div className="services-home-card-content">
-                <p className="services-home-card-subtitle">
-                  {service.subtitle}
-                </p>
                 <h3 className="services-home-card-title">{service.title}</h3>
                 <p className="services-home-card-desc">{service.description}</p>
                 <div className="services-home-card-link">

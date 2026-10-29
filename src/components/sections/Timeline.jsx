@@ -16,6 +16,7 @@ import {
   Building2,
   Star,
   Landmark,
+  ShieldCheck,
 } from "lucide-react";
 import "./Timeline.css";
 
@@ -115,7 +116,7 @@ const Timeline = () => {
       icon: TrendingUp,
       short: "Contributed to the City of Columbus Small Business Agenda",
       description:
-        "Helped cultivate an inclusive, dynamic small business ecosystem as part of Next Street's engagement with the City of Columbus, Ohio.",
+        "Helped cultivate an inclusive, dynamic small business ecosystem as part of Next Street's engagement with the City of Columbus, Ohio. This work informed the creation of a multi-year implementation framework for entrepreneurship-based economic development.",
       stats: ["City Partnership", "Ecosystem Building"],
       category: "Economic Development",
       color: "#06b6d4",
@@ -137,8 +138,8 @@ const Timeline = () => {
       icon: Award,
       short: "Received Ohio Black Expo Award and Diversity Champion Award",
       description:
-        "Received two major awards in 2020: the Ohio Black Expo Business Excellence Award for commitment to business excellence and setting an example for Black Excellence in Ohio, and the Columbus Business First Outstanding Diversity Champion Award for promoting equity and inclusiveness in Central Ohio.",
-      stats: ["Business Excellence", "Diversity Champion", "State Recognition"],
+        "Received two major awards in 2020: the Ohio Black Expo Business Excellence Award for commitment to business excellence and setting an example for Black Excellence in Ohio, and the Columbus Business First Outstanding Diversity Champion Award for promoting equity and inclusiveness in Central Ohio. During the COVID-19 pandemic, Henry led the rapid disbursement of millions of dollars in assistance to small businesses across Central Ohio.",
+      stats: ["Business Excellence", "Diversity Champion", "COVID-19 Relief"],
       category: "Award",
       color: "#3b82f6",
     },
@@ -155,14 +156,18 @@ const Timeline = () => {
     },
     {
       year: "2023",
-      title: "Diversity Champion Recognition",
-      icon: Award,
-      short: "Recognized by Columbus Business First",
+      title: "Advancing Equity in Energy Research",
+      icon: BookOpen,
+      short: "Co-authored landmark research on equity in clean energy",
       description:
-        "Recognized along with organizations and individuals leading the way in promoting equity and inclusiveness in Central Ohio.",
-      stats: ["Diversity Champion", "Central Ohio"],
-      category: "Award",
-      color: "#ec4899",
+        "Co-authored 'Advancing Equity in Energy Research: Overcoming Barriers and Building Pathways' — a research study funded by the Alfred P. Sloan Foundation, led by Johnson C. Smith University, FIU, Ohio State, and HBCU-CDAC. Henry served as Co-Principal Investigator for Policy Analysis and Energy Equity. The report identified systemic barriers Black researchers face in clean energy and outlined 10 actionable recommendations.",
+      stats: [
+        "Sloan Foundation",
+        "Co-Principal Investigator",
+        "Clean Energy Equity",
+      ],
+      category: "Publication",
+      color: "#10b981",
     },
     {
       year: "2024",
@@ -186,6 +191,17 @@ const Timeline = () => {
       category: "Recognition",
       color: "#06b6d4",
     },
+    {
+      year: "2026",
+      title: "Appalachian Community Capital Board Appointment",
+      icon: ShieldCheck,
+      short: "Joins ACC as Incoming Loan Committee Chair",
+      description:
+        "Henry A. Golatt joined Appalachian Community Capital (ACC) as its incoming Loan Committee Chair and newest member of the Board of Directors. A seasoned economic development strategist, Henry brings extensive experience in community development finance, entrepreneurship, strategic partnerships, and expanding access to capital. As incoming Loan Committee Chair, he will bring a valuable combination of lending expertise, cross-sector collaboration, and strategic leadership to ACC's work to strengthen community development finance and expand access to capital throughout Appalachia.",
+      stats: ["Loan Committee Chair", "CDFI Expertise", "Board of Directors"],
+      category: "Recognition",
+      color: "#8b5cf6",
+    },
   ];
 
   const scroll = (direction) => {
@@ -204,20 +220,23 @@ const Timeline = () => {
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.6 }}
           className="timeline-header"
         >
           <div className="timeline-badge">
             <Calendar size={14} />
-            <span>Our Journey</span>
+            <span>Evidence in Practice</span>
           </div>
           <h2 className="timeline-title">
             From 1999 to <span className="timeline-title-highlight">Today</span>
           </h2>
           <p className="timeline-subtitle">
-            25+ years of impact in inclusive economic development. Click any
-            year to explore.
+            The Economic Empowerment Framework and Architect/Builder Model grew
+            out of practical work across institutions, communities,
+            entrepreneurship ecosystems, HBCUs, partnerships, and place-based
+            development.
           </p>
         </motion.div>
 
@@ -244,7 +263,8 @@ const Timeline = () => {
                 <motion.div
                   key={milestone.year}
                   initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.06 }}
                   className={`timeline-node ${
                     index % 2 === 0

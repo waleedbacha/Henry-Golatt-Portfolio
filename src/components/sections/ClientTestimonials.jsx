@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Quote, Star, ChevronLeft, ChevronRight } from "lucide-react";
+import { Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import "./ClientTestimonials.css";
 
 const ClientTestimonials = () => {
@@ -8,6 +8,7 @@ const ClientTestimonials = () => {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
   const autoPlayRef = useRef(null);
 
+  // Only keeping verified testimonials from real emails received
   const testimonials = [
     {
       quote:
@@ -17,7 +18,6 @@ const ClientTestimonials = () => {
       avatar: "🏛️",
       company:
         "City of Columbus, Office of Small Business & Entrepreneur Development",
-      rating: 5,
     },
     {
       quote:
@@ -26,52 +26,6 @@ const ClientTestimonials = () => {
       role: "Manager, Far East Neighborhood Pride Center",
       avatar: "🏘️",
       company: "City of Columbus, Department of Neighborhoods",
-      rating: 5,
-    },
-    {
-      quote:
-        "Henry's work has fundamentally changed how we approach inclusive economic development. His vision and execution have made Columbus a national leader in equitable entrepreneurship.",
-      name: "City of Columbus",
-      role: "Municipal Partnership",
-      avatar: "🏛️",
-      company: "City of Columbus, Ohio",
-      rating: 5,
-    },
-    {
-      quote:
-        "The network Henry built gave me access to resources, mentors, and capital I never knew existed. It changed the trajectory of my business.",
-      name: "Columbus Entrepreneurs",
-      role: "Program Participants",
-      avatar: "🚀",
-      company: "Entrepreneur Support Network",
-      rating: 5,
-    },
-    {
-      quote:
-        "HG Consulting brought together critical voices to examine how education can be a lever for equity. Their ability to convene diverse stakeholders and drive meaningful conversation is unmatched.",
-      name: "McGraw Hill Partnership",
-      role: "Achieving DEI Through Education Series",
-      avatar: "🎓",
-      company: "McGraw Hill & Achieve 3000",
-      rating: 5,
-    },
-    {
-      quote:
-        "HG Consulting understands what it takes to build inclusive ecosystems that actually work. Their strategic insight and community-driven approach set them apart.",
-      name: "The Columbus Foundation",
-      role: "Advisory Board Partner",
-      avatar: "🌱",
-      company: "Inclusive Entrepreneurship PRI",
-      rating: 5,
-    },
-    {
-      quote:
-        "Working with HG Consulting on our community development initiatives has been transformative. Their expertise in HBCU partnerships and economic development is invaluable.",
-      name: "HBCU Coalition.org",
-      role: "National Partnership",
-      avatar: "🎯",
-      company: "HBCU Community Development",
-      rating: 5,
     },
   ];
 
@@ -90,7 +44,6 @@ const ClientTestimonials = () => {
   const goTo = (index) => {
     setCurrentIndex(index);
     setIsAutoPlaying(false);
-    // Resume auto-play after 15s of inactivity
     setTimeout(() => setIsAutoPlaying(true), 15000);
   };
 
@@ -113,39 +66,36 @@ const ClientTestimonials = () => {
   return (
     <section id="testimonials" className="client-testimonials-section">
       <div className="client-testimonials-container">
-        {/* ================= HEADER ================= */}
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 0.7 }}
           className="client-testimonials-header"
         >
           <div className="client-testimonials-badge">
             <Quote size={14} />
-            <span>Client Testimonials</span>
+            <span>Client & Partner Perspectives</span>
           </div>
-
           <h2 className="client-testimonials-title">
             What Our{" "}
             <span className="client-testimonials-title-highlight">
-              Clients Say
+              Partners Say
             </span>
           </h2>
-
           <p className="client-testimonials-subtitle">
             Real partnerships, real impact. Hear from the organizations and
             communities we've worked with.
           </p>
         </motion.div>
 
-        {/* ================= MAIN SLIDER ================= */}
+        {/* Main Slider */}
         <div className="client-testimonials-slider">
-          {/* Quote icon decoration */}
           <div className="client-testimonials-quote-icon">
             <Quote size={80} strokeWidth={1} />
           </div>
 
-          {/* Testimonial content */}
           <div className="client-testimonials-content">
             <AnimatePresence mode="wait">
               <motion.div
@@ -156,23 +106,8 @@ const ClientTestimonials = () => {
                 transition={{ duration: 0.5 }}
                 className="client-testimonials-card"
               >
-                {/* Stars */}
-                <div className="client-testimonials-stars">
-                  {[...Array(current.rating)].map((_, i) => (
-                    <Star
-                      key={i}
-                      size={20}
-                      fill="#F4C430"
-                      strokeWidth={0}
-                      color="#F4C430"
-                    />
-                  ))}
-                </div>
-
-                {/* Quote text */}
                 <p className="client-testimonials-text">"{current.quote}"</p>
 
-                {/* Author */}
                 <div className="client-testimonials-author">
                   <div className="client-testimonials-avatar">
                     {current.avatar}
@@ -201,7 +136,6 @@ const ClientTestimonials = () => {
           >
             <ChevronLeft size={22} />
           </button>
-
           <button
             className="client-testimonials-nav client-testimonials-nav-next"
             onClick={goNext}
@@ -211,7 +145,7 @@ const ClientTestimonials = () => {
           </button>
         </div>
 
-        {/* ================= DOTS ================= */}
+        {/* Dots */}
         <div className="client-testimonials-dots">
           {testimonials.map((_, index) => (
             <button
