@@ -474,9 +474,27 @@
 @media (max-width: 1024px) {
   .hero-flow-label {
     font-size: 9px;
+    letter-spacing: 1px;
   }
+
   .hero-flow-steps {
-    font-size: 12px;
-    gap: 4px;
+    font-size: 11px; /* ⬇️ Reduced from 12px */
+    gap: 3px; /* ⬇️ Reduced from 4px */
+  }
+
+  .hero-flow-arrow {
+    font-size: 9px; /* ⬇️ Added to shrink the arrows too */
+  }
+}
+
+/* Extra small phones (iPhone SE, Galaxy Fold, etc.) */
+@media (max-width: 400px) {
+  .hero-flow-steps {
+    font-size: 10px;
+    gap: 2px;
+  }
+
+  .hero-flow-arrow {
+    font-size: 8px;
   }
 }

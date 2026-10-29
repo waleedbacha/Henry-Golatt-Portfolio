@@ -23,6 +23,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [openMobileSubmenu, setOpenMobileSubmenu] = useState(null);
   const location = useLocation();
   const closeTimerRef = useRef(null);
 
@@ -309,14 +310,67 @@ const Navbar = () => {
 
         <nav className="mobile-drawer-nav">
           {navItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              className={`mobile-drawer-link ${location.pathname === item.path ? "mobile-drawer-link-active" : ""}`}
-              onClick={() => setIsOpen(false)}
-            >
-              {item.name}
-            </Link>
+            <div key={item.name} className="mobile-drawer-item-wrapper">
+              {item.mega ? (
+                <>
+                  <button
+                    className={`mobile-drawer-link mobile-drawer-accordion-btn ${
+                      openMobileSubmenu === item.mega ? "active" : ""
+                    }`}
+                    onClick={() =>
+                      setOpenMobileSubmenu(
+                        openMobileSubmenu === item.mega ? null : item.mega,
+                      )
+                    }
+                  >
+                    <span>{item.name}</span>
+                    <span
+                      className={`mobile-arrow ${openMobileSubmenu === item.mega ? "rotate" : ""}`}
+                    >
+                      ▾
+                    </span>
+                  </button>
+
+                  {/* Dropdown list */}
+                  <div
+                    className={`mobile-drawer-submenu ${
+                      openMobileSubmenu === item.mega ? "open" : ""
+                    }`}
+                  >
+                    {megaMenus[item.mega].items.map((subItem, i) => (
+                      <Link
+                        key={i}
+                        to={buildItemUrl(subItem)}
+                        className="mobile-drawer-sublink"
+                        onClick={() => setIsOpen(false)}
+                      >
+                        <subItem.icon size={16} />
+                        <div>
+                          <div className="mobile-sub-title">
+                            {subItem.title}
+                          </div>
+                          <div className="mobile-sub-desc">
+                            {subItem.description}
+                          </div>
+                        </div>
+                      </Link>
+                    ))}
+                  </div>
+                </>
+              ) : (
+                <Link
+                  to={item.path}
+                  className={`mobile-drawer-link ${
+                    location.pathname === item.path
+                      ? "mobile-drawer-link-active"
+                      : ""
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.name}
+                </Link>
+              )}
+            </div>
           ))}
         </nav>
 
