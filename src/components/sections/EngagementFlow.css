@@ -1,14 +1,15 @@
 /* ============================================================
-   ENGAGEMENT FLOW SECTION
+   ENGAGEMENT FLOW — ARROW INFOGRAPHIC (ZIG-ZAG)
    ============================================================ */
 
 .flow-section {
   padding: 100px 24px;
   background: #050505;
+  overflow: hidden;
 }
 
 .flow-container {
-  max-width: 1120px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
@@ -54,66 +55,233 @@
   line-height: 1.7;
 }
 
-.flow-scroll-wrapper {
-  overflow-x: auto;
-  padding-bottom: 24px;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
+/* ============================================================
+   INFOGRAPHIC WRAPPER
+   ============================================================ */
 
-.flow-scroll-wrapper::-webkit-scrollbar {
-  display: none;
-}
-
-.flow-track {
-  display: flex;
-  align-items: center;
-  gap: 0;
-  min-width: max-content;
-}
-
-.flow-node {
+.flow-infographic-wrapper {
   position: relative;
+  margin-bottom: 40px;
+  padding: 40px 0;
+}
+
+/* ============================================================
+   MOBILE — Vertical List (default)
+   ============================================================ */
+
+.flow-arrows-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.flow-arrow-box {
+  position: relative;
+  background-color: var(--box-bg);
+  padding: 20px 22px;
+  border-radius: 12px;
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 140px;
-  text-align: center;
-  flex-shrink: 0;
+  justify-content: center;
+  min-height: 120px;
 }
 
-.flow-node-step {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: rgba(50, 181, 84, 0.1);
-  border: 1px solid rgba(50, 181, 84, 0.4);
-  color: #32b554;
+.flow-arrow-content {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.flow-arrow-icon {
+  margin-bottom: 12px;
+  opacity: 0.9;
+}
+
+.flow-arrow-title {
   font-size: 13px;
   font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.flow-arrow-desc {
+  font-size: 12px;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Mobile color fallback (arrow uses background, but mobile uses left border) */
+@media (max-width: 900px) {
+  .flow-arrow-box {
+    /* Dark green tinted background matching the theme */
+    background: linear-gradient(to right, rgba(50, 181, 84, 0.08), #0b160e);
+    border-left: 4px solid #32b554;
+    border-top: 1px solid #1a2a1f;
+    border-right: 1px solid #1a2a1f;
+    border-bottom: 1px solid #1a2a1f;
+    border-radius: 12px;
+    padding: 20px 24px;
+  }
+
+  .flow-arrow-icon {
+    color: #32b554;
+  }
+
+  .flow-arrow-title {
+    color: #ffffff;
+    text-shadow: none;
+  }
+
+  .flow-arrow-desc {
+    color: #a8a8a8;
+  }
+}
+
+/* ============================================================
+   DESKTOP — 5 Columns + Zig-Zag Arrows
+   ============================================================ */
+
+@media (min-width: 900px) {
+  .flow-arrows-grid {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 0;
+    padding: 0 20px;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+
+  /* Base arrow styling */
+  .flow-arrow-box {
+    border-radius: 0;
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - 22px) 0%,
+      100% 50%,
+      calc(100% - 22px) 100%,
+      0% 100%,
+      22px 50%
+    );
+    margin-left: -12px;
+    padding: 18px 26px 18px 34px;
+    min-height: 155px;
+  }
+
+  /* First arrow — no left notch */
+  .flow-arrow-box:first-child {
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - 22px) 0%,
+      100% 50%,
+      calc(100% - 22px) 100%,
+      0% 100%
+    );
+    margin-left: 0;
+    padding-left: 22px;
+  }
+
+  /* Every 6th item (start of second row) also loses the left notch */
+  .flow-arrow-box:nth-child(6) {
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - 22px) 0%,
+      100% 50%,
+      calc(100% - 22px) 100%,
+      0% 100%
+    );
+    margin-left: 0;
+    padding-left: 22px;
+  }
+
+  /* ============================================================
+     🎯 THE ZIG-ZAG EFFECT
+     Row 1: Steps 1–5 sit at the base position.
+     Row 2: Steps 6–10 sit lower (staggered down).
+     Even columns in each row nudge slightly down for a wave feel.
+     ============================================================ */
+
+  /* Row 2 — Steps 6–10 pushed down 60px */
+  .flow-arrow-box:nth-child(n + 6) {
+    transform: translateY(60px);
+  }
+
+  /* Row 1 — Every even item nudged down 20px */
+  .flow-arrow-box:nth-child(2),
+  .flow-arrow-box:nth-child(4) {
+    transform: translateY(20px);
+  }
+
+  /* Row 2 — Every even item nudged back up 20px */
+  .flow-arrow-box:nth-child(7),
+  .flow-arrow-box:nth-child(9) {
+    transform: translateY(40px);
+  }
+
+  /* Hover overrides the zig-zag position */
+  .flow-arrow-box:hover {
+    filter: brightness(1.2);
+    z-index: 10;
+    transform: translateY(-6px) !important;
+  }
+
+  /* Slightly smaller typography in desktop arrows */
+  .flow-arrow-icon {
+    margin-bottom: 10px;
+  }
+
+  .flow-arrow-title {
+    font-size: 12.5px;
+    margin-bottom: 5px;
+  }
+
+  .flow-arrow-desc {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+}
+
+/* ============================================================
+   LOOP TEXT (Continuous Learning)
+   ============================================================ */
+
+.flow-loop-text {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
-  z-index: 2;
+  gap: 16px;
+  margin-top: 100px;
+  padding: 0 20px;
 }
 
-.flow-node-title {
-  font-size: 13px;
-  font-weight: 600;
-  color: #ffffff;
-  line-height: 1.3;
+@media (max-width: 900px) {
+  .flow-loop-text {
+    margin-top: 30px;
+  }
 }
 
-.flow-node-connector {
-  position: absolute;
-  top: 22px;
-  left: calc(50% + 22px);
-  width: calc(140px - 44px);
+.flow-loop-line {
+  flex: 1;
   height: 1px;
-  background: #1a2a1f;
-  z-index: 1;
+  background: rgba(255, 255, 255, 0.1);
+  max-width: 200px;
 }
+
+.flow-loop-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #a8a8a8;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   CAPITAL NOTE
+   ============================================================ */
 
 .flow-note {
   margin-top: 40px;
@@ -124,6 +292,9 @@
   border: 1px solid rgba(50, 181, 84, 0.15);
   font-size: 13px;
   color: #a8a8a8;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .flow-note strong {

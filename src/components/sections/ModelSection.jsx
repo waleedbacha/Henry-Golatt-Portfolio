@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { Building2, Layers, Users, Compass, Landmark } from "lucide-react";
 import "./ModelSection.css";
 
 const ModelSection = () => {
@@ -8,20 +8,28 @@ const ModelSection = () => {
     {
       label: "Institutional Capacity",
       desc: "Build the underlying ability to act.",
+      icon: Building2,
     },
     {
       label: "Ecosystem Architecture",
       desc: "Connect the system and align partners.",
+      icon: Layers,
     },
     {
       label: "Economic Agency",
       desc: "Expand people's ability to act and choose.",
+      icon: Users,
     },
     {
       label: "Asset Conversion",
       desc: "Turn agency into productive, durable assets.",
+      icon: Compass,
     },
-    { label: "Community Wealth", desc: "Retain and reinvest value over time." },
+    {
+      label: "Community Wealth",
+      desc: "Retain and reinvest value over time.",
+      icon: Landmark,
+    },
   ];
 
   return (
@@ -47,24 +55,25 @@ const ModelSection = () => {
           </p>
         </motion.div>
 
-        <div className="model-grid">
+        {/* Arrow Infographic */}
+        <div className="framework-arrows-grid">
           {steps.map((step, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="model-card"
+              transition={{ duration: 0.4, delay: index * 0.1 }}
+              className="framework-arrow-box"
             >
-              <div className="model-card-number">{index + 1}</div>
-              <h3 className="model-card-title">{step.label}</h3>
-              <p className="model-card-desc">{step.desc}</p>
-              {index < steps.length - 1 && (
-                <div className="model-card-arrow">
-                  <ArrowRight size={16} />
+              <div className="framework-arrow-content">
+                <div className="framework-arrow-icon">
+                  <step.icon size={22} strokeWidth={2} />
                 </div>
-              )}
+                <div className="framework-arrow-num">0{index + 1}</div>
+                <h3 className="framework-arrow-title">{step.label}</h3>
+                <p className="framework-arrow-desc">{step.desc}</p>
+              </div>
             </motion.div>
           ))}
         </div>
