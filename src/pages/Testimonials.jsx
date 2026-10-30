@@ -78,7 +78,7 @@ const Testimonials = () => {
       client: "University of Arkansas at Pine Bluff",
       category: "Economic Development",
       coverImage:
-        "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791181987/board_led_2_gcbrbn.jpg",
+        "https://res.cloudinary.com/dcjhzgigb/image/upload/v1793359780/UAPB_Business_Support_Incubator-2_ylm5ge.jpg",
       shortDescription:
         "A $5M initial investment that catalyzed $75M+ in downtown Pine Bluff development — and became a national model for HBCU-led revitalization.",
       duration: "1999 — 2025",
@@ -119,7 +119,7 @@ const Testimonials = () => {
       client: "McGraw Hill & Achieve 3000",
       category: "Education & Equity",
       coverImage:
-        "https://res.cloudinary.com/dcjhzgigb/image/upload/v1789476260/henry_5_bjdagr.jpg",
+        "https://res.cloudinary.com/dcjhzgigb/image/upload/v1793359780/Achieving_Diversity_Equity_Inclusion_Through_Education_jrrj9q.jpg",
       shortDescription:
         "National panel series examining the role education plays in ensuring equitable outcomes from high school to career.",
       duration: "Multi-year",
@@ -158,7 +158,7 @@ const Testimonials = () => {
       client: "City of Columbus, Ohio",
       category: "Economic Development",
       coverImage:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&q=80",
+        "https://res.cloudinary.com/dcjhzgigb/image/upload/v1793359780/Columbus_Inclusive_Ecosystem_Building_k3fhxi.jpg",
       shortDescription:
         "Creating an inclusive small business ecosystem that propels every resident toward prosperity.",
       duration: "Ongoing",
@@ -198,7 +198,7 @@ const Testimonials = () => {
       client: "City of Columbus",
       category: "Entrepreneurship",
       coverImage:
-        "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&q=80",
+        "https://res.cloudinary.com/dcjhzgigb/image/upload/v1793359780/City_of_Columbus_Entrepreneur_Support_Network_tuiyni.jpg",
       shortDescription:
         "Pilot program providing critical services to entrepreneurs across the small business lifecycle.",
       duration: "Pilot Program",
