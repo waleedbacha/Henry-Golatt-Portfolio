@@ -973,6 +973,48 @@ Response time is typically within 1-2 business days.`,
     category: "About",
     content: `HG Consulting's engagement tiers: 1) Executive Economic Empowerment Briefing (frame the strategic opportunity with senior leadership), 2) Economic Empowerment Diagnostic (establish maturity, gaps, assets, and priorities), 3) HBCU Economic Engine Assessment (institution-wide anchor asset and conversion assessment), 4) Ecosystem Architecture Blueprint (design governance and pathways around priority outcomes), 5) Implementation Advisory (support activation, partnerships, recalibration, and measurement).`,
   },
+  // ============================================================
+  // NEW GROWTH INNOVATION NETWORK (NGIN) PUBLICATION
+  // ============================================================
+  {
+    id: "publication-ngin-anchor-institutions",
+    category: "Publications",
+    content: `Publication: "How Anchor Institutions Can Drive Community-Driven Real Estate Development." Written by Bernita Johnson-Gabriel (NGIN), Aditya Nekkanti (Broadstreet Impact Services), and Henry Golatt (HBCU CDAC). Published by New Growth Innovation Network (NGIN). The article explains how anchor institutions — including HBCUs — can unlock community-driven real estate development in low- and moderate-income (LMI) neighborhoods in small and midsize cities. It identifies three financial barriers (predevelopment gaps, underwriting approaches, and timeline mismatches) and outlines catalytic capital tools such as credit enhancements, interest-rate buydowns, predevelopment funding, "first in, last to control" capital, and coalition-based blended funds.`,
+  },
+  {
+    id: "publication-ngin-uapb-case-study",
+    category: "Publications",
+    content: `NGIN Case Study: UAPB Campus South, Pine Bluff. According to the NGIN publication co-authored by Henry Golatt: "When the University of Arkansas at Pine Bluff (UAPB), an HBCU, partnered with the City of Pine Bluff in 2005 to support the redevelopment of the Central Business District... The modest investment of $180k made by UAPB and $200k made by the City of Pine Bluff spurred approximately $75 million in follow-on public and private investments in the two-block area surrounding the UAPB Business Support Incubator and Office Complex, affectionately known as the UAPB Campus South. The initial investment of $380k produced an extraordinary catalytic multiplier effect, transforming a three-block corridor into a civic, cultural, and educational anchor district and yielding a near-200× return in community-scale investment."`,
+  },
+
+  // ============================================================
+  // BROOKINGS INSTITUTION PUBLICATION
+  // ============================================================
+  {
+    id: "publication-brookings-hbcu",
+    category: "Publications",
+    content: `Publication: "Harnessing the Wind: A Strategy for HBCU Campus and Community Development." Published by the Brookings Institution (Center for Community Uplift) on October 28, 2026. This follow-up to Brookings' 2022 "A call to action for HBCU investment" report draws on a yearlong engagement process including convenings with HBCU presidents, senior administrators, capital providers, developers, and policymakers. Henry A. Golatt is quoted multiple times as founder of Growth AdvantEDGE and a founding member of the HBCU Coalition. The report identifies five central themes: 1) The primary constraint is capital design, not institutional vision; 2) Land is an asset only with site control and trusted partners; 3) Institutional capacity is systematically misread; 4) Campus and community futures are inseparable; 5) The field is ready to move beyond pilots.`,
+  },
+  {
+    id: "publication-brookings-hbcu-impact",
+    category: "Publications",
+    content: `Brookings HBCU Impact Data: According to the Brookings Institution report "Harnessing the Wind" (October 2026): HBCUs represent just 3% of the nation's four-year nonprofit colleges and universities but enroll 10% of all Black college students and award 15% of all bachelor's degrees and 19% of all STEM bachelor's degrees earned by Black graduates. According to the UNCF 2024 economic impact report, HBCUs generate $16.5 billion in direct economic impact annually and support more than 136,000 jobs. Measured by job creation, the nation's HBCUs would rank among the top 50 companies on the Fortune 500. Between 1987 and 2020, 16 of 19 historically Black land-grant universities were underfunded by their states by an estimated $12.6 billion.`,
+  },
+  {
+    id: "publication-brookings-henry-quotes",
+    category: "Publications",
+    content: `Henry Golatt quotes from Brookings "Harnessing the Wind" report (October 2026): 1) "The work of community development is a discipline, it is long term, it is not something that happens overnight." 2) On institutional caution: "Some of them have been burned — let's be honest about that. Investors, developers coming to the table, some able to deliver, some not able to deliver. And so there's this caution there." 3) On the connection between education and development: "At the end of the day, you're creating education to create economic mobility for people... they're not two different things. They're really one and the same." 4) On the field's readiness: "There is ample supply. I don't think it's targeted and directed as much toward the needs of HBCUs. That's where the opportunity lies."`,
+  },
+  {
+    id: "publication-brookings-recommendations",
+    category: "Publications",
+    content: `Brookings "Harnessing the Wind" Policy Recommendations (5 items): 1) Restore public baseline funding and redesign capital instruments to share early-stage risk. 2) Finance site control and build a pipeline of trusted developers. 3) Underwrite capacity as an investment, not a screening criterion. 4) Embed HBCUs in development policy as delivery infrastructure. 5) Replace pilots with permanent platforms.`,
+  },
+  {
+    id: "publication-brookings-hbcu-endowments",
+    category: "Publications",
+    content: `Brookings HBCU Endowment Data (from "Harnessing the Wind," October 2026): The 10 largest HBCU endowments hold a combined $2.4 billion, while the 10 largest PWI endowments hold a combined $340 billion — a difference of more than 140 to 1. Public HBCUs hold roughly one-third the endowment per student of comparable public institutions. HBCUs comprised 1.4% of the 678 institutions reporting to NACUBO in Fiscal Year 2025, but held just 0.3% of the $953.7 billion in reported endowment assets. Howard University is the first and only HBCU to surpass $1 billion in endowment. Spelman College's endowment is over $500 million.`,
+  },
 ];
 
 export default knowledgeBase;

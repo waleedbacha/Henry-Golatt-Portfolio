@@ -107,7 +107,7 @@ const Gallery = () => {
         "https://res.cloudinary.com/dcjhzgigb/image/upload/v1791182233/Publications_ooehia.jpg",
       description:
         "Peer-reviewed research, news features, and strategic plans on inclusive economic development.",
-      count: 14,
+      count: 16,
       images: [
         {
           id: 1,
@@ -237,6 +237,26 @@ const Gallery = () => {
             "Announcement of Henry A. Golatt joining Appalachian Community Capital as incoming Loan Committee Chair and newest member of the Board of Directors.",
           fileType: "image",
           subcategory: "news",
+        },
+        {
+          id: 15,
+          src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&q=80",
+          title:
+            "How Anchor Institutions Can Drive Community-Driven Real Estate — NGIN (Co-Authored)",
+          description:
+            "Co-authored by Henry Golatt for New Growth Innovation Network (NGIN). Explains how anchor institutions like HBCUs can unlock community-driven real estate development in LMI neighborhoods.",
+          fileType: "image",
+          subcategory: "publications",
+        },
+        {
+          id: 16,
+          src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&q=80",
+          title:
+            "Harnessing the Wind: HBCU Campus and Community Development — Brookings Institution (2026)",
+          description:
+            "Published by the Brookings Center for Community Uplift. Henry A. Golatt is quoted multiple times as a leading voice on HBCU economic development and community development discipline.",
+          fileType: "image",
+          subcategory: "publications",
         },
       ],
     },
